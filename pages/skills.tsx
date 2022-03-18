@@ -2,17 +2,20 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { ListItem } from '../dist/components/ListItem'
+import { Code } from '../dist/components/Code'
 import { Past } from '../dist/components/Past'
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaGit, FaNodeJs, FaAws } from 'react-icons/fa'
 import { SiNextdotjs, SiExpress, SiMongodb, SiJquery, SiJavascript} from 'react-icons/si'
 import styles from '../styles/Skills.module.scss'
-import { personality, media, pastTrades } from '../dist/data'
+import { personality, media, pastTrades, myCode } from '../dist/data'
 import code from '../public/images/code.jpg'
-console.log(pastTrades)
+
 const Skills: NextPage = () => {
   const [random, setRandom] = useState<number>(10)
   const [spanOpen, setSpanOpen] = useState<boolean>(false)
+  const [sectionOpen, setSectionOpen] = useState<boolean>(false)
 
+{/* ----------------------------------random to randomly highlight skill box--------------------------------------- */}
   useEffect(() => {
     const skills: ReturnType<typeof setInterval> = setInterval(() => {
       setRandom(Math.floor(Math.random() * 8))
@@ -20,6 +23,7 @@ const Skills: NextPage = () => {
     return () => clearInterval(skills)
   }, [])
 
+{/* ----------------------------------rotate > after 1sec of loading, or after clicking it--------------------------------------- */}
   useEffect(() => {
     if (spanOpen) return
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
@@ -36,7 +40,7 @@ const Skills: NextPage = () => {
         </div>
         <div className={ styles.textCodeContainer}>
           <h3>Self Taught.</h3>
-          <p>Self taught as I had to split my time between working, studying and family.</p>
+          <p>Self taught as I had to split my time between working, studying and a young family.</p>
           <div className={ styles.mediaList }>
             <h5>Media used</h5>
             <ul>
@@ -69,11 +73,16 @@ const Skills: NextPage = () => {
             <p key={ index } className={ index === random ? styles.pActive : undefined }>{ skill }</p>
           )}
         </div>
+        {/* --------overlay container-------- */}
+        <div className={ styles.overlay } onClick={() => setSectionOpen(!sectionOpen)}>
+              Code
+        </div>
+        {/* --------------------------------- */}
       </section>
-{/* ----------------------------------overlay container--------------------------------------- */}
-      <div className={ styles.overlay }>
-
-      </div>
+{/* ----------------------------------My Code--------------------------------------- */}
+      <section className={ sectionOpen ? styles.codeContainer : [ styles.codeContainer, styles.codeContainerClosed ].join(' ') }>
+            { myCode.map(code => <Code code={ code }/>) }
+      </section>
 {/* ----------------------------------Non tech history--------------------------------------- */}
       <section className={ styles.nonTechSection }>
         { pastTrades.map((past, index) => 

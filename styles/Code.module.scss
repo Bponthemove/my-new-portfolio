@@ -1,0 +1,11 @@
+@import './_variables.scss';
+
+.codeContainer{
+    display: flex;
+    padding: 3em;
+
+    .imgContainer{
+        width: 30vw;
+        height: auto;
+    }
+}

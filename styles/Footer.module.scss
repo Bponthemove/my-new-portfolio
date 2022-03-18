@@ -42,6 +42,7 @@
                 cursor: pointer;
                 border: none;
                 padding: 1em 2.5em;
+                font-weight: 800;
     
                 @include on-hover{
                     background-color: #fa8d85;
@@ -60,6 +61,7 @@
     }
 
     .copyright{
+        margin-top: 2em;
         text-align: center;
     }
 }

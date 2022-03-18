@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react"
+import React, { createContext, useEffect, useState, useRef } from "react"
 import useMediaQuery from "../hooks/useMediaQuery"
 
 interface ProviderProps {
@@ -8,6 +8,8 @@ interface ProviderProps {
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
     desktop: boolean
+    bottomRef: React.LegacyRef<HTMLParagraphElement> | undefined
+    headerRef: React.LegacyRef<HTMLElement> | undefined
 }
 
 export const PortfolioContext = createContext<ProviderProps | undefined>(undefined)
@@ -16,6 +18,8 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     const [theme, setTheme] = useState<string>('standard')
     const [menu, setMenu] = useState<boolean>(false)
     const desktop: boolean = useMediaQuery('(min-width: 55em)')
+    const bottomRef = useRef(null) 
+    const headerRef = useRef(null)
 
     const themeStrings: string[] = ['Standard', 'Rainbows&Unicorns', 'Moody', 'Random']
 
@@ -25,7 +29,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     if (menu) console.log(window)
 
     const value: ProviderProps = { 
-        theme, setTheme, themeStrings, desktop, menu, setMenu
+        theme, setTheme, themeStrings, desktop, menu, setMenu, bottomRef, headerRef
     }
 
     return(

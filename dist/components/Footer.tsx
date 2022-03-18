@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import Router from 'next/router'
+import emailjs from 'emailjs-com'
 import { FaGithub, FaChevronRight, FaLinkedin, FaChevronLeft, FaArrowUp } from 'react-icons/fa'
 import styled from 'styled-components'
 import styles from '../../styles/Footer.module.scss'
+import usePortfolioContext from '../hooks/usePortfoliocontext'
 
 interface ArrowProps {
   active: string
@@ -45,7 +48,13 @@ export const Footer = () => {
   const [first, setFirst] = useState<string>('false')
   const [second, setSecond] = useState<string>('false')
   const [third, setThird] = useState<string>('false')
-  
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const [toTop, setToTop] = useState<boolean>(false)
+
+  const { bottomRef, headerRef } = usePortfolioContext()
+
   useEffect(() => {
     let arrows: ReturnType<typeof setInterval>
     if (!hover) {
@@ -77,19 +86,53 @@ export const Footer = () => {
     return () => clearInterval(arrows)   
   }, [hover])
 
+  useEffect(() => {
+    if (toTop && headerRef) {
+      headerRef.current.scrollIntoView({behavior: 'smooth'})
+      setToTop(!toTop)
+    }
+  }, [toTop])
+
+  const handleInput = (e: React.FormEvent<HTMLFormElement> ) => {
+    console.log(e.currentTarget.message.value)
+    e.preventDefault()
+    
+    emailjs
+      .sendForm(
+        "service_bps9mac",
+        "template_bejf8ua",
+        e.currentTarget,
+        'gVMc6hqzE6iCyCUFO'
+      )
+      .then(res => {
+          console.log(res.status)
+          alert("Your email has been sent")
+        },
+      )
+      .catch(err => {
+          console.log(err.status)
+          alert("FAILED... Please try again")
+        }
+      )
+      .finally(() => {
+        setName('')
+        setEmail('')
+        setMessage('')
+      })
+    }
+
   return (
     
-      <footer className={ styles.footer } id='footer'>
+      <footer className={ styles.footer }>
         <div className={ styles.contact }>
           <p>Feel free to leave me a message<br/>of support or for some more info!</p>
-          <form action='mailto:bpvanzalk@hotmail.com' method='post' encType='text/plain'>
+          <form onSubmit={ e => handleInput(e) } id='form' >
             <div className={ styles.names }>
-              <input type='text' maxLength={ 256 } name='First-Name' placeholder='First Name' id='First-Name' required/>
-              <input type='text' maxLength={ 256 } name='Last-Name' placeholder='Last Name' id='Last-Name' required/>
-              <input type='email' maxLength={ 256 } name='Email' placeholder='Email' id='Email'/>
-              <textarea name='Message' id='Message' placeholder='Your message' rows={6} required/>
+              <input type='name' maxLength={ 256 } name='name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
+              <input type='email' maxLength={ 256 } name='email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
+              <textarea name='message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
             </div>
-            <input type='submit' value='Contact me' id={ styles.ContactBtn }/>
+            <input type='submit' value='Contact me' id={ styles.ContactBtn } />
           </form>
         </div>
         <div className={ styles.bottomContainer }>
@@ -107,10 +150,10 @@ export const Footer = () => {
                 <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
               </div>
         </div>
-        <p className={ styles.copyright }>
+        <p className={ styles.copyright } ref={ bottomRef }>
           &copy; Bponthemove @ 2022
         </p>
-        <a href="#top">
+        <a onClick={ () => setToTop(!toTop) }>
           <ArrowTop/>
         </a>
       </footer>

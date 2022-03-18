@@ -7,7 +7,7 @@ import { navLinks } from '../data'
 import styles from '../../styles/Header.module.scss'
 
 const Header: NextPage = () => {
-    const { theme, setTheme, desktop, menu, setMenu } = usePortfolioContext()
+    const { theme, setTheme, desktop, menu, setMenu, headerRef } = usePortfolioContext()
 
     useEffect(() => {
         document.documentElement.className = ''
@@ -16,7 +16,7 @@ const Header: NextPage = () => {
     
     return (
         <>
-            <header className={ styles.container } id='top'>
+            <header className={ styles.container } ref={ headerRef }>
                 <div className={ styles.headerLeft }>
                     <h1>
                         IamBram

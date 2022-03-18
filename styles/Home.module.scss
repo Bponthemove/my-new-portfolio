@@ -79,14 +79,16 @@
     }
   
     aside{
-      transform: rotate(-90deg);
+      transform: rotate(-90deg) translateX(-25vw);
       transform-origin: top left;
       line-height: 120%;
-      font-size: 1.6em;
+      font-size: 3.7vw;
       
-      @include media('notMobile') {
+      @include media('desktop') {
         position: absolute;
         top: 15em;
+        transform: rotate(-90deg);
+        font-size: 1.7em;
       }
     }
 
@@ -145,28 +147,36 @@
       }
     }
   }
-
-  .img{
-    opacity: 0.4;
-  }
-
+  
   .sectionThree{
     display: grid;
 
     span, .divOnImg{
       grid-area: 1/1;
     }
-
+    
     .img{
       width: 100%;
       height: auto;
+      opacity: 1;
+    }
+
+    .imgLoaded{
+      opacity: 0.3;
+      transition: 0.8s;
     }
 
     .divOnImg{
       padding: 3em 1em;
       width: 80%;
-      background-color: $color-white;
+      background-color: transparent;
       border-radius: 1em;
+      color: transparent;
+    }
+
+    .divOnImgLoaded{
+      color: black;
+      transition: 0.8s;
     }
   }
 

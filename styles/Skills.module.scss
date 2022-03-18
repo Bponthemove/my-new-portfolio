@@ -108,8 +108,8 @@
 }
 
 .personality{
-    // margin: 0 auto 3em 0;
-    padding: 4em 1em;
+    position: relative;
+    padding: 4em 1em 8em;
     background: url('../public/images/codebg.png') no-repeat;
     background-size: cover;
     min-height: 200px;
@@ -162,7 +162,42 @@
             background-color: #fe5f55;
         }
     }
+
+    .overlay{
+        position: absolute;
+        bottom: -13%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width:70%;
+        background-color: #fdffb6;
+        border-radius: 2em;
+        padding: 2em 3em;
+        font-weight: 800;
+        font-size: 1.6em;
+        text-align: center;
+        cursor: pointer;
+    
+        @include on-hover{
+            background-color: black;
+            color: $color-white;
+            transition: 0.3s;
+        }
+    }
 }
+
+.codeContainer{
+    background-color: #9bf6ff;
+    max-height: 90vh;
+    transition: 0.3s;
+}
+
+.codeContainerClosed{
+    max-height: 0;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
 
 .nonTechSection{
 
@@ -174,18 +209,34 @@
         align-items: center;
 
         @include media('desktop') {
+            max-width: 1000px;
             flex-direction: row;
             align-items: center;
+            justify-content: space-between;
         }
 
         .pastImgContainer{
             position: relative;
             width: 30vw;
             height: auto;
+            
+            @include media('desktop') {
+                flex: 1;
+                margin: 0 2em;
+            }
+        }
+
+        > p{
+            font-weight: 700;
+            line-height: 120%;
+
+            @include media('desktop') {
+                flex: 2;
+            }
         }
     }
 
-    &:nth-child(2n+1){
+    :nth-child(odd){
         @include media('desktop') {
             flex-direction: row-reverse;
         }
