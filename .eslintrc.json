@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    // https://stackoverflow.com/questions/57802057/eslint-configuring-no-unused-vars-for-typescript
+    "prettier" 
+    // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
+  ],
+  "rules": {
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error"
+    //turning rules off by replacing the string with 'off'
+    //also npm add eslint-config-prettier to avoid conflicts
+  }
+}

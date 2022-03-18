@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+.footer {
+  margin-top: 3em;
+  padding-top: 2em;
+  background-color: #9bf6ff;
+  position: relative;
+}
+
+.footer .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  padding: 1em 2em;
+  margin: 2em auto;
+  border-radius: 2em;
+  background: url("../public/images/background.png") no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 55em) {
+  .footer .contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.footer .contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .contact form input, .footer .contact form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.5em 1.25em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  border: 1px solid black;
+}
+
+.footer .contact form #ContactBtn {
+  width: 50%;
+  background-color: #fe5f55;
+  cursor: pointer;
+  border: none;
+  padding: 1em 2.5em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
+  }
+}
+
+.footer .bottomContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 55em) {
+  .footer .bottomContainer {
+    padding: 1em;
+  }
+}
+
+.footer .copyright {
+  text-align: center;
+}
+/*# sourceMappingURL=Footer.module.css.map */

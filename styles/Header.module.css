@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.theme-Standard .container {
+  color: #9bf6ff;
+}
+
+.theme-Rainbows Unicorns .container {
+  color: #242423;
+}
+
+.theme-Moody .container {
+  color: #242423;
+}
+
+.theme-Random .container {
+  color: #242423;
+}
+
+.container h1 {
+  font-size: 2em;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.container .themes {
+  text-align: center;
+}
+
+.container .themes .themesTitle {
+  text-decoration: underline;
+}
+
+.container .themes .themeTicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1em;
+  overflow: hidden;
+}
+
+.container .navContainer .hamburger {
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-right: 2em;
+}
+
+.container .navContainer .hamburgerOpen {
+  -webkit-transform: rotate(450deg);
+          transform: rotate(450deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container .navContainer .navContainer {
+  justify-self: flex-end;
+}
+
+.container .navContainer .navlinkContainer {
+  display: none;
+}
+/*# sourceMappingURL=Header.module.css.map */

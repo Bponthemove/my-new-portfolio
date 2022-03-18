@@ -1,0 +1,101 @@
+@import './_variables.scss';
+
+.container{
+    width: 100%;
+    @include theme('color', 'colorThree');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 0 15px 0 rgb(0 0 0 / 5%);
+
+    h1{
+        font-size: 2em;
+        font-family: $font-header;
+        padding: 0.6em 0;
+    }
+    
+    .navContainer{
+        
+        .hamburger{
+            cursor: pointer;
+            transition: 0.3s;
+            margin-right: 2em;
+            position: absolute;
+            top: 0.8em;
+            right: 1em;
+            z-index: 999;
+        }
+
+        .hamburgerOpen{
+            position: absolute;
+            top: 0.7em;
+            right: 1em;
+            transform: rotate(450deg);
+            transform-origin: center center;
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        // .navContainer{
+        //     justify-self: flex-end;    
+        // }
+
+        .navlinkContainer{
+            display: none;
+
+            @include media('desktop'){
+                display: flex;
+            }
+
+            .linkContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                a{
+                    padding: 0.5em 1em;
+                    cursor: pointer;
+                    font-weight: 600;
+                }
+
+                .aNotActive{
+                    width: 0%;
+                    border-bottom: 3px solid black;
+                    // transform: translateX(50%);
+                }
+                
+                .aActive{
+                    width: 100%;
+                    border-bottom: 3px solid black;
+                    transition: width 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.navLinksMobileContainer{
+    position: absolute;
+    top: 40%;
+    right: 0;
+    border-radius: 2em 0 0 2em;
+    background-color: black;
+    padding: 3em 0.5em 3em 2em;
+    z-index: 999;
+    
+    .linkContainer{
+        margin: 3em 0;
+    }
+    
+    a{
+        color: $color-white;
+        font-weight: 600;
+        font-size: 2em;
+    }
+    
+    .aActive{
+        border-bottom: 3px solid $color-white;
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,193 @@
+@import './_variables.scss';
+
+.sectionOne{
+    margin: 3em;
+    padding: 3em;
+    background-color: #9bf6ff;
+    border-radius: 2em;
+
+    @include media('desktop') {
+        display: flex;
+    }
+
+    .imgCodeContainer{
+        width: 80%;
+        height: auto;
+        margin: 0 auto 1em;
+    }
+
+    .textCodeContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3{
+            margin-bottom: 1em;
+        }
+        
+        .mediaList{
+            width: 100%;
+            margin-top: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h5{
+                font-size: 2em;
+                margin: 0 2em;
+                align-self: center;
+            }
+
+            ul{
+                align-content: center;
+
+                @include media('desktop') {
+                    align-self: flex-end;
+                }
+                
+                .spanOpen{
+                    display: inline-block;
+                    font-size: 6em;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transform: rotate(450deg);
+                    transition: transform 0.3s;
+                }
+                
+                .spanClosed{
+                    display: inline-block;
+                    font-size: 6em;
+                    font-weight: 700;
+                    transform: rotate(-360deg);
+                    transition: transform 0.3s;
+                }
+    
+                li{
+                    list-style: none;
+                    margin: 1em;
+                    font-size: 1.2em;
+                    opacity: 0;
+                }
+                
+                .list{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.ticker{
+    width: 100%;
+    background-color: #fe5f55;
+    padding-left: 100%;
+    overflow: hidden;
+    box-sizing: content-box;
+  
+    .innerTicker{
+      display: inline-block;
+      white-space: nowrap;
+      padding-right: 100%;
+      box-sizing: content-box;
+      animation: tickerh linear 35s infinite;
+      
+        @keyframes tickerh {
+            0% {    transform: translate3d(0, 0, 0);
+                    visibility: visible;}
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+      
+        svg{
+            margin: 0.5em;
+            display: inline-block;
+            font-size: 4em;
+            font-weight: 700;
+        }
+    }
+}
+
+.personality{
+    // margin: 0 auto 3em 0;
+    padding: 4em 1em;
+    background: url('../public/images/codebg.png') no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    .textPersonality{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+        font-weight: 600;
+        margin-bottom: 4em;
+        line-height: 120%;
+
+        :nth-child(odd){
+            margin-left: 5em;
+        }
+
+        :nth-child(even){
+            margin-left: 10em;
+        }
+    }
+   
+    .bottomPersonality{
+        font-size: 2.5vw;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 0.5em;
+        row-gap: 1em;
+        justify-items: center;
+        align-items: center;
+
+        @include media('desktop'){
+            font-size: 1.4vw;
+            width: 80%;
+        }
+
+        p{
+            text-align: center;
+            padding: 0.5em 1.25em;
+            border-radius: 2em;
+        }
+
+        .pActive{
+            background-color: #fe5f55;
+        }
+    }
+}
+
+.nonTechSection{
+
+    .pastContainer{
+        width: 80%;
+        margin: 4em auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media('desktop') {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .pastImgContainer{
+            position: relative;
+            width: 30vw;
+            height: auto;
+        }
+    }
+
+    &:nth-child(2n+1){
+        @include media('desktop') {
+            flex-direction: row-reverse;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, "Domine", serif, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+main {
+  overflow-y: scroll;
+}
+/*# sourceMappingURL=globals.css.map */

@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+.sectionOne {
+  margin: 3em;
+  padding: 3em;
+  background-color: #9bf6ff;
+  border-radius: 2em;
+}
+
+@media (min-width: 55em) {
+  .sectionOne {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.sectionOne .imgCodeContainer {
+  width: 80%;
+  height: auto;
+  margin: 0 auto 1em;
+}
+
+.sectionOne .textCodeContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sectionOne .textCodeContainer h3 {
+  margin-bottom: 1em;
+}
+
+.sectionOne .textCodeContainer .mediaList {
+  width: 100%;
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sectionOne .textCodeContainer .mediaList h5 {
+  font-size: 2em;
+  margin: 0 2em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.sectionOne .textCodeContainer .mediaList ul {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media (min-width: 55em) {
+  .sectionOne .textCodeContainer .mediaList ul {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.sectionOne .textCodeContainer .mediaList ul .spanOpen {
+  display: inline-block;
+  font-size: 6em;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transform: rotate(450deg);
+          transform: rotate(450deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.sectionOne .textCodeContainer .mediaList ul .spanClosed {
+  display: inline-block;
+  font-size: 6em;
+  font-weight: 700;
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.sectionOne .textCodeContainer .mediaList ul li {
+  list-style: none;
+  margin: 1em;
+  font-size: 1.2em;
+  opacity: 0;
+}
+
+.sectionOne .textCodeContainer .mediaList ul .list {
+  opacity: 1;
+}
+
+.ticker {
+  width: 100%;
+  background-color: #fe5f55;
+  padding-left: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.ticker .innerTicker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-animation: tickerh linear 35s infinite;
+          animation: tickerh linear 35s infinite;
+}
+
+@-webkit-keyframes tickerh {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes tickerh {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker .innerTicker svg {
+  margin: 0.5em;
+  display: inline-block;
+  font-size: 4em;
+  font-weight: 700;
+}
+
+.personality {
+  padding: 4em 1em;
+  background: url("../public/images/codebg.png") no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.personality .textPersonality {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+  font-weight: 600;
+  margin-bottom: 4em;
+}
+
+.personality .textPersonality :nth-child(odd) {
+  margin-left: 5em;
+}
+
+.personality .textPersonality :nth-child(even) {
+  margin-left: 10em;
+}
+
+.personality .bottomPersonality {
+  font-size: 2.5vw;
+  font-weight: 800;
+  margin: 0 auto;
+  width: 95%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 0.5em;
+          column-gap: 0.5em;
+  row-gap: 1em;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 55em) {
+  .personality .bottomPersonality {
+    font-size: 1.4vw;
+    width: 80%;
+  }
+}
+
+.personality .bottomPersonality p {
+  text-align: center;
+  padding: 0.5em 1.25em;
+  border-radius: 2em;
+}
+
+.personality .bottomPersonality .pActive {
+  background-color: #fe5f55;
+}
+/*# sourceMappingURL=Skills.module.css.map */

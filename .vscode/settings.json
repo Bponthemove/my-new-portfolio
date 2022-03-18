@@ -1,0 +1,10 @@
+// tell VSCode to auto-fix eslint errors on save.
+
+{
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true, // Tell VSCode to format files on save
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // Tell VSCode to use Prettier as default file formatter
+    //From now on, every time you save a file, it will be formatted using prettier
+  }

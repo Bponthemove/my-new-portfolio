@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+.containerBlurred {
+  opacity: 0.3;
+}
+
+.container {
+  background-color: #fffffc;
+  margin-top: 2em;
+}
+
+.container .themeTicker {
+  background-color: #9bf6ff;
+  padding: 0.5em 0;
+  overflow: hidden;
+}
+
+.container .themeTicker .themeInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: tickerh linear 15s infinite;
+          animation: tickerh linear 15s infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .container .themeTicker .themeInner:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+}
+
+@-webkit-keyframes tickerh {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes tickerh {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.container .themeTicker .themeInner div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+.container .sectionOne {
+  background: url("../public/images/background.png") no-repeat;
+  background-size: cover;
+  min-height: 65vh;
+  margin: 2em;
+  padding: 14em 2em 6em;
+  border-radius: 2em;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.theme-Standard .container .sectionOne {
+  background-color: #fdffb6;
+}
+
+.theme-Rainbows Unicorns .container .sectionOne {
+  background-color: #242423;
+}
+
+.theme-Moody .container .sectionOne {
+  background-color: #242423;
+}
+
+.theme-Random .container .sectionOne {
+  background-color: #242423;
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne {
+    display: block;
+  }
+}
+
+.container .sectionOne h1 {
+  font-size: 12vw;
+  font-family: "Alfa Slab One", cursive;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  line-height: 90%;
+  position: absolute;
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne h1 {
+    position: absolute;
+    bottom: 0.2em;
+    right: 0.2em;
+  }
+}
+
+.container .sectionOne .navLinksMobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.97em;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: end;
+}
+
+.container .sectionOne aside {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  line-height: 120%;
+  font-size: 1.6em;
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne aside {
+    position: absolute;
+    top: 15em;
+  }
+}
+
+.container .sectionOne .download {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 1.5em 3em;
+  border-radius: 1em;
+  background-color: #fe5f55;
+  font-weight: 800;
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne .download {
+    position: absolute;
+    bottom: 3em;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .container .sectionOne .download:hover {
+    background-color: #fa8d85;
+  }
+}
+
+.container .sectionTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 35em) {
+  .container .sectionTwo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.container .sectionTwo .divOne {
+  padding: 1em;
+}
+
+.container .sectionTwo .divQoute {
+  background-color: #9bf6ff;
+  margin: 1.5em;
+  padding: 6em 2em;
+  border-radius: 2em;
+  position: relative;
+}
+
+@media (min-width: 35em) {
+  .container .sectionTwo .divQoute {
+    margin: 1.5em 5em;
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+  }
+}
+
+.container .sectionTwo .divQoute cite {
+  position: absolute;
+  right: 3em;
+  bottom: 3em;
+}
+
+.container .img {
+  opacity: 0.4;
+}
+
+.container .sectionThree {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container .sectionThree span, .container .sectionThree .divOnImg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+}
+
+.container .sectionThree .img {
+  width: 100%;
+  height: auto;
+}
+
+.container .sectionThree .divOnImg {
+  padding: 3em 1em;
+  width: 80%;
+  background-color: #fffffc;
+  border-radius: 1em;
+}
+
+.container .sectionFour {
+  margin: 4em auto;
+  text-align: center;
+  max-width: 400px;
+}
+
+@media (min-width: 55em) {
+  .container .sectionFour {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 5em auto;
+    padding: 3em 0;
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
+    max-width: none;
+    width: 85%;
+    height: 40em;
+  }
+}
+/*# sourceMappingURL=Home.module.css.map */
