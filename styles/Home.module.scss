@@ -150,8 +150,9 @@
   
   .sectionThree{
     display: grid;
+    margin-top: 2em;
 
-    span, .divOnImg{
+    .img, .divOnImg{
       grid-area: 1/1;
     }
     
@@ -162,8 +163,8 @@
     }
 
     .imgLoaded{
-      opacity: 0.3;
-      transition: 0.8s;
+      opacity: 0.2;
+      transition: 1.8s;
     }
 
     .divOnImg{
@@ -176,7 +177,7 @@
 
     .divOnImgLoaded{
       color: black;
-      transition: 0.8s;
+      transition: 1.8s linear 1s;
     }
   }
 

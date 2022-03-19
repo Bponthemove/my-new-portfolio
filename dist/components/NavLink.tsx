@@ -29,12 +29,9 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
         <div className={ router.pathname === link.path ? styles.aActive : styles.aNotActive }></div>
         </>    
         : 
-        <>
-        <a onClick={ () => setToBottom(!toBottom) }>
+        <a onClick={ () => setToBottom(!toBottom) } className={ styles.contactBtn}>
           Contact
         </a>        
-        <div className={ router.pathname === link.path ? styles.aActive : styles.aNotActive }></div>
-        </>
       }
     </div>
   )

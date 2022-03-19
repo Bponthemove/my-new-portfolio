@@ -85,6 +85,7 @@
     
     .linkContainer{
         margin: 3em 0;
+
     }
     
     a{
@@ -97,5 +98,15 @@
         border-bottom: 3px solid $color-white;
         width: 100%;
     }
+    
 }
 
+.contactBtn{
+    padding: 0.5em 1.5em;
+    border-radius: 1em;
+    background-color: #fe5f55;
+
+    @include on-hover{
+        background-color: #fa8d85;
+    }
+}

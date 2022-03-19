@@ -137,18 +137,21 @@
 }
 
 .container .sectionOne aside {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg) translateX(-25vw);
+          transform: rotate(-90deg) translateX(-25vw);
   -webkit-transform-origin: top left;
           transform-origin: top left;
   line-height: 120%;
-  font-size: 1.6em;
+  font-size: 3.7vw;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 55em) {
   .container .sectionOne aside {
     position: absolute;
     top: 15em;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    font-size: 1.7em;
   }
 }
 
@@ -220,16 +223,13 @@
   bottom: 3em;
 }
 
-.container .img {
-  opacity: 0.4;
-}
-
 .container .sectionThree {
   display: -ms-grid;
   display: grid;
+  margin-top: 2em;
 }
 
-.container .sectionThree span, .container .sectionThree .divOnImg {
+.container .sectionThree .img, .container .sectionThree .divOnImg {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1/1;
@@ -238,13 +238,27 @@
 .container .sectionThree .img {
   width: 100%;
   height: auto;
+  opacity: 1;
+}
+
+.container .sectionThree .imgLoaded {
+  opacity: 0.2;
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
 }
 
 .container .sectionThree .divOnImg {
   padding: 3em 1em;
   width: 80%;
-  background-color: #fffffc;
+  background-color: transparent;
   border-radius: 1em;
+  color: transparent;
+}
+
+.container .sectionThree .divOnImgLoaded {
+  color: black;
+  -webkit-transition: 1.8s linear 1s;
+  transition: 1.8s linear 1s;
 }
 
 .container .sectionFour {
