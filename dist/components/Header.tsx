@@ -4,7 +4,7 @@ import usePortfolioContext from '../hooks/usePortfoliocontext'
 import { NextPage } from 'next'
 import { NavLink } from './NavLink'
 import { navLinks } from '../data'
-import styles from '../../styles/Header.module.scss'
+import styles from '../../styles/Header.module.css'
 
 const Header: NextPage = () => {
     const { theme, desktop, menu, setMenu, headerRef } = usePortfolioContext()

@@ -2,7 +2,7 @@ My new portfolio site. A simple, lively and dynamic site, with clean lines and c
 
 It is work in progress.
 
-gifs not working in build
+gifs not working in build. They have not been copied to next/static for some reason.
 
 Code section needs finishing off.
 Theme toggle needs finsihing and theme colors need to done in _variables.

@@ -6,11 +6,11 @@ import { Interest } from '../dist/components/Interest'
 import { interests } from '../dist/data'
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 import useVisible from '../dist/hooks/useVisible'
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
-  const { themeStrings, menu, desktop } = usePortfolioContext()
+  const { themeStrings, menu } = usePortfolioContext()
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const imgRef = useRef(null)

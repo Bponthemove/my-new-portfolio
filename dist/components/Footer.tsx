@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Router from 'next/router'
 import emailjs from 'emailjs-com'
 import { FaGithub, FaChevronRight, FaLinkedin, FaChevronLeft, FaArrowUp } from 'react-icons/fa'
 import styled from 'styled-components'
-import styles from '../../styles/Footer.module.scss'
+import styles from '../../styles/Footer.module.css'
 import usePortfolioContext from '../hooks/usePortfoliocontext'
 
 interface ArrowProps {

@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&&family=Titan+One&family=Domine&display=swap");
 html,
 body {
   margin: 0;
   width: 100vw;
+  text-shadow: RGB(74 68 73/1%) 0 0 1px;
+  font-family: -apple-system, "Domine", "Titan One", serif, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100vh;
-  font-family: -apple-system, "Domine", serif, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+  background-color: #fffffc;
 }
 
 a {
@@ -17,10 +20,5 @@ a {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-}
-
-main {
-  overflow-y: scroll;
 }
 /*# sourceMappingURL=globals.css.map */

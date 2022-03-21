@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import styles from '../../styles/Header.module.scss'
+import styles from '../../styles/Header.module.css'
 import usePortfolioContext from '../hooks/usePortfoliocontext'
 
 export const NavLink = ({ link }: {link: { name: string, path: string } }) => {

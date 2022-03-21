@@ -6,7 +6,7 @@ import { Code } from '../dist/components/Code'
 import { Past } from '../dist/components/Past'
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaGit, FaNodeJs, FaAws } from 'react-icons/fa'
 import { SiNextdotjs, SiExpress, SiMongodb, SiJquery, SiJavascript} from 'react-icons/si'
-import styles from '../styles/Skills.module.scss'
+import styles from '../styles/Skills.module.css'
 import { personality, media, pastTrades, myCode } from '../dist/data'
 import code from '../public/images/code.jpg'
 
@@ -29,11 +29,13 @@ const Skills: NextPage = () => {
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
       setSpanOpen(true)
     }, 1000)
+
+    return () => clearTimeout(timer)
   }, [spanOpen])
 
   return (
-    <>
-{/* ----------------------------------top section - Media used--------------------------------------- */}
+    <>  
+   {/* ----------------------------------top section - Media used--------------------------------------- */}
       <section className={ styles.sectionOne }>
         <div className={ styles.imgCodeContainer }>
           <Image src={ code } layout='responsive'/>
@@ -89,12 +91,12 @@ const Skills: NextPage = () => {
         </div>
       </section>
 {/* ----------------------------------absolute image overlay--------------------------------------- */}
-<div className={ styles.parallax }>
+      <div className={ styles.parallax }>
   {/* ----------------------------------Non tech history--------------------------------------- */}
         <section className={ styles.nonTechSection }>
           { pastTrades.map(past => <Past key={ past.id } past={ past } />) }
         </section>   
-</div>
+      </div>
     </>
   )
 }

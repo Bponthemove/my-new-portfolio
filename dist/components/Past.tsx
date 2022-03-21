@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from '../../styles/Skills.module.scss'
+import styles from '../../styles/Skills.module.css'
 
 interface Props {
     past: {

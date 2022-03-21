@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
-import styles from '../../styles/Code.module.scss'
+import styles from '../../styles/Code.module.css'
 
 interface Props {
     code: 

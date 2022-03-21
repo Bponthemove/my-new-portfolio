@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import styles from '../../styles/Interest.module.scss'
+import styles from '../../styles/Interest.module.css'
 
 type props = {
     gifRef: React.LegacyRef<HTMLDivElement>
@@ -16,7 +16,7 @@ type props = {
 
 export const Interest = ({ interest, gifRef }: props) => {
     const {title, gif, gif_static, text, bg} = interest
-    const [img, setImg] = useState<string>(gif_static) 
+    const [img, setImg] = useState(gif_static) 
 
   return (
     <div    className={ styles.interest } 
@@ -26,8 +26,7 @@ export const Interest = ({ interest, gifRef }: props) => {
             ref={interest.id === 1 ? gifRef : null}
     >
         <h2>{ title }</h2>
-        {/* null needs to be loading placeholder */}
-        {gif ? <Image src={ img } width={500} height={500} /> : null }
+        { gif ? <Image src={ img } width={500} height={500} alt={ interest.title }/> : null }
         <p>{ text }</p>
     </div>
   )
