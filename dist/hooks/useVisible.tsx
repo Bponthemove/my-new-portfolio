@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
-const useVisible= (ref: React.LegacyRef<HTMLDivElement>, rootMargin = "0px") => {
+const useVisible= (ref: any, rootMargin = "0px") => {
     const [isVisible, setIsVisible] = useState(false);
   
+//parameter needs to be type checked
+
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
