@@ -170,7 +170,7 @@
 .personality {
   position: relative;
   padding: 4em 1em 8em;
-  background: url("../public/images/codebg.png") no-repeat;
+  background: url("/images/codebg.png") no-repeat;
   background-size: cover;
   min-height: 200px;
   width: 100%;
@@ -293,7 +293,7 @@
 .parallax {
   width: 100vw;
   padding: 80vh 0 40vh;
-  background: url("../public/images/spain.jpg") no-repeat;
+  background: url("/images/spain.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -301,7 +301,7 @@
 @media (min-width: 55em) {
   .parallax {
     width: 100vw;
-    background: url("../public/images/spain-wide.jpg") no-repeat;
+    background: url("/images/spain-wide.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
   }

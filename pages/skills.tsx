@@ -78,7 +78,7 @@ const Skills: NextPage = () => {
         {/* --------overlay container - Code button-------- */}
         <div  className={ styles.codeBtn } 
               onClick={ () => setSectionOpen(!sectionOpen) }
-              style={ sectionOpen ? { cursor: 'url(../public/images/arrowUp.png), pointer' } : { cursor: 'url(../public/images/arrowDown.png), pointer' }}
+              style={ sectionOpen ? { cursor: 'url(/images/arrowUp.png), pointer' } : { cursor: 'url(/images/arrowDown.png), pointer' }}
         >
               Code
         </div>
