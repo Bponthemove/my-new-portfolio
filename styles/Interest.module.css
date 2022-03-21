@@ -13,26 +13,34 @@
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 2em;
-  height: 25em;
+  min-height: 25em;
   margin: 2em;
   padding: 3em 1em;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 @media (min-width: 55em) {
   .interest {
     margin: 0;
-    height: 40em;
+    min-height: 35em;
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .interest:hover {
-    -webkit-transform: scale(1.02);
-            transform: scale(1.02);
-    -webkit-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-  }
+.interest:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 120%;
+  -webkit-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+          box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.interest p {
+  margin-top: auto;
 }
 /*# sourceMappingURL=Interest.module.css.map */

@@ -97,6 +97,7 @@
       padding: 1.5em 3em;
       border-radius: 1em;
       background-color: #fe5f55;
+      transition: 0.25s;
       font-weight: 800;
       
       @include media('notMobile') {
@@ -106,6 +107,7 @@
 
       @include on-hover{
         background-color: #fa8d85;
+        transition: 0.25s;
       }
     }
 
@@ -129,6 +131,7 @@
     }
 
     .divQoute{
+      font-family: $font-handwriting;
       background-color: #9bf6ff;
       margin: 1.5em;
       padding: 6em 2em;
@@ -140,7 +143,12 @@
         flex: 3;
       }
 
+      q{
+       font-size: 2em; 
+      }
+
       cite{
+        font-size: 1.3em;
         position: absolute;
         right: 3em;
         bottom: 3em;     
@@ -149,36 +157,81 @@
   }
   
   .sectionThree{
-    display: grid;
-    margin-top: 2em;
-
-    .img, .divOnImg{
-      grid-area: 1/1;
-    }
-    
-    .img{
-      width: 100%;
-      height: auto;
-      opacity: 1;
-    }
-
-    .imgLoaded{
-      opacity: 0.2;
-      transition: 1.8s;
-    }
+    position: relative;
+    min-height: 70vh;
+    width: 100%;
+    transition: 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .divOnImg{
-      padding: 3em 1em;
+      padding: 1em;
+      margin: 1em 0;
       width: 80%;
-      background-color: transparent;
-      border-radius: 1em;
       color: transparent;
-    }
+      font-size: 1.1em;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: 1px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+      
+      @include media('desktop'){
+        padding: 6em 8em;
+        margin: 2em 0;
+      }
 
-    .divOnImgLoaded{
-      color: black;
-      transition: 1.8s linear 1s;
+      
+      .p{
+        max-height: 0;
+        transition: 0.8s;
+        overflow: hidden;
+      }
+
+      .pExpanded{
+        max-height: 199vh;
+        transition: 1.8s;
+      } 
+      
+      span{
+        cursor: pointer;
+        padding: 1em 0;
+      }
     }
+    
+    .divOnImgLoaded{
+      background-color: rgba(108, 117, 125, 0.85);
+      border-radius: 1em;
+      color: $color-white;
+      transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+    }
+  }
+
+  .sectionThree::before {    
+    content: "";
+    background: url('../public/images/oil.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    transition: 0.8s;
+  }
+
+  .sectionThreeLoaded::before{
+    opacity: 0.2;
+    transition: 0.8s;
+  }
+
+  .sectionThreeExpanded{
+    transition: 0.4s;
   }
 
   .sectionFour{

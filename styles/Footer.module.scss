@@ -1,7 +1,6 @@
 @import './_variables.scss';
 
 .footer{
-    margin-top: 3em;
     padding-top: 2em;
     background-color: #9bf6ff;
     position: relative;
@@ -22,6 +21,10 @@
             justify-content: space-between;
         }
 
+        p{
+            margin-right: 1em;
+        }
+
         form{
             display: flex;
             flex-direction: column;
@@ -39,6 +42,7 @@
             #ContactBtn{
                 width: 50%;
                 background-color: #fe5f55;
+                transition: 0.25s;
                 cursor: pointer;
                 border: none;
                 padding: 1em 2.5em;
@@ -46,6 +50,7 @@
     
                 @include on-hover{
                     background-color: #fa8d85;
+                    transition: 0.25s;
                 }
             }
         }

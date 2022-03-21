@@ -2,6 +2,7 @@
 
 .container{
     width: 100%;
+    padding-right: 1em;
     @include theme('color', 'colorThree');
     display: flex;
     justify-content: space-between;
@@ -36,10 +37,6 @@
             z-index: 999;
         }
 
-        // .navContainer{
-        //     justify-self: flex-end;    
-        // }
-
         .navlinkContainer{
             display: none;
 
@@ -61,7 +58,6 @@
                 .aNotActive{
                     width: 0%;
                     border-bottom: 3px solid black;
-                    // transform: translateX(50%);
                 }
                 
                 .aActive{
@@ -105,8 +101,11 @@
     padding: 0.5em 1.5em;
     border-radius: 1em;
     background-color: #fe5f55;
+    transition: 0.25s;
+    cursor: pointer;
 
     @include on-hover{
         background-color: #fa8d85;
+        transition: 0.25s;
     }
 }

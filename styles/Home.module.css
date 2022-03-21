@@ -161,6 +161,8 @@
   padding: 1.5em 3em;
   border-radius: 1em;
   background-color: #fe5f55;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   font-weight: 800;
 }
 
@@ -174,6 +176,8 @@
 @media (hover: hover) and (pointer: fine) {
   .container .sectionOne .download:hover {
     background-color: #fa8d85;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
 }
 
@@ -201,6 +205,7 @@
 }
 
 .container .sectionTwo .divQoute {
+  font-family: "Caveat", cursive;
   background-color: #9bf6ff;
   margin: 1.5em;
   padding: 6em 2em;
@@ -217,48 +222,115 @@
   }
 }
 
+.container .sectionTwo .divQoute q {
+  font-size: 2em;
+}
+
 .container .sectionTwo .divQoute cite {
+  font-size: 1.3em;
   position: absolute;
   right: 3em;
   bottom: 3em;
 }
 
 .container .sectionThree {
-  display: -ms-grid;
-  display: grid;
-  margin-top: 2em;
-}
-
-.container .sectionThree .img, .container .sectionThree .divOnImg {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: 1/1;
-}
-
-.container .sectionThree .img {
+  position: relative;
+  min-height: 70vh;
   width: 100%;
-  height: auto;
-  opacity: 1;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.container .sectionThree .imgLoaded {
-  opacity: 0.2;
+.container .sectionThree .divOnImg {
+  padding: 1em;
+  margin: 1em 0;
+  width: 80%;
+  color: transparent;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 1px;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+  transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+}
+
+@media (min-width: 55em) {
+  .container .sectionThree .divOnImg {
+    padding: 6em 8em;
+    margin: 2em 0;
+  }
+}
+
+.container .sectionThree .divOnImg .p {
+  max-height: 0;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  overflow: hidden;
+}
+
+.container .sectionThree .divOnImg .pExpanded {
+  max-height: 199vh;
   -webkit-transition: 1.8s;
   transition: 1.8s;
 }
 
-.container .sectionThree .divOnImg {
-  padding: 3em 1em;
-  width: 80%;
-  background-color: transparent;
-  border-radius: 1em;
-  color: transparent;
+.container .sectionThree .divOnImg span {
+  cursor: pointer;
+  padding: 1em 0;
 }
 
 .container .sectionThree .divOnImgLoaded {
-  color: black;
-  -webkit-transition: 1.8s linear 1s;
-  transition: 1.8s linear 1s;
+  background-color: rgba(108, 117, 125, 0.85);
+  border-radius: 1em;
+  color: #fffffc;
+  -webkit-transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+  transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+}
+
+.container .sectionThree::before {
+  content: "";
+  background: url("../public/images/oil.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.container .sectionThreeLoaded::before {
+  opacity: 0.2;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.container .sectionThreeExpanded {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .container .sectionFour {

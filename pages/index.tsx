@@ -1,21 +1,30 @@
 import type { NextPage } from 'next'
-import { useState, useRef, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { ThemeBox } from '../dist/components/ThemeBox'
 import { Interest } from '../dist/components/Interest'
 import { interests } from '../dist/data'
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 import useVisible from '../dist/hooks/useVisible'
 import styles from '../styles/Home.module.scss'
-import img from '../public/images/oil.png'
 import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
-  const { themeStrings, menu } = usePortfolioContext()
+  const { themeStrings, menu, desktop } = usePortfolioContext()
+  const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const imgRef = useRef(null)
-  const isVisible = useVisible(imgRef, '-20%')
+  const gifRef = useRef<null | HTMLDivElement>(null)
+  const isVisible = useVisible(imgRef, '-50%')
+  console.log(isVisible)
+
+  useEffect(() => {
+    //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
+    if (!isVisible && expanded) {
+      setExpanded(false)
+      if (gifRef.current) gifRef.current.scrollIntoView()
+    }
+  }, [isVisible])
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
@@ -66,23 +75,35 @@ const Home: NextPage = () => {
         </div>
       </section>
 {/*--------------------------------oil image section-------------------------------- */}
-      <section className={ styles.sectionThree }>
-        <div className={ isVisible ? [styles.img, styles.imgLoaded].join(' ') : styles.img}  ref={ imgRef } >
-          <Image
-            src={ img }
-            layout='responsive'
-          />
-        </div>
+      <section className={ expanded && isVisible ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ')
+                          : isVisible ? [styles.sectionThree, styles.sectionThreeLoaded].join(' ')  
+                          : styles.sectionThree }  
+                          ref={ imgRef }
+      >
         <div className={ isVisible ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
-          What I love is most things associated with family, friends, good food and the outdoors.
-          section about why, when, how learn to dev etc
+          <p>
+            What I love is most things associated with family, friends, good food and the outdoors.  I enjoy a good party, but also an evening with friends doing board games. 
+          </p> 
+          <span onClick={ () => setExpanded(!expanded) }>
+            { expanded ? '👇' : 'Discover more...' }
+          </span>
+          <p className={ expanded ? [styles.p, styles.pExpanded].join(' ') : styles.p }>
+            I have always loved cooking and I make sure I cook most nights. Food and family are very important to me. I also enjoy building things for cooking, like our pizza oven. Other important routines are my bike rides, either on my road bike or on my mountain bike. 
+            <br/>
+            <br/>
+            I have always enjoyed working and choose life/work style over steady career/money. I have travelled a lot and worked in France, Switzerland, Spain, Austria, Germany, New Zealand. Some seasonal, some for longer term. I have never been intimidated by learning new skills and languages and have always seen this as an opportunity rather than an obstacle.
+            <br/>
+            <br/>
+              Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. This turned out to be Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
+            <br/>
+            <br/> 
+            Time has really flown by and the combination of the visual and the problem solving has really got me hooked. I would love to keep on learning new things and one day have a dream job, helping to develop something that will have a positive impact on our planet.
+          </p>
         </div>
       </section>
 {/*--------------------------------my important things section-------------------------------- */}
       <section className={ styles.sectionFour }>
-        { interests.map(interest => 
-          <Interest key={ interest.title } interest={ interest } /> 
-        )}
+        { interests.map(interest => <Interest gifRef={ gifRef } key={ interest.id } interest={ interest } />) }
       </section>
     </div>
   )

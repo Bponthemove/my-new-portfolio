@@ -1,5 +1,7 @@
 @import './_variables.scss';
 
+
+//section one needs tidying, adjusting fonts
 .sectionOne{
     margin: 3em;
     padding: 3em;
@@ -14,6 +16,10 @@
         width: 80%;
         height: auto;
         margin: 0 auto 1em;
+
+        @include media('desktop'){
+            margin-right: 2em;
+        }
     }
 
     .textCodeContainer{
@@ -78,9 +84,13 @@
     }
 }
 
+//check if ticker speed is correct for all display sizes
+
 .ticker{
     width: 100%;
-    background-color: #fe5f55;
+    background-color: #fdffb6;
+    border-top: 0.5px  solid black;
+    border-bottom: 0.5px  solid black;
     padding-left: 100%;
     overflow: hidden;
     box-sizing: content-box;
@@ -163,21 +173,21 @@
         }
     }
 
-    .overlay{
+    .codeBtn{
         position: absolute;
-        bottom: -13%;
+        bottom: -6.5%;
         left: 0;
         right: 0;
         margin: 0 auto;
-        width:70%;
-        background-color: #fdffb6;
+        width:50%;
+        background-color: #fe5f55;
         border-radius: 2em;
-        padding: 2em 3em;
+        padding: 1em 0;
         font-weight: 800;
         font-size: 1.6em;
         text-align: center;
-        cursor: pointer;
-    
+        // cursor: url(../public/images/arrowDown.jpg), pointer;
+        
         @include on-hover{
             background-color: black;
             color: $color-white;
@@ -186,59 +196,95 @@
     }
 }
 
-.codeContainer{
-    background-color: #9bf6ff;
-    max-height: 90vh;
-    transition: 0.3s;
-}
-
-.codeContainerClosed{
-    max-height: 0;
-    transition: 0.3s;
-    overflow: hidden;
-}
-
-
-.nonTechSection{
-
-    .pastContainer{
-        width: 80%;
-        margin: 4em auto;
+.sectionCode{
+    
+    .codeContainer{
+        background-color: #9bf6ff;
+        width: 100%;
+        max-height: 199vh;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2vw;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
+    .codeContainerClosed{
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+}
 
-        @include media('desktop') {
-            max-width: 1000px;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
 
-        .pastImgContainer{
-            position: relative;
-            width: 30vw;
-            height: auto;
-            
-            @include media('desktop') {
-                flex: 1;
-                margin: 0 2em;
-            }
-        }
+.parallax{
+    width: 100vw;
+    padding: 80vh 0 40vh;
+    background: url('../public/images/spain.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
-        > p{
-            font-weight: 700;
-            line-height: 120%;
-
-            @include media('desktop') {
-                flex: 2;
-            }
-        }
+    @include media('desktop'){
+        width: 100vw;
+        // height: 180vh;
+        background: url('../public/images/spain-wide.jpg') no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 
-    :nth-child(odd){
-        @include media('desktop') {
-            flex-direction: row-reverse;
+    .nonTechSection{
+    
+        .pastContainer{
+            width: 80%;
+            background-color: rgba(108, 117, 125, 0.8);
+            color: $color-white;
+            font-family: $font-handwriting;
+            font-size: 2em;
+            letter-spacing: 1px;
+            padding: 1em;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            @include media('desktop') {
+                width: 90%;
+                margin: 0 auto;                
+                flex-direction: row;
+            }
+
+            
+            .pastImgContainer{
+                width: 30vw;
+                height: auto;
+                
+                @include media('desktop') {
+                    flex: 1;
+                }
+            }
+
+            .spacer{
+                @include media('desktop') {
+                    flex: 1;
+                }
+            }
+            
+            .pastTextContainer{
+                font-weight: 700;
+                line-height: 120%;
+    
+                @include media('desktop') {
+                    flex: 2;
+                }
+            }
+        }
+
+        & > :nth-child(even){
+            margin: 80vh auto;
+            
+            @include media('desktop') {
+                flex-direction: row-reverse;
+            }
         }
     }
 }

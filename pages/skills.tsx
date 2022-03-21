@@ -33,7 +33,7 @@ const Skills: NextPage = () => {
 
   return (
     <>
-{/* ----------------------------------top section--------------------------------------- */}
+{/* ----------------------------------top section - Media used--------------------------------------- */}
       <section className={ styles.sectionOne }>
         <div className={ styles.imgCodeContainer }>
           <Image src={ code } layout='responsive'/>
@@ -55,40 +55,46 @@ const Skills: NextPage = () => {
           </div>
         </div>
       </section>
-{/* ----------------------------------ticker--------------------------------------- */}
+{/* ----------------------------------ticker - skills--------------------------------------- */}
       <div className={ styles.ticker }>
         <div className={ styles.innerTicker }>
           <FaHtml5/><FaCss3Alt/><FaSass/><FaReact/><FaGit/><FaNodeJs/><FaAws/><SiNextdotjs/><SiExpress/><SiMongodb/><SiJquery/><SiJavascript/>
         </div>
       </div>
-{/* ----------------------------------personal trades--------------------------------------- */}
+{/* ----------------------------------personal skills--------------------------------------- */}
       <section className={ styles.personality }>
         <div className={ styles.textPersonality }>
           <p>I am an inquisitive and caring person, who likes to succeed in what he is doing. A teamplayer as well as an independent professional.</p>
           <p>Having worked in multiple industries with very different people, I have been exposed to a wide range of characters, accompanied by a wide range of characteristics.</p>
-          <p>This has made me into a person who is independent, confident and very aware of its surroundings.</p>
+          <p>This has made me into a person who is independent, confident and who is always learning new skills.</p>
         </div>
         <div className={ styles.bottomPersonality }>
           { personality.map((skill: string, index: number) => 
             <p key={ index } className={ index === random ? styles.pActive : undefined }>{ skill }</p>
           )}
         </div>
-        {/* --------overlay container-------- */}
-        <div className={ styles.overlay } onClick={() => setSectionOpen(!sectionOpen)}>
+        {/* --------overlay container - Code button-------- */}
+        <div  className={ styles.codeBtn } 
+              onClick={ () => setSectionOpen(!sectionOpen) }
+              style={ sectionOpen ? { cursor: 'url(../public/images/arrowUp.png), pointer' } : { cursor: 'url(../public/images/arrowDown.png), pointer' }}
+        >
               Code
         </div>
         {/* --------------------------------- */}
       </section>
-{/* ----------------------------------My Code--------------------------------------- */}
-      <section className={ sectionOpen ? styles.codeContainer : [ styles.codeContainer, styles.codeContainerClosed ].join(' ') }>
-            { myCode.map(code => <Code code={ code }/>) }
+{/* ----------------------------------My Code Open & close with code button--------------------------------------- */}
+      <section className={ styles.sectionCode }>
+        <div className={ sectionOpen ? styles.codeContainer : [ styles.codeContainer, styles.codeContainerClosed ].join(' ') }>
+              { myCode.map(code => <Code code={ code } key={ code.id }/>) }
+        </div>
       </section>
-{/* ----------------------------------Non tech history--------------------------------------- */}
-      <section className={ styles.nonTechSection }>
-        { pastTrades.map((past, index) => 
-          <Past key={ index } past={ past } index={ index }/>
-        )}
-      </section>    
+{/* ----------------------------------absolute image overlay--------------------------------------- */}
+<div className={ styles.parallax }>
+  {/* ----------------------------------Non tech history--------------------------------------- */}
+        <section className={ styles.nonTechSection }>
+          { pastTrades.map(past => <Past key={ past.id } past={ past } />) }
+        </section>   
+</div>
     </>
   )
 }

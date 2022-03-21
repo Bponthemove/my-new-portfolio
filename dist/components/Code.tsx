@@ -8,18 +8,22 @@ interface Props {
     {
         img: string
         text: string
+        link: string
+        id: number
     }
 }
 
 export const Code = ({ code }: Props) => {
 
   return (
-    <div className={ styles.codeContainer }>
+    <div className={ styles.code }>
         <div className={ styles.imgContainer }>
             <Image src={ code.img } width='100%' height='100%' layout='responsive' objectFit='contain'></Image>
         </div>
         <p>{ code.text }</p>
-        <FaGithub size={50} />
+        <a href={ code.link } target='_blank'>
+          <FaGithub size={50}/>
+        </a>
     </div>
   )
 }

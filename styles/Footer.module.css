@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat&family=Domine&display=swap");
 .footer {
-  margin-top: 3em;
   padding-top: 2em;
   background-color: #9bf6ff;
   position: relative;
@@ -37,6 +36,10 @@
   }
 }
 
+.footer .contact p {
+  margin-right: 1em;
+}
+
 .footer .contact form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,14 +65,19 @@
 .footer .contact form #ContactBtn {
   width: 50%;
   background-color: #fe5f55;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   cursor: pointer;
   border: none;
   padding: 1em 2.5em;
+  font-weight: 800;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .footer .contact form #ContactBtn:hover {
     background-color: #fa8d85;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
 }
 
@@ -89,6 +97,7 @@
 }
 
 .footer .copyright {
+  margin-top: 2em;
   text-align: center;
 }
 /*# sourceMappingURL=Footer.module.css.map */

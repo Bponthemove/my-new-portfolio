@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { FiMenu } from 'react-icons/fi'
 import usePortfolioContext from '../hooks/usePortfoliocontext' 
 import { NextPage } from 'next'
 import { NavLink } from './NavLink'
-import { navLinks } from '../data' 
+import { navLinks } from '../data'
 import styles from '../../styles/Header.module.scss'
 
 const Header: NextPage = () => {
-    const { theme, setTheme, desktop, menu, setMenu, headerRef } = usePortfolioContext()
+    const { theme, desktop, menu, setMenu, headerRef } = usePortfolioContext()
 
     useEffect(() => {
         document.documentElement.className = ''
@@ -23,9 +23,12 @@ const Header: NextPage = () => {
                     </h1>
                     
                 </div>
+                <p style={{color: 'red', fontSize: '1.5em', textDecoration: 'underline'}}>
+                    This site is still under construction!! 
+                </p>
                 <nav className={ styles.navContainer }>
                     { !desktop && 
-                        <GiHamburgerMenu
+                        <FiMenu
                             className={ !menu ? styles.hamburger : [ styles.hamburgerOpen, styles.hamburger].join(' ') } 
                             size={60}
                             onClick={ () => setMenu(!menu) }    

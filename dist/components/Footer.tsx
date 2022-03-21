@@ -18,11 +18,22 @@ const iconStyle = `
   transform: scale(3); 
   margin: 0em 2em; 
   cursor: pointer;
+  transition: 0.2s;
   
+  :hover{
+    transform: scale(3.20)
+  }
+
   @media (min-width: 55em) {
     transform: scale(5);
     margin: 0em 4em;
+    transition: 0.2s;
+
+    :hover{
+      transform: scale(5.2)
+    }
   }
+
 `
 const LinkedIn = styled(FaLinkedin)<IconProps>`${iconStyle}`
 const GitHub = styled(FaGithub)<IconProps>`${iconStyle}`
@@ -64,15 +75,18 @@ export const Footer = () => {
         else counter = 1
         if (counter === 1) {
           setFirst('true')
+          setSecond('false')
           setThird('false')
           return
         }
         if (counter === 2) {
           setFirst('false')
           setSecond('true')
+          setThird('false')
           return
         }
         if (counter === 3) {
+          setFirst('false')
           setSecond('false')
           setThird('true')
           return
@@ -125,7 +139,7 @@ export const Footer = () => {
     
       <footer className={ styles.footer }>
         <div className={ styles.contact }>
-          <p>Feel free to leave me a message<br/>of support or for some more info!</p>
+          <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
           <form onSubmit={ e => handleInput(e) } id='form' >
             <div className={ styles.names }>
               <input type='name' maxLength={ 256 } name='name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
