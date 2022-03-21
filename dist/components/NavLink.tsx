@@ -8,10 +8,11 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
   const { menu, setMenu, desktop, bottomRef } = usePortfolioContext()
   const [toBottom, setToBottom] = useState(false)
   const router = useRouter()
+  const { current } = bottomRef
 
   useEffect(() => {
-    if (toBottom && bottomRef) {
-      bottomRef.current.scrollIntoView({behavior: 'smooth'})
+    if (toBottom && current) {
+      current.scrollIntoView({behavior: 'smooth'})
       setToBottom(!toBottom)
     }
   }, [toBottom])

@@ -8,8 +8,8 @@ interface ProviderProps {
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
     desktop: boolean
-    bottomRef: React.LegacyRef<HTMLParagraphElement> | undefined
-    headerRef: React.LegacyRef<HTMLElement> | undefined
+    bottomRef: React.RefObject<HTMLParagraphElement>
+    headerRef: React.RefObject<HTMLDivElement>
 }
 
 export const PortfolioContext = createContext<ProviderProps | undefined>(undefined)
@@ -18,8 +18,8 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     const [theme, setTheme] = useState<string>('standard')
     const [menu, setMenu] = useState<boolean>(false)
     const desktop: boolean = useMediaQuery('(min-width: 55em)')
-    const bottomRef = useRef(null) 
-    const headerRef = useRef(null)
+    const bottomRef = useRef<HTMLParagraphElement>(null) 
+    const headerRef = useRef<HTMLDivElement>(null)
 
     const themeStrings: string[] = ['Standard', 'Rainbows&Unicorns', 'Moody', 'Random']
 

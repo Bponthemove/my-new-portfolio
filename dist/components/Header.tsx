@@ -16,8 +16,8 @@ const Header: NextPage = () => {
     
     return (
         <>
-            <header className={ styles.container } ref={ headerRef }>
-                <div className={ styles.headerLeft }>
+            <header className={ styles.container }>
+                <div className={ styles.headerLeft } ref={ headerRef }>
                     <h1>
                         IamBram
                     </h1>

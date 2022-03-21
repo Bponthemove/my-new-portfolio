@@ -65,6 +65,7 @@ export const Footer = () => {
   const [toTop, setToTop] = useState<boolean>(false)
 
   const { bottomRef, headerRef } = usePortfolioContext()
+  const { current } = headerRef
 
   useEffect(() => {
     let arrows: ReturnType<typeof setInterval>
@@ -101,8 +102,8 @@ export const Footer = () => {
   }, [hover])
 
   useEffect(() => {
-    if (toTop && headerRef) {
-      headerRef.current.scrollIntoView({behavior: 'smooth'})
+    if (toTop && current) {
+      current.scrollIntoView({behavior: 'smooth'})
       setToTop(!toTop)
     }
   }, [toTop])
