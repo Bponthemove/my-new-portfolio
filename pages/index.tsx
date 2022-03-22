@@ -91,7 +91,7 @@ const Home: NextPage = () => {
             I have always loved cooking and I make sure I cook most nights. Food and family are very important to me. I also enjoy building things for cooking, like our pizza oven. Other important routines are my bike rides, either on my road bike or on my mountain bike. 
             <br/>
             <br/>
-            I have always enjoyed working and choose life/work style over steady career/money. I have travelled a lot and worked in France, Switzerland, Spain, Austria, Germany, New Zealand. Some seasonal, some for longer term. I have never been intimidated by learning new skills and languages and have always seen this as an opportunity rather than an obstacle.
+            I have always enjoyed working/volunteering and chosen life/work style over steady career/money. I have travelled a lot and worked in France, Switzerland, Spain, Austria, Germany, New Zealand. Some seasonal, some volunteering and some for longer term, full-time employement. I have never been intimidated by learning new skills and languages and have always seen this as an opportunity rather than an obstacle.
             <br/>
             <br/>
               Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. This turned out to be Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
