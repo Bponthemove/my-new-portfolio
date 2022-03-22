@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useReducer } from 'react'
 import emailjs from 'emailjs-com'
 import { FaGithub, FaChevronRight, FaLinkedin, FaChevronLeft, FaArrowUp } from 'react-icons/fa'
 import styled from 'styled-components'
@@ -53,11 +53,65 @@ const ArrowTop = styled(FaArrowUp)`
   cursor: pointer;
 `
 
+const ACTIONS = {
+  FIRST: 'first',
+  SECOND: 'second',
+  THIRD: 'third',
+  RESET: 'reset'
+}
+
+type State = {
+  first: string
+  second: string
+  third: string
+}
+
+type Action = {
+  type: string
+}
+
+function arrowReducer(state: State, action: Action) {
+  switch (action.type) {
+    case ACTIONS.FIRST: {
+      return {
+        first: 'true',
+        second: 'false',
+        third: 'false'
+      }
+    }
+    case ACTIONS.SECOND: {
+      return {
+        first: 'false',
+        second: 'true',
+        third: 'false'
+      }
+    }
+    case ACTIONS.THIRD: {
+      return {
+        first: 'false',
+        second: 'false',
+        third: 'true'
+      }
+    }
+    case ACTIONS.RESET: {
+      return {
+        first: 'true',
+        second: 'true',
+        third: 'true'
+      }
+    }
+    default: 
+      return state
+  }
+}
+
 export const Footer = () => {
+  const [state, dispatch] = useReducer(arrowReducer, {
+    first: 'false',
+    second: 'false',
+    third: 'false'
+  })
   const [hover, setHover] = useState<boolean>(false)
-  const [first, setFirst] = useState<string>('false')
-  const [second, setSecond] = useState<string>('false')
-  const [third, setThird] = useState<string>('false')
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
@@ -66,6 +120,7 @@ export const Footer = () => {
   const { bottomRef, headerRef } = usePortfolioContext()
   const { current } = headerRef
 
+//arrows go red every 1 sec
   useEffect(() => {
     let arrows: ReturnType<typeof setInterval>
     if (!hover) {
@@ -73,33 +128,17 @@ export const Footer = () => {
       arrows = setInterval(() => {
         if (counter < 3) counter++
         else counter = 1
-        if (counter === 1) {
-          setFirst('true')
-          setSecond('false')
-          setThird('false')
-          return
-        }
-        if (counter === 2) {
-          setFirst('false')
-          setSecond('true')
-          setThird('false')
-          return
-        }
-        if (counter === 3) {
-          setFirst('false')
-          setSecond('false')
-          setThird('true')
-          return
-        }
+        if (counter === 1) dispatch({ type: ACTIONS.FIRST})
+        if (counter === 2) dispatch({ type: ACTIONS.SECOND})
+        if (counter === 3) dispatch({ type: ACTIONS.THIRD})
       }, 1000)
     } else {
-      setFirst('true')
-      setSecond('true')
-      setThird('true')
+      dispatch({ type: ACTIONS.RESET })
     }
-    return () => clearInterval(arrows)   
+    return () => clearInterval(arrows) 
   }, [hover])
 
+//arrow to go back to top
   useEffect(() => {
     if (toTop && current) {
       current.scrollIntoView({behavior: 'smooth'})
@@ -107,6 +146,7 @@ export const Footer = () => {
     }
   }, [toTop])
 
+//email me through emailjs. Still have to set up netlify functions to hide credentials
   const handleInput = (e: React.FormEvent<HTMLFormElement> ) => {
     console.log(e.currentTarget.message.value)
     e.preventDefault()
@@ -136,44 +176,43 @@ export const Footer = () => {
     }
 
   return (
-    
-      <footer className={ styles.footer }>
-        <div className={ styles.contact }>
-          <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
-          <form onSubmit={ e => handleInput(e) } id='form' >
-            <div className={ styles.names }>
-              <input type='name' maxLength={ 256 } name='name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
-              <input type='email' maxLength={ 256 } name='email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
-              <textarea name='message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
+    <footer className={ styles.footer }>
+      <div className={ styles.contact }>
+        <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
+        <form onSubmit={ e => handleInput(e) } id='form' >
+          <div className={ styles.names }>
+            <input type='name' maxLength={ 256 } name='name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
+            <input type='email' maxLength={ 256 } name='email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
+            <textarea name='message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
+          </div>
+          <input type='submit' value='Contact me' id={ styles.ContactBtn } />
+        </form>
+      </div>
+      <div className={ styles.bottomContainer }>
+            <div>
+              {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
+              <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
+                <LinkedIn onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+              </a>
+              <ArrowLeft active={ state.third }/>
+              <ArrowLeft active={ state.second }/>
+              <ArrowLeft active={ state.first }/>
             </div>
-            <input type='submit' value='Contact me' id={ styles.ContactBtn } />
-          </form>
-        </div>
-        <div className={ styles.bottomContainer }>
-              <div>
-                {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
-                <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
-                  <LinkedIn onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
-                </a>
-                <ArrowLeft active={ third }/>
-                <ArrowLeft active={ second }/>
-                <ArrowLeft active={ first }/>
-              </div>
-              <div>
-                <ArrowRight active={ first }/>
-                <ArrowRight active={ second }/>
-                <ArrowRight active={ third }/>
-                <a href="https://github.com/Bponthemove" target='_blank'>
-                  <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
-                </a>
-              </div>
-        </div>
-        <p className={ styles.copyright } ref={ bottomRef }>
-          &copy; Bponthemove @ 2022
-        </p>
-        <a onClick={ () => setToTop(!toTop) }>
-          <ArrowTop/>
-        </a>
-      </footer>
+            <div>
+              <ArrowRight active={ state.first }/>
+              <ArrowRight active={ state.second }/>
+              <ArrowRight active={ state.third }/>
+              <a href="https://github.com/Bponthemove" target='_blank'>
+                <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+              </a>
+            </div>
+      </div>
+      <p className={ styles.copyright } ref={ bottomRef }>
+        &copy; Bponthemove @ 2022
+      </p>
+      <a onClick={ () => setToTop(!toTop) }>
+        <ArrowTop/>
+      </a>
+    </footer>
   )
 }
