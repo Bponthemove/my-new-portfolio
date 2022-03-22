@@ -14,21 +14,21 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
     if (toBottom && current) {
       current.scrollIntoView({behavior: 'smooth'})
       setToBottom(!toBottom)
+      if (!desktop) setMenu(!menu)
     }
   }, [toBottom])
 
   return (
     <div 
       className={ styles.linkContainer }
-      onClick={ !desktop ? () => setMenu(!menu) : undefined }
     >
       { link.path ?
-        <>
-        <Link href={ link.path }>
-          { link.name }
-        </Link>        
-        <div className={ router.pathname === link.path ? styles.aActive : styles.aNotActive }></div>
-        </>    
+        <div onClick={ !desktop ? () => setMenu(!menu) : undefined }>
+          <Link href={ link.path }>
+            { link.name }
+          </Link>        
+          <div className={ router.pathname === link.path ? styles.aActive : styles.aNotActive }></div>
+        </div>    
         : 
         <a onClick={ () => setToBottom(!toBottom) } className={ styles.contactBtn}>
           Contact

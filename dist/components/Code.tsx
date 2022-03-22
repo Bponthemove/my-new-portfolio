@@ -18,7 +18,7 @@ export const Code = ({ code }: Props) => {
   return (
     <div className={ styles.code }>
         <div className={ styles.imgContainer }>
-            <Image src={ code.img } width='100%' height='100%' layout='responsive' objectFit='contain'></Image>
+            <Image src={ code.img } width='100%' height='100%' layout='responsive' objectFit='contain' alt={code.img}></Image>
         </div>
         <p>{ code.text }</p>
         <a href={ code.link } target='_blank'>

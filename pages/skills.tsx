@@ -38,7 +38,7 @@ const Skills: NextPage = () => {
    {/* ----------------------------------top section - Media used--------------------------------------- */}
       <section className={ styles.sectionOne }>
         <div className={ styles.imgCodeContainer }>
-          <Image src={ code } layout='responsive'/>
+          <Image src={ code } layout='responsive' alt='Image with lines of code' />
         </div>
         <div className={ styles.textCodeContainer}>
           <h3>Self Taught.</h3>
@@ -91,7 +91,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
 {/* ----------------------------------absolute image overlay--------------------------------------- */}
-      <div className={ styles.parallax }>
+      <div className={ styles.parallax } title='beautiful landscape'>
   {/* ----------------------------------Non tech history--------------------------------------- */}
         <section className={ styles.nonTechSection }>
           { pastTrades.map(past => <Past key={ past.id } past={ past } />) }

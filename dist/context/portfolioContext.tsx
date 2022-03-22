@@ -26,7 +26,6 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     useEffect(() => {
         if (menu)  window.scrollTo(0,0)
     }, [menu])
-    if (menu) console.log(window)
 
     const value: ProviderProps = { 
         theme, setTheme, themeStrings, desktop, menu, setMenu, bottomRef, headerRef

@@ -16,7 +16,7 @@ export const Past = ({ past }: Props) => {
     return (
         <div className={ styles.pastContainer }>
             <div className={ styles.pastImgContainer }>
-                <Image src={ past.img } width='100%' height='100%' layout='responsive' objectFit='contain'/>
+                <Image src={ past.img } width='100%' height='100%' layout='responsive' objectFit='contain' alt={ past.img }/>
             </div>
             <div className={ styles.spacer }/>
             <div className={ styles.pastTextContainer }>

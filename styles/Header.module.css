@@ -44,14 +44,14 @@
   margin-right: 2em;
   position: absolute;
   top: 0.8em;
-  right: 1em;
+  right: 0.1em;
   z-index: 999;
 }
 
 .container .navContainer .hamburgerOpen {
   position: absolute;
   top: 0.7em;
-  right: 1em;
+  right: 0.1em;
   -webkit-transform: rotate(450deg);
           transform: rotate(450deg);
   -webkit-transform-origin: center center;
@@ -70,6 +70,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -130,7 +133,7 @@
 }
 
 .contactBtn {
-  padding: 0.5em 1.5em;
+  padding: 0.3em 1em;
   border-radius: 1em;
   background-color: #fe5f55;
   -webkit-transition: 0.25s;
@@ -143,6 +146,12 @@
     background-color: #fa8d85;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+  }
+}
+
+@media (min-width: 55em) {
+  .contactBtn {
+    margin-left: 1em;
   }
 }
 

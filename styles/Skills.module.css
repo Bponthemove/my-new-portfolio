@@ -315,7 +315,7 @@
   font-family: Kalam, Caveat, Bradley Hand, cursive;
   font-size: 2em;
   letter-spacing: 1px;
-  padding: 1em;
+  padding: 1em 0.6em;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -333,6 +333,7 @@
   .parallax .nonTechSection .pastContainer {
     width: 90%;
     margin: 0 auto;
+    padding: 1.2em;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -362,12 +363,14 @@
 }
 
 .parallax .nonTechSection .pastContainer .pastTextContainer {
+  font-size: 0.7em;
   font-weight: 700;
   line-height: 120%;
 }
 
 @media (min-width: 55em) {
   .parallax .nonTechSection .pastContainer .pastTextContainer {
+    font-size: 1em;
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;

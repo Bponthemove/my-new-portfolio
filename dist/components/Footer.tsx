@@ -181,18 +181,18 @@ export const Footer = () => {
         <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
         <form onSubmit={ e => handleInput(e) } id='form' >
           <div className={ styles.names }>
-            <input type='name' maxLength={ 256 } name='name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
-            <input type='email' maxLength={ 256 } name='email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
-            <textarea name='message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
+            <input type='name' maxLength={ 256 } name='name' aria-label='Name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
+            <input type='email' maxLength={ 256 } name='email' aria-label='Email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
+            <textarea name='message' aria-label='Message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
           </div>
-          <input type='submit' value='Contact me' id={ styles.ContactBtn } />
+          <input type='submit' value='Contact me' title='Send' id={ styles.ContactBtn } />
         </form>
       </div>
       <div className={ styles.bottomContainer }>
             <div>
               {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
               <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
-                <LinkedIn onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                <LinkedIn title='LinkedIn Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
               </a>
               <ArrowLeft active={ state.third }/>
               <ArrowLeft active={ state.second }/>
@@ -203,7 +203,7 @@ export const Footer = () => {
               <ArrowRight active={ state.second }/>
               <ArrowRight active={ state.third }/>
               <a href="https://github.com/Bponthemove" target='_blank'>
-                <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                <GitHub title='Github Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
               </a>
             </div>
       </div>

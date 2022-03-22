@@ -16,7 +16,6 @@ const Home: NextPage = () => {
   const imgRef = useRef(null)
   const gifRef = useRef<null | HTMLDivElement>(null)
   const isVisible = useVisible(imgRef, '-50%')
-  console.log(isVisible)
 
   useEffect(() => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
@@ -43,7 +42,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 {/*--------------------------------top section-------------------------------- */}
-      <section className={[ styles.sectionOne, styles.section ].join(' ')}>
+      <section className={[ styles.sectionOne, styles.section ].join(' ')} title='plain background with code grafiti'>
         <h1>
           Iam<br/>Bram
         </h1>
@@ -79,6 +78,7 @@ const Home: NextPage = () => {
                           : isVisible ? [styles.sectionThree, styles.sectionThreeLoaded].join(' ')  
                           : styles.sectionThree }  
                           ref={ imgRef }
+                          title='image of village in oil filter style'
       >
         <div className={ isVisible ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
           <p>
