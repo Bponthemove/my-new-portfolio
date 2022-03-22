@@ -11,6 +11,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: 2em 10vw;
   }
 }
 

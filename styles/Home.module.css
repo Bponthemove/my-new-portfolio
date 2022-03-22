@@ -107,6 +107,12 @@
   }
 }
 
+@media (min-width: 55em) {
+  .container .sectionOne {
+    margin: 2em 10vw;
+  }
+}
+
 .container .sectionOne h1 {
   font-size: 12vw;
   font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
@@ -257,7 +263,7 @@
 .container .sectionThree .divOnImg {
   padding: 1em;
   margin: 1em 0;
-  width: 80%;
+  width: 70vw;
   color: transparent;
   font-size: 1.1em;
   font-weight: 500;
@@ -350,13 +356,12 @@
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    margin: 5em auto;
     padding: 3em 0;
-    -webkit-column-gap: 2em;
-            column-gap: 2em;
-    max-width: none;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+    max-width: 1100px;
     width: 85%;
-    height: 40em;
+    height: 45em;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

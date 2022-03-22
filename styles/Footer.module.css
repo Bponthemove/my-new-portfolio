@@ -97,6 +97,10 @@
   }
 }
 
+.footer .bottomContainer a {
+  cursor: pointer;
+}
+
 .footer .copyright {
   margin-top: 2em;
   text-align: center;

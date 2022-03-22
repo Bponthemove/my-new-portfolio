@@ -152,7 +152,9 @@ export const Footer = () => {
         <div className={ styles.bottomContainer }>
               <div>
                 {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
-                <LinkedIn onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
+                  <LinkedIn onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                </a>
                 <ArrowLeft active={ third }/>
                 <ArrowLeft active={ second }/>
                 <ArrowLeft active={ first }/>
@@ -161,7 +163,9 @@ export const Footer = () => {
                 <ArrowRight active={ first }/>
                 <ArrowRight active={ second }/>
                 <ArrowRight active={ third }/>
-                <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                <a href="https://github.com/Bponthemove" target='_blank'>
+                  <GitHub onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                </a>
               </div>
         </div>
         <p className={ styles.copyright } ref={ bottomRef }>
