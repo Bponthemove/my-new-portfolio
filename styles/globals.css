@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dongle&family=Modak&family=Moul&family=Caveat&family=Engagement&family=Titan+One&family=Domine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kanit:wght@300&family=Modak&family=Moul&family=Caveat&family=Kalam&family=Titan+One&family=Domine&display=swap");
 html,
 body {
   margin: 0;
   width: 100vw;
   text-shadow: RGB(74 68 73/1%) 0 0 1px;
-  font-family: -apple-system, "Domine", "Titan One", Dongle, Trebuchet, sans-serif, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Kanit, Titan One, Domine, Trebuchet, sans-serif, -apple-system, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
   height: 100vh;
   overflow-x: hidden;
   background-color: #fffffc;
