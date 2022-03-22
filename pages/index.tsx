@@ -97,7 +97,7 @@ const Home: NextPage = () => {
               Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. This turned out to be Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
             <br/>
             <br/> 
-            Time has really flown by and the combination of the visual and the problem solving has really got me hooked. I would love to keep on learning new things and one day have a dream job, helping to develop something that will have a positive impact on our planet.
+            Time has really flown by and the combination of the visual and the problem solving has really got me hooked. I would love to keep on learning new things and one day have a dream job, helping to develop something that will have a positive impact on our planet and its people.
           </p>
         </div>
       </section>

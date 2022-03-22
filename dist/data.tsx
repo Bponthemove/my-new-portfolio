@@ -77,7 +77,7 @@ export const myCode = [
   {
     img: '/images/calculator.png',
     text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Later rewritten to practise Typescript.',
-    link: 'https://github.com/Bponthemove/calculator',
+    link: 'https://github.com/Bponthemove/calculatorTS',
     id: 2
   },
   {
