@@ -48,19 +48,19 @@ export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scr
 
 export const pastTrades = [
   {
-    img: '/images/salou.png',
+    img: '/images/salou.jpg',
     textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 20 - 70 staff members (seasonal variances). I learned many valuable life skills as I ended up in situations which I could have never imagined."',
     textTwo: '',
     id: 1
   },
   {
-    img: '/images/farming.png',
+    img: '/images/farming.jpg',
     textOne: '"Lived in France for several years, managing a large beef farm with one other member of staff (only french speaking). Living and working in very remote places teaches you to be inventive, quick thinking, responsible and problem solving skills."',
     textTwo: '"Also spent several seasons working as a snowsports instructor, taking many students into off-piste areas. Teaching me risk-assesment and people skills."',
     id: 2
   },
   {
-    img: '/images/trading.png',
+    img: '/images/trading.jpg',
     textOne: '"The last six years I have been working as a self employed tradesman. Renovating bathrooms was the main trade and I especially enjoy plumbing, tiling and paving."',
     textTwo: '"I combined this with stock trading which is something I have been doing as a hobby for years. This is where I got interested in development as I was always trying to adapt the trading indicators/programs to my liking and most of them are written in Javascript"',
     id: 3
