@@ -30,9 +30,9 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
           <div className={ router.pathname === link.path ? styles.aActive : styles.aNotActive }></div>
         </div>    
         : 
-        <a onClick={ () => setToBottom(!toBottom) } className={ styles.contactBtn}>
+        <button onClick={ () => setToBottom(!toBottom) } className={ styles.contactBtn} aria-label='button to scroll down to contact form'>
           Contact
-        </a>        
+        </button>        
       }
     </div>
   )

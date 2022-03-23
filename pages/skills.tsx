@@ -1,14 +1,18 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 import { ListItem } from '../dist/components/ListItem'
 import { Code } from '../dist/components/Code'
-import { Past } from '../dist/components/Past'
+import { IPastProps } from '../dist/components/Past'
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaGit, FaNodeJs, FaAws } from 'react-icons/fa'
 import { SiNextdotjs, SiExpress, SiMongodb, SiJquery, SiJavascript} from 'react-icons/si'
 import styles from '../styles/Skills.module.css'
 import { personality, media, pastTrades, myCode } from '../dist/data'
 import code from '../public/images/code.jpg'
+
+const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
+ 
 
 const Skills: NextPage = () => {
   const [random, setRandom] = useState<number>(10)
@@ -38,7 +42,7 @@ const Skills: NextPage = () => {
    {/* ----------------------------------top section - Media used--------------------------------------- */}
       <section className={ styles.sectionOne }>
         <div className={ styles.imgCodeContainer }>
-          <Image src={ code } layout='responsive' alt='Image with lines of code' />
+          <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
         </div>
         <div className={ styles.textCodeContainer}>
           <h3>Self Taught.</h3>
@@ -82,7 +86,7 @@ const Skills: NextPage = () => {
         >
               Code
         </div>
-        {/* --------------------------------- */}
+        {/* ----------------------------------------------- */}
       </section>
 {/* ----------------------------------My Code Open & close with code button--------------------------------------- */}
       <section className={ styles.sectionCode }>
@@ -94,7 +98,7 @@ const Skills: NextPage = () => {
       <div className={ styles.parallax } title='beautiful landscape'>
   {/* ----------------------------------Non tech history--------------------------------------- */}
         <section className={ styles.nonTechSection }>
-          { pastTrades.map(past => <Past key={ past.id } past={ past } />) }
+          { pastTrades.map(past => <DynamicPast key={ past.id } past={ past } />) }
         </section>   
       </div>
     </>

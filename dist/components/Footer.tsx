@@ -210,9 +210,9 @@ export const Footer = () => {
       <p className={ styles.copyright } ref={ bottomRef }>
         &copy; Bponthemove @ 2022
       </p>
-      <a onClick={ () => setToTop(!toTop) }>
+      <button onClick={ () => setToTop(!toTop) } aria-label='button to scroll to the top'>
         <ArrowTop/>
-      </a>
+      </button>
     </footer>
   )
 }

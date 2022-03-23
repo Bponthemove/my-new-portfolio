@@ -23,7 +23,7 @@ const Header: NextPage = () => {
                     </h1>
                     
                 </div>
-                <p style={{color: 'red', fontSize: '1.5em', textDecoration: 'underline'}}>
+                <p style={{color: 'red', fontSize: '1.2em', textDecoration: 'underline'}}>
                     This site is still under construction!! 
                 </p>
                 <nav className={ styles.navContainer }>

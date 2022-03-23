@@ -173,12 +173,21 @@
   -webkit-transition: 0.25s;
   transition: 0.25s;
   font-weight: 800;
+  font-size: 0.8em;
 }
 
 @media (min-width: 35em) {
   .container .sectionOne .download {
     position: absolute;
     bottom: 3em;
+    font-size: 1em;
+    padding: 1em 2em;
+  }
+}
+
+@media (min-width: 55em) {
+  .container .sectionOne .download {
+    font-size: 1.2em;
     padding: 1.25em 3em;
   }
 }

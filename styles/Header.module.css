@@ -133,9 +133,11 @@
 }
 
 .contactBtn {
-  padding: 0.3em 1em;
+  padding: 0.8em 3em;
   border-radius: 1em;
   background-color: #fe5f55;
+  font-size: 1.2em;
+  font-weight: 700;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   cursor: pointer;
@@ -152,10 +154,7 @@
 @media (min-width: 55em) {
   .contactBtn {
     margin-left: 1em;
+    font-size: 1em;
   }
-}
-
-.bo {
-  display: block;
 }
 /*# sourceMappingURL=Header.module.css.map */

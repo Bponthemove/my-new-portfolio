@@ -11,9 +11,10 @@ body {
   background-color: #fffffc;
 }
 
-a {
+a, button {
   color: inherit;
   text-decoration: none;
+  border: none;
 }
 
 * {

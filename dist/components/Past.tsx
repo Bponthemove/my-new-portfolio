@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Skills.module.css'
 
-interface Props {
+export interface IPastProps {
     past: {
         img: string
         textOne: string
@@ -11,7 +11,7 @@ interface Props {
     }
 }
 
-export const Past = ({ past }: Props) => {
+export const Past = ({ past }: IPastProps) => {
 
     return (
         <div className={ styles.pastContainer }>

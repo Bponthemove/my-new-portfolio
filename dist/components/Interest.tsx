@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Interest.module.css'
 
-type props = {
+export type IInterestProps = {
     gifRef: React.LegacyRef<HTMLDivElement>
     interest: {
         title: string
@@ -14,7 +14,7 @@ type props = {
     }
 }
 
-export const Interest = ({ interest, gifRef }: props) => {
+export const Interest = ({ interest, gifRef }: IInterestProps) => {
     const {title, gif, gif_static, text, bg} = interest
     const [img, setImg] = useState(gif_static) 
 
@@ -26,7 +26,16 @@ export const Interest = ({ interest, gifRef }: props) => {
             ref={interest.id === 1 ? gifRef : null}
     >
         <h2>{ title }</h2>
-        { gif ? <Image src={ img } width={500} height={500} alt={ interest.title }/> : null }
+        <div className={ styles.imgContainer }>
+          { gif && <Image src={ img } 
+                          width='100%' 
+                          height='100%' 
+                          quality='25'
+                          layout='responsive' 
+                          objectFit='contain' 
+                          alt={ interest.title } 
+                          className={ styles.img }/> }
+        </div>
         <p>{ text }</p>
     </div>
   )
