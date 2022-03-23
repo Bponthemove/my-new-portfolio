@@ -2,14 +2,14 @@ My new portfolio site. A simple, lively and dynamic site, with clean lines and c
 
 It is work in progress.
 
-gifs not working in build. They have not been copied to next/static for some reason.
+gifs not working in build. 
 
-Code section needs finishing off.
+Code section needs finishing off.   --done--(except news app which has run out of its api free trial)
 Theme toggle needs finsihing and theme colors need to done in _variables.
 Theme mixin needs to be introduced in style sheets.
-Fonts needs more back up families supported in all browsers
+Fonts needs more back up families supported in all browsers     --done--
 Code needs to be schecked for all browser
-Access (labels etc) needs to be added
+Access (labels etc) needs to be added       --done--
 
 Code needs to be refactored.
 Netlify function needs to be made to control/hide the emailjs variables.
