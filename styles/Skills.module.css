@@ -301,7 +301,6 @@
 
 @media (min-width: 55em) {
   .parallax {
-    width: 100vw;
     background: url("/images/spain-wide.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;

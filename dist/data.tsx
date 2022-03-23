@@ -69,31 +69,31 @@ export const pastTrades = [
 
 export const myCode = [
   {
-    img: '/images/weather.png',
+    img: '/images/weather.jpg',
     text: 'A weather app built with Next.js and served on Netlify. Easy accessible right menu for mobile hand-held devices. Weather Outlook with responsive temperature visualization, air pollution chart and weather map with various layers. Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps.',
     link: 'https://github.com/Bponthemove/weatherapp',
     id: 1
   },
   {
-    img: '/images/drump.png',
+    img: '/images/drump.jpg',
     text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Very first React project. Was meant to be a drum machine, but made it a little bit more fun',
     link: 'https://github.com/Bponthemove/Drump-machine',
     id: 2
   },  
   {
-    img: '/images/oldPortfolio.png',
+    img: '/images/oldPortfolio.jpg',
     text: 'This is my old portfolio, which I made while learning Express and Mongo. Both client and server side are on github, the back end is served on Heroku and takes a little bit of time to load. Images are served from Cloudinay and authorization is with UserFront. It has a little blog page which is "members only", but sign in has test user and password, so that you dont have to sign up for real.',
     link: 'https://github.com/Bponthemove/portfolio',
     id: 3
   },
   {
-    img: '/images/calculator.png',
+    img: '/images/calculator.jpg',
     text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Later rewritten to practise Typescript.',
     link: 'https://github.com/Bponthemove/calculatorTS',
     id: 4
   },
   {
-    img: '/images/memory.png',
+    img: '/images/memory.jpg',
     text: 'One of the first things I built when I was learning javascript. My children absolutely love playing memory so I thought it would be a good idea to do that in js. I have later rewritten it in React and Typescript. I still have to make it responsive for smaller screens.',
     link: 'https://github.com/Bponthemove/Memory',
     id: 5
