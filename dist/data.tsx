@@ -99,9 +99,9 @@ export const myCode = [
     id: 5
   },
   {
-    img: '/images/busybuilding.png',
-    text: '',
-    link: '',
+    img: '/images/news.jpg',
+    text: 'News ticker run on a free tier of gNews api. Built with React, Typescript and Sass.',
+    link: 'https://github.com/Bponthemove/news',
     id: 6
   }
 ]
