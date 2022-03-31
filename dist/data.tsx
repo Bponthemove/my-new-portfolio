@@ -105,3 +105,87 @@ export const myCode = [
     id: 6
   }
 ]
+
+export const stickmanArr = [
+  '/images/paro-AL-pointing-right.png',
+  '/images/paro-scratching-head.png',
+  '/images/paro-AL-happy.png',
+  '/images/paro_AL_tired.png',
+  '/images/Al-very-sad.png',
+  // '/images/AL_with_red_flag.png',
+  '/images/paro-AL-hands-up.png',
+  '/images/paro-AL-hip-hop.png',
+  '/images/paro-AL-old-man.png',
+  '/images/paro-AL-sad.png',
+  '/images/paro-AL-sleeping.png',
+  '/images/paro-AL-jumping.png'
+]
+
+export const certificates = [
+  {
+    url: 'https://www.freecodecamp.org/certification/bpvanzalk/front-end-development-libraries',
+    title: 'Front End Development Libraries',
+    company: 'freeCodeCamp',
+    id: 1
+  },
+  {
+    url: 'https://www.freecodecamp.org/certification/bpvanzalk/data-visualization',
+    title: 'Data Visualization',
+    company: 'freeCodeCamp',
+    id: 2
+  },
+  {
+    url: 'https://www.freecodecamp.org/certification/bpvanzalk/javascript-algorithms-and-data-structures',
+    title: 'JavaScript Algorithms and Data Structures',
+    company: 'freeCodeCamp',
+    id: 3
+  },
+  {
+    url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
+    title: 'Responsive Web Design',
+    company: 'freeCodeCamp',
+    id: 4
+  },
+  {
+    url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
+    title: "Back End Development and Api's",
+    company: 'freeCodeCamp',
+    id: 5
+  },
+  {
+    url: '',
+    title: 'Designated JavaScript Specialist 2020',
+    company: 'FrameWork',
+    id: 6
+  },
+  {
+    url: '',
+    title: 'Designated CSS Specialist 2020',
+    company: 'FrameWork',
+    id: 7
+  },
+  {
+    url: '',
+    title: 'JavaScript (Basic)',
+    company: 'HackerRank',
+    id: 8
+  },
+  {
+    url: '',
+    title: 'JavaScript (Intermediate)',
+    company: 'HackerRank',
+    id: 9
+  },
+  {
+    url: '',
+    title: 'CSS',
+    company: 'HackerRank',
+    id: 10
+  },
+  {
+    url: '',
+    title: 'React',
+    company: 'HackerRank',
+    id: 11
+  }
+]

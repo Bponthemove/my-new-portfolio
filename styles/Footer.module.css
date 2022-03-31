@@ -70,8 +70,14 @@
   transition: 0.25s;
   cursor: pointer;
   border: none;
-  padding: 1em 2.5em;
+  padding: 0.5em;
   font-weight: 800;
+}
+
+@media (min-width: 35em) {
+  .footer .contact form #ContactBtn {
+    padding: 1em 2.5em;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {

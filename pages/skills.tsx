@@ -2,14 +2,24 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
+  //--components & types--//
+import Certificate from '../dist/components/Certificate'
 import { ListItem } from '../dist/components/ListItem'
 import { Code } from '../dist/components/Code'
 import { IPastProps } from '../dist/components/Past'
+  //--custom hooks--//
+import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
+  //--styles--//
+import styles from '../styles/Skills.module.css'
+  //--data--//
+import { personality, media, pastTrades, myCode, stickmanArr, certificates } from '../dist/data'
+  //--images--//
+import code from '../public/images/code.jpg'
+import graduation from '../public/images/graduation.jpg'
+import stickPoint from '../public/images/paro-AL-pointing-right.png'
+  //--icons--//
 import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaGit, FaNodeJs, FaAws } from 'react-icons/fa'
 import { SiNextdotjs, SiExpress, SiMongodb, SiJquery, SiJavascript} from 'react-icons/si'
-import styles from '../styles/Skills.module.css'
-import { personality, media, pastTrades, myCode } from '../dist/data'
-import code from '../public/images/code.jpg'
 
 const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
  
@@ -17,9 +27,12 @@ const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').
 const Skills: NextPage = () => {
   const [random, setRandom] = useState<number>(10)
   const [spanOpen, setSpanOpen] = useState<boolean>(false)
+  const [showPage, setShowPage] = useState<boolean>(false)
   const [sectionOpen, setSectionOpen] = useState<boolean>(false)
+  const { scroll, desktop } = usePortfolioContext()
+  
 
-{/* ----------------------------------random to randomly highlight skill box--------------------------------------- */}
+{/* ----------------------------random to randomly highlight skill in section personal skills---------------------------------- */}
   useEffect(() => {
     const skills: ReturnType<typeof setInterval> = setInterval(() => {
       setRandom(Math.floor(Math.random() * 8))
@@ -27,38 +40,76 @@ const Skills: NextPage = () => {
     return () => clearInterval(skills)
   }, [])
 
-{/* ----------------------------------rotate > after 1sec of loading, or after clicking it--------------------------------------- */}
+{/* ----------------------------------rotate > after 1sec of loading--------------------------------------- */}
   useEffect(() => {
     if (spanOpen) return
-    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
+    const timerOne: ReturnType<typeof setTimeout> = setTimeout(() => {
       setSpanOpen(true)
     }, 1000)
 
-    return () => clearTimeout(timer)
+    return () => clearTimeout(timerOne)
+    
+  }, [spanOpen])
+
+  useEffect(() => {
+    if (!spanOpen) return
+    const timerTwo: ReturnType<typeof setTimeout> = setTimeout(() => {
+      setShowPage(true)
+    }, 6000)
+
+    return () => clearTimeout(timerTwo)
   }, [spanOpen])
 
   return (
     <>  
-   {/* ----------------------------------top section - Media used--------------------------------------- */}
-      <section className={ styles.sectionOne }>
-        <div className={ styles.imgCodeContainer }>
-          <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
-        </div>
-        <div className={ styles.textCodeContainer}>
-          <h3>Self Taught.</h3>
-          <p>Self taught as I had to split my time between working, studying and a young family.</p>
-          <div className={ styles.mediaList }>
-            <h5>Media used</h5>
-            <ul>
-              <span 
-                className={ spanOpen ? styles.spanOpen : styles.spanClosed }
-                onClick={ spanOpen ? () => setSpanOpen(!spanOpen) : undefined}
-              >
-                {'>'}
-              </span>
-              { media.map((mediaItem, index) => <ListItem key={ index } mediaItem={ mediaItem} index={ index } spanOpen={ spanOpen }/>) }
-            </ul>
+   {/* ----------------------------------top section - Media used----------------------------------- */}
+      <section className={ showPage ? [ styles.sectionOne, styles.sectionOneOpen ].join(' ') : styles.sectionOne }>
+        { desktop && <div className={ styles.imagesContainer }>
+            <div className={ styles.imgCodeContainer }>
+                <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
+            </div>
+            <div className={ styles.stickPointContainer }>
+                <Image src={ stickPoint } width='100%' height='100%' layout='responsive' objectFit='contain' alt='stickman pointing' priority={ true }/>
+            </div>
           </div>
+        }
+        <div className={ styles.mediaContainer }>
+        { !desktop && <div className={ styles.imgCodeContainer }>
+            <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
+          </div> 
+        }
+          <div className={ styles.textCodeContainer}>
+            <h3>Self Taught.</h3>
+            <p>Self taught as I had to split my time between working, studying and a young family.</p>
+            <div className={ styles.mediaList }>
+              <h5>Media used</h5>
+              <ul>
+                <span className={ spanOpen ? styles.spanOpen : styles.spanClosed }>
+                  {'>'}
+                </span>
+                { media.map((mediaItem, index) => <ListItem key={ index } mediaItem={ mediaItem} index={ index } spanOpen={ spanOpen }/>) }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+{/* ----------------------------------scrollAnimation--------------------------------------- */}
+      <div className={ styles.scrollRoll }>
+        <div  className={ styles.imgScrollContainer } 
+              style={{ transform: `translateX(${scroll*(100 / 12)}vw)` }}
+        >
+          <Image src={ stickmanArr[scroll] } objectFit='contain' layout='fill' />
+        </div>
+      </div>
+{/* ----------------------------------Certificates--------------------------------------- */}
+      <section className={ styles.certSection }>
+        <div className={ styles.graduationContainer }>
+          <Image src={ graduation } objectFit='cover' height={ '100%' } width={ '100%' } layout='responsive' alt='graduates throwing their hats' quality='90' placeholder='blur'/>
+        </div>
+        <div className={ styles.certificatesContainer }>
+          <ul>
+            { certificates.map(certificate => <Certificate certificate={ certificate }/>) }
+          </ul>
         </div>
       </section>
 {/* ----------------------------------ticker - skills--------------------------------------- */}

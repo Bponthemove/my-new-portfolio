@@ -69,7 +69,7 @@
   font-size: 1.2em;
   min-height: 65vh;
   margin: 2em;
-  padding: 10em 1em 4em;
+  padding: 6em 1em 4em;
   border-radius: 2em;
   position: relative;
   display: -webkit-box;
@@ -113,7 +113,13 @@
   }
 }
 
-.container .sectionOne h1 {
+.container .sectionOne div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container .sectionOne div .Iam, .container .sectionOne div .Bram {
   font-size: 12vw;
   font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
   -ms-flex-item-align: end;
@@ -124,8 +130,48 @@
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne h1 {
+  .container .sectionOne div .Iam, .container .sectionOne div .Bram {
+    font-size: 10vw;
     position: absolute;
+  }
+}
+
+.container .sectionOne div .Iam {
+  -webkit-transform: translateY(-1em);
+          transform: translateY(-1em);
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne div .Iam {
+    bottom: 0.2em;
+    right: 3em;
+    opacity: 0;
+    -webkit-transition: right 2.2s ease-out, opacity 0.5s;
+    transition: right 2.2s ease-out, opacity 0.5s;
+  }
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne div .Bram {
+    bottom: 3em;
+    right: 0.2em;
+    opacity: 0;
+    -webkit-transition: bottom 0.2s ease-in 2.5s, opacity 0.3s ease-in-out 2.5s;
+    transition: bottom 0.2s ease-in 2.5s, opacity 0.3s ease-in-out 2.5s;
+  }
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne div .IamAnimated {
+    opacity: 1;
+    bottom: 0.2em;
+    right: 0.2em;
+  }
+}
+
+@media (min-width: 35em) {
+  .container .sectionOne div .BramAnimated {
+    opacity: 1;
     bottom: 0.2em;
     right: 0.2em;
   }
@@ -272,7 +318,7 @@
 .container .sectionThree .divOnImg {
   padding: 1em;
   margin: 1em 0;
-  width: 70vw;
+  width: 80vw;
   color: transparent;
   font-size: 1.1em;
   font-weight: 500;

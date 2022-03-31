@@ -42,7 +42,7 @@ const Header: NextPage = () => {
                 </nav>
             </header>
             { menu ?
-            <div className={ styles.navLinksMobileContainer }>
+            <div className={ !menu ? styles.navLinksMobileContainer : [ styles.navLinksMobileContainer, styles.navLinksMobileContainerOpen].join(' ') }>
                 <div className={ styles.navLinksMobile }>
                     { navLinks.map((link, index) => 
                         <NavLink key={ index } link={ link }/>

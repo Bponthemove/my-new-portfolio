@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kanit:wght@300&family=Modak&family=Moul&family=Caveat&family=Kalam&family=Titan+One&family=Domine&display=swap");
 .sectionOne {
-  margin: 3em;
-  padding: 3em;
-  background-color: #9bf6ff;
-  border-radius: 2em;
+  height: 100%;
 }
 
 @media (min-width: 55em) {
@@ -11,24 +8,48 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 2em 10vw;
+  }
+  .sectionOne .imagesContainer {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .sectionOne .imagesContainer .stickPointContainer {
+    width: 20em;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
-.sectionOne .imgCodeContainer {
-  width: 80%;
-  height: auto;
-  margin: 0 auto 1em;
+.sectionOne .mediaContainer {
+  width: 100%;
+  background-color: #9bf6ff;
 }
 
 @media (min-width: 55em) {
-  .sectionOne .imgCodeContainer {
-    margin-right: 2em;
+  .sectionOne .mediaContainer {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
-.sectionOne .textCodeContainer {
+.sectionOne .mediaContainer .imgCodeContainer {
   width: 100%;
+  height: auto;
+}
+
+.sectionOne .mediaContainer .textCodeContainer {
+  padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,11 +62,11 @@
           align-items: center;
 }
 
-.sectionOne .textCodeContainer h3 {
+.sectionOne .mediaContainer .textCodeContainer h3 {
   margin-bottom: 1em;
 }
 
-.sectionOne .textCodeContainer .mediaList {
+.sectionOne .mediaContainer .textCodeContainer .mediaList {
   width: 100%;
   margin-top: 2em;
   display: -webkit-box;
@@ -60,7 +81,7 @@
           justify-content: space-between;
 }
 
-.sectionOne .textCodeContainer .mediaList h5 {
+.sectionOne .mediaContainer .textCodeContainer .mediaList h5 {
   font-size: 2em;
   margin: 0 2em;
   -ms-flex-item-align: center;
@@ -68,23 +89,22 @@
       align-self: center;
 }
 
-.sectionOne .textCodeContainer .mediaList ul {
+.sectionOne .mediaContainer .textCodeContainer .mediaList ul {
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
 @media (min-width: 55em) {
-  .sectionOne .textCodeContainer .mediaList ul {
+  .sectionOne .mediaContainer .textCodeContainer .mediaList ul {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
 }
 
-.sectionOne .textCodeContainer .mediaList ul .spanOpen {
+.sectionOne .mediaContainer .textCodeContainer .mediaList ul .spanOpen {
   display: inline-block;
   font-size: 6em;
   font-weight: 700;
-  cursor: pointer;
   -webkit-transform: rotate(450deg);
           transform: rotate(450deg);
   -webkit-transition: -webkit-transform 0.3s;
@@ -93,7 +113,7 @@
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-.sectionOne .textCodeContainer .mediaList ul .spanClosed {
+.sectionOne .mediaContainer .textCodeContainer .mediaList ul .spanClosed {
   display: inline-block;
   font-size: 6em;
   font-weight: 700;
@@ -105,15 +125,128 @@
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-.sectionOne .textCodeContainer .mediaList ul li {
+.sectionOne .mediaContainer .textCodeContainer .mediaList ul li {
   list-style: none;
   margin: 1em;
   font-size: 1.2em;
+  font-weight: 900;
   opacity: 0;
 }
 
-.sectionOne .textCodeContainer .mediaList ul .list {
+.sectionOne .mediaContainer .textCodeContainer .mediaList ul .list {
   opacity: 1;
+}
+
+.scrollRoll {
+  width: 100%;
+  height: 25vh;
+  background-color: #fe5f55;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scrollRoll .imgScrollContainer {
+  height: 80%;
+  width: 20%;
+  position: relative;
+}
+
+.certSection {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 55em) {
+  .certSection {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.certSection .graduationContainer {
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 55em) {
+  .certSection .graduationContainer {
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.certSection .certificatesContainer {
+  padding: 1em;
+}
+
+.certSection .certificatesContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 55em) {
+  .certSection .certificatesContainer ul {
+    height: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    letter-spacing: 0.8px;
+  }
+}
+
+.certSection .certificatesContainer ul li {
+  width: 75%;
+  padding: 0.4em 0;
+  border-bottom: 1px solid black;
+  font-size: 0.9em;
+  font-weight: 600;
+  list-style: none;
+  text-align: center;
+}
+
+@media (min-width: 55em) {
+  .certSection .certificatesContainer ul li {
+    padding: 0.3em;
+    font-size: 1em;
+    text-align: start;
+    border: none;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 55em) and (hover: hover) and (pointer: fine) {
+  .certSection .certificatesContainer ul li:hover {
+    background-color: azure;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
 }
 
 .ticker {
@@ -245,7 +378,7 @@
 
 .personality .codeBtn {
   position: absolute;
-  bottom: -6.5%;
+  bottom: -8%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -270,7 +403,7 @@
 .sectionCode .codeContainer {
   background-color: #9bf6ff;
   width: 100%;
-  max-height: 399vh;
+  max-height: 499vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
