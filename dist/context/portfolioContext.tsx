@@ -36,12 +36,15 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     }, [menu])
 
     useEffect(() => {
-        if (router.pathname !== '/skills') return
+        //wait for useRouter on page load
+        if (!router.pathname) return
         window.addEventListener('scroll', scrollHandler)
         return () => window.removeEventListener('scroll', scrollHandler)
-      }, [])
-
+    }, [router])
+    
     const scrollHandler = () => {
+        //no need to run if we do not need it
+        if (router.pathname !== '/skills') return
         //check if offset is 100 more than previous, if so then increment scrolling by 1
         //still needs a ref on stickman section to use useVisible to see when it comes in view and then calculate the starting point
         const current = Math.floor(window.pageYOffset / 100) 
