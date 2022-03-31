@@ -108,7 +108,7 @@ const Skills: NextPage = () => {
         </div>
         <div className={ styles.certificatesContainer }>
           <ul>
-            { certificates.map(certificate => <Certificate certificate={ certificate }/>) }
+            { certificates.map(certificate => <Certificate key={ certificate.id } certificate={ certificate }/>) }
           </ul>
         </div>
       </section>

@@ -46,8 +46,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
         //still needs a ref on stickman section to use useVisible to see when it comes in view and then calculate the starting point
         const current = Math.floor(window.pageYOffset / 100) 
         if (scroll === current) return
-        if (current < 11) return setScroll(current)
-        if (current > 10) return setScroll(0)
+        return current < 11 ? setScroll(current) : setScroll(0)
     }
 
     const value: ProviderProps = { 
