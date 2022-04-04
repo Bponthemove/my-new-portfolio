@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
+//import Image from 'next/image'
 import styles from '../../styles/Interest.module.css'
 
 export type IInterestProps = {
@@ -27,12 +27,13 @@ export const Interest = ({ interest, gifRef }: IInterestProps) => {
     >
         <h2>{ title }</h2>
         <div className={ styles.imgContainer }>
-          { gif && <Image src={ img } 
+          //cant get Next Image to work with animated gif, so stepping back to img tag
+          { gif && <img src={ img } 
                           width='100%' 
                           height='100%' 
-                          quality='25'
-                          layout='responsive' 
-                          objectFit='contain' 
+                          //quality='25'
+                          //layout='responsive' 
+                          //objectFit='contain' 
                           alt={ interest.title } 
                           className={ styles.img }/> }
         </div>
