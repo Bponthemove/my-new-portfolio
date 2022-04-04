@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { useEffect, useRef, useState } from 'react'
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
   //--components--//
@@ -44,14 +43,7 @@ const Home: NextPage = () => {
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
-      <Head>
-        <title>IamBram Front End Development & Web Design</title>
-        <meta name="Description" content="Junior Developer for hire, Front End Development with React, Javascript, SCSS, CSS3."/>
-        <meta name='Author' content='Bram peter van Zalk'/>
-        <meta name='robots' content='all'/>
-        <meta name='lang' content='en'/>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
 {/*-------------------------------- running theme ticker-------------------------------- */}
       <div className={ styles.themeTicker }>
         <div className={ styles.themeInner }>

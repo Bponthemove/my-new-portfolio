@@ -15,7 +15,7 @@ import { media, pastTrades, myCode, certificates } from '../dist/data'
   //--images--//
 import code from '../public/images/code.jpg'
 import graduation from '../public/images/graduation.jpg'
-import stickPoint from '../public/images/paro-AL-pointing-right.png'
+import stickPoint from '../public/images/stickman-pointing-right.png'
   //--icons--//
 import { PersonalSkills } from '../dist/components/PersonalSkills'
 import { Stickman } from '../dist/components/Stickman'

@@ -12,7 +12,11 @@ module.exports = withBundleAnalyzer({
       'www.freecodecamp.org',
 
     ]
-  }
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 })
 
 

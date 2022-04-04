@@ -107,17 +107,17 @@ export const myCode = [
 ]
 
 export const stickmanArr = [
-  '/images/paro-AL-pointing-right.png',
-  '/images/paro-scratching-head.png',
-  '/images/paro-AL-happy.png',
-  '/images/paro_AL_tired.png',
-  '/images/Al-very-sad.png',
-  '/images/paro-AL-hands-up.png',
-  '/images/paro-AL-hip-hop.png',
-  '/images/paro-AL-old-man.png',
-  '/images/paro-AL-sad.png',
-  '/images/paro-AL-sleeping.png',
-  '/images/paro-AL-jumping.png'
+  '/images/stickman-pointing-right.png',
+  '/images/stickman-scratching-head.png',
+  '/images/stickman-happy.png',
+  '/images/stickman-tired.png',
+  '/images/stickman-very-sad.png',
+  '/images/stickman-hands-up.png',
+  '/images/stickman-hip-hop.png',
+  '/images/stickman-old-man.png',
+  '/images/stickman-sad.png',
+  '/images/stickman-sleeping.png',
+  '/images/stickman-jumping.png'
 ]
 
 export const certificates = [
