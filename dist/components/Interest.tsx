@@ -1,18 +1,7 @@
 import React, { useState } from 'react'
 //import Image from 'next/image'
+import { IInterestProps } from '../types'
 import styles from '../../styles/Interest.module.css'
-
-export type IInterestProps = {
-    gifRef: React.LegacyRef<HTMLDivElement>
-    interest: {
-        title: string
-        gif: string
-        gif_static: string
-        text: string
-        bg: string
-        id: number
-    }
-}
 
 export const Interest = ({ interest, gifRef }: IInterestProps) => {
     const {title, gif, gif_static, text, bg} = interest

@@ -1,19 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
+import { ICodeProps } from '../types'
 import styles from '../../styles/Code.module.css'
 
-interface Props {
-    code: 
-    {
-        img: string
-        text: string
-        link: string
-        id: number
-    }
-}
-
-export const Code = ({ code }: Props) => {
+export const Code = ({ code }: ICodeProps) => {
 
   return (
     <div className={ styles.code }>

@@ -3,14 +3,16 @@ import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-
+  //--components--//
 import { ThemeBox } from '../dist/components/ThemeBox'
+  //--data--//
 import { interests } from '../dist/data'
-import { IInterestProps } from '../dist/components/Interest'
-
+  //--types--//
+import { IInterestProps } from '../dist/types'
+  //--hooks--//
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 import useVisible from '../dist/hooks/useVisible'
-
+  //--styles--//
 import styles from '../styles/Home.module.css'
 
 const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest))
@@ -47,6 +49,7 @@ const Home: NextPage = () => {
         <meta name="Description" content="Junior Developer for hire, Front End Development with React, Javascript, SCSS, CSS3."/>
         <meta name='Author' content='Bram peter van Zalk'/>
         <meta name='robots' content='all'/>
+        <meta name='lang' content='en'/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 {/*-------------------------------- running theme ticker-------------------------------- */}

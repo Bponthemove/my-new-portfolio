@@ -5,38 +5,29 @@ import React, { useEffect, useState } from 'react'
   //--components & types--//
 import Certificate from '../dist/components/Certificate'
 import { ListItem } from '../dist/components/ListItem'
-import { Code } from '../dist/components/Code'
-import { IPastProps } from '../dist/components/Past'
+import { ICodeProps, IPastProps } from '../dist/types'
   //--custom hooks--//
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
   //--styles--//
 import styles from '../styles/Skills.module.css'
   //--data--//
-import { personality, media, pastTrades, myCode, stickmanArr, certificates } from '../dist/data'
+import { media, pastTrades, myCode, certificates } from '../dist/data'
   //--images--//
 import code from '../public/images/code.jpg'
 import graduation from '../public/images/graduation.jpg'
 import stickPoint from '../public/images/paro-AL-pointing-right.png'
   //--icons--//
-import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaGit, FaNodeJs, FaAws } from 'react-icons/fa'
-import { SiNextdotjs, SiExpress, SiMongodb, SiJquery, SiJavascript} from 'react-icons/si'
+import { PersonalSkills } from '../dist/components/PersonalSkills'
+import { Stickman } from '../dist/components/Stickman'
 
 const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
- 
+const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker))
+const DynamicCode = dynamic<ICodeProps>(() => import('../dist/components/Code').then(mod => mod.Code))
 
 const Skills: NextPage = () => {
-  const [random, setRandom] = useState<number>(10)
   const [spanOpen, setSpanOpen] = useState<boolean>(false)
   const [sectionOpen, setSectionOpen] = useState<boolean>(false)
-  const { scroll, desktop } = usePortfolioContext()
-
-{/* ----------------------------random to randomly highlight skill in section personal skills---------------------------------- */}
-  useEffect(() => {
-    const skills: ReturnType<typeof setInterval> = setInterval(() => {
-      setRandom(Math.floor(Math.random() * 8))
-    }, 2000)
-    return () => clearInterval(skills)
-  }, [])
+  const { desktop } = usePortfolioContext()
 
 {/* ----------------------------------rotate > after 1sec of loading--------------------------------------- */}
   useEffect(() => {
@@ -67,7 +58,7 @@ const Skills: NextPage = () => {
         }
           <div className={ styles.textCodeContainer}>
             <h3>Self Taught.</h3>
-            <p>Self taught as I had to split my time between working, studying and a young family.</p>
+            <p>Self taught as I have to split my time between working, studying and a young family.</p>
             <div className={ styles.mediaList }>
               <h5>Media used</h5>
               <ul>
@@ -81,13 +72,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
 {/* ----------------------------------scrollAnimation--------------------------------------- */}
-      <div className={ styles.scrollRoll }>
-        <div  className={ styles.imgScrollContainer } 
-              style={{ transform: `translateX(${scroll*(100 / 12)}vw)` }}
-        >
-          <Image src={ stickmanArr[scroll] } objectFit='contain' layout='fill' />
-        </div>
-      </div>
+      <Stickman/>
 {/* ----------------------------------Certificates--------------------------------------- */}
       <section className={ styles.certSection }>
         <div className={ styles.graduationContainer }>
@@ -100,11 +85,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
 {/* ----------------------------------ticker - skills--------------------------------------- */}
-      <div className={ styles.ticker }>
-        <div className={ styles.innerTicker }>
-          <FaHtml5/><FaCss3Alt/><FaSass/><FaReact/><FaGit/><FaNodeJs/><FaAws/><SiNextdotjs/><SiExpress/><SiMongodb/><SiJquery/><SiJavascript/>
-        </div>
-      </div>
+      <DynamicSkillsTicker/>
 {/* ----------------------------------personal skills--------------------------------------- */}
       <section className={ styles.personality }>
         <div className={ styles.textPersonality }>
@@ -112,12 +93,8 @@ const Skills: NextPage = () => {
           <p>Having worked in multiple industries with very different people, I have been exposed to a wide range of characters, accompanied by a wide range of characteristics.</p>
           <p>This has made me into a person who is independent, confident and who is always learning new skills.</p>
         </div>
-        <div className={ styles.bottomPersonality }>
-          { personality.map((skill: string, index: number) => 
-            <p key={ index } className={ index === random ? styles.pActive : undefined }>{ skill }</p>
-          )}
-        </div>
-        {/* --------overlay container - Code button-------- */}
+        <PersonalSkills/>
+{/* --------overlay container - Code button-------- */}
         <div  className={ styles.codeBtn } 
               onClick={ () => setSectionOpen(!sectionOpen) }
               style={ sectionOpen ? { cursor: 'url(/images/arrowUp.png), pointer' } : { cursor: 'url(/images/arrowDown.png), pointer' }}
@@ -129,7 +106,7 @@ const Skills: NextPage = () => {
 {/* ----------------------------------My Code Open & close with code button--------------------------------------- */}
       <section className={ styles.sectionCode }>
         <div className={ sectionOpen ? styles.codeContainer : [ styles.codeContainer, styles.codeContainerClosed ].join(' ') }>
-              { myCode.map(code => <Code code={ code } key={ code.id }/>) }
+              { myCode.map(code => <DynamicCode code={ code } key={ code.id }/>) }
         </div>
       </section>
 {/* ----------------------------------absolute image overlay--------------------------------------- */}

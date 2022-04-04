@@ -16,6 +16,43 @@ export type ProviderProps = {
     colorGradient: number
 }
 
+export interface IListItemProps{
+    mediaItem: string
+    index: number
+    spanOpen: boolean
+}
+
+export type IInterestProps = {
+    gifRef: React.LegacyRef<HTMLDivElement>
+    interest: {
+        title: string
+        gif: string
+        gif_static: string
+        text: string
+        bg: string
+        id: number
+    }
+}
+
+export interface ICodeProps {
+    code: 
+    {
+        img: string
+        text: string
+        link: string
+        id: number
+    }
+}
+
+export interface IPastProps {
+    past: {
+        img: string
+        textOne: string
+        textTwo: string
+        id: number
+    }
+}
+
 export interface ICertificate {
     certificate: {
         url: string,

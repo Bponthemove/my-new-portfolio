@@ -1,15 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
+import { IPastProps } from '../types'
 import styles from '../../styles/Skills.module.css'
-
-export interface IPastProps {
-    past: {
-        img: string
-        textOne: string
-        textTwo: string
-        id: number
-    }
-}
 
 export const Past = ({ past }: IPastProps) => {
 

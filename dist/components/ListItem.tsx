@@ -1,13 +1,8 @@
 import React from 'react'
 import styles from '../../styles/Skills.module.css'
+import { IListItemProps } from '../types'
 
-interface Props{
-    mediaItem: string
-    index: number
-    spanOpen: boolean
-}
-
-export const ListItem = ({ mediaItem, index, spanOpen }: Props) => {
+export const ListItem = ({ mediaItem, index, spanOpen }: IListItemProps) => {
   return (
     <li 
         className={ spanOpen ? styles.list : undefined }
