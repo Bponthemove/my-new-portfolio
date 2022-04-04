@@ -11,11 +11,11 @@ Fonts needs more back up families supported in all browsers --done--
 Code needs to be checked for all browser
 Access (labels etc) needs to be added --done--
 Stickman section needs useVisible hook to set starting when section comes in view. On smaller screens he is not in view on load
-Certificate section needs image box which displays hovered certficate
-scroll Y needs to be stopped when mobile menu is open
-arrow to top needs to be visible when scrolling
+Certificate section needs image box which displays hovered certficate --not doing--
+scroll Y needs to be stopped when mobile menu is open --done--
+arrow to top needs to be visible when scrolling --done--
 
-extra's to be done:
+extra's maybe to be done:
   modal pop up after x seconds of inactivity to play 
   guess the skill game
 

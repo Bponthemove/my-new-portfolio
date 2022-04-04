@@ -1,21 +1,7 @@
 import { useRouter } from "next/router"
 import React, { createContext, useEffect, useState, useRef } from "react"
+import { ProviderProps } from "../types"
 import useMediaQuery from "../hooks/useMediaQuery"
-
-interface ProviderProps {
-    themeStrings: string[]
-    theme: string,
-    setTheme: React.Dispatch<React.SetStateAction<string>>
-    menu: boolean
-    setMenu: React.Dispatch<React.SetStateAction<boolean>>
-    desktop: boolean
-    bottomRef: React.RefObject<HTMLParagraphElement>
-    headerRef: React.RefObject<HTMLDivElement>
-    scroll: number
-    setScroll: React.Dispatch<React.SetStateAction<number>>
-    scrolling: number
-    setScrolling: React.Dispatch<React.SetStateAction<number>>
-}
 
 export const PortfolioContext = createContext<ProviderProps | undefined>(undefined)
 
@@ -24,6 +10,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     const [menu, setMenu] = useState<boolean>(false)
     const [scroll, setScroll] = useState(0)
     const [scrolling, setScrolling] = useState(0)
+    const [colorGradient, setColorGradient] = useState(0)
     const desktop: boolean = useMediaQuery('(min-width: 55em)')
     const bottomRef = useRef<HTMLParagraphElement>(null) 
     const headerRef = useRef<HTMLDivElement>(null)
@@ -32,29 +19,43 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     const themeStrings: string[] = ['Standard', 'Rainbows&Unicorns', 'Moody', 'Random']
 
     useEffect(() => {
-        if (menu) window.scrollTo(0,0)
+            //disable scroll when mobile menu is open
+        if (menu) {
+            document.documentElement.classList.add('noScroll')
+        } else {
+            document.documentElement.classList.remove('noScroll')
+        }
     }, [menu])
 
     useEffect(() => {
-        //wait for useRouter on page load
+            //wait for useRouter on page load
         if (!router.pathname) return
+            //than add listener
         window.addEventListener('scroll', scrollHandler)
         return () => window.removeEventListener('scroll', scrollHandler)
     }, [router])
     
     const scrollHandler = () => {
-        //no need to run if we do not need it
+            //setscrolling for rotating icon
+        setScrolling(window.scrollY)
+            //calculate which percentage of entire page has been scrolled. 
+        const topOfBottom = window.innerHeight
+        const bodyHeight = document.body.offsetHeight - 225 - topOfBottom
+        const offsetPercentage = Math.round((window.scrollY / bodyHeight) * 100)
+            //To set the 'filling up' background to indicate how far down the page you are.
+        if (offsetPercentage !== colorGradient && offsetPercentage < 101) setColorGradient(offsetPercentage)
+            //no need to run stickman if we do not need it
         if (router.pathname !== '/skills') return
-        //check if offset is 100 more than previous, if so then increment scrolling by 1
-        //still needs a ref on stickman section to use useVisible to see when it comes in view and then calculate the starting point
-        const current = Math.floor(window.pageYOffset / 100) 
+            //check if offset is 100 more than previous, if so then increment scrolling by 1
+        const current = Math.floor(window.scrollY / 100) 
+            //still needs a ref on stickman section to use useVisible to see when it comes in view and then calculate the starting point
         if (scroll === current) return
         return current < 11 ? setScroll(current) : setScroll(0)
     }
 
     const value: ProviderProps = { 
         theme, setTheme, themeStrings, desktop, menu, setMenu, bottomRef, headerRef, scroll,
-        scrolling, setScroll, setScrolling
+        scrolling, setScroll, setScrolling, colorGradient
     }
 
     return(

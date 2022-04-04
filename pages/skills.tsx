@@ -27,10 +27,8 @@ const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').
 const Skills: NextPage = () => {
   const [random, setRandom] = useState<number>(10)
   const [spanOpen, setSpanOpen] = useState<boolean>(false)
-  const [showPage, setShowPage] = useState<boolean>(false)
   const [sectionOpen, setSectionOpen] = useState<boolean>(false)
   const { scroll, desktop } = usePortfolioContext()
-  
 
 {/* ----------------------------random to randomly highlight skill in section personal skills---------------------------------- */}
   useEffect(() => {
@@ -46,24 +44,13 @@ const Skills: NextPage = () => {
     const timerOne: ReturnType<typeof setTimeout> = setTimeout(() => {
       setSpanOpen(true)
     }, 1000)
-
     return () => clearTimeout(timerOne)
-    
-  }, [spanOpen])
-
-  useEffect(() => {
-    if (!spanOpen) return
-    const timerTwo: ReturnType<typeof setTimeout> = setTimeout(() => {
-      setShowPage(true)
-    }, 6000)
-
-    return () => clearTimeout(timerTwo)
   }, [spanOpen])
 
   return (
     <>  
    {/* ----------------------------------top section - Media used----------------------------------- */}
-      <section className={ showPage ? [ styles.sectionOne, styles.sectionOneOpen ].join(' ') : styles.sectionOne }>
+      <section className={ styles.sectionOne }>
         { desktop && <div className={ styles.imagesContainer }>
             <div className={ styles.imgCodeContainer }>
                 <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
@@ -108,7 +95,7 @@ const Skills: NextPage = () => {
         </div>
         <div className={ styles.certificatesContainer }>
           <ul>
-            { certificates.map(certificate => <Certificate key={ certificate.id } certificate={ certificate }/>) }
+            { certificates.map(certificate => <Certificate key={ certificate.certId } certificate={ certificate }/>) }
           </ul>
         </div>
       </section>

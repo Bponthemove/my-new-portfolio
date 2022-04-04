@@ -29,4 +29,8 @@ a, button {
 main {
   overflow-x: hidden;
 }
+
+.noScroll {
+  overflow: hidden;
+}
 /*# sourceMappingURL=globals.css.map */

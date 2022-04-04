@@ -6,6 +6,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  iframes: {
+    domains: [
+      'www.bbc.co.uk',
+      'www.freecodecamp.org',
+
+    ]
+  }
 })
 
 

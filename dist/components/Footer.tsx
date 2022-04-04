@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useReducer } from 'react'
 import emailjs from 'emailjs-com'
-import { FaGithub, FaChevronRight, FaLinkedin, FaChevronLeft, FaArrowUp } from 'react-icons/fa'
+import { FaGithub, FaChevronRight, FaLinkedin, FaChevronLeft, FaArrowUp, FaReact } from 'react-icons/fa'
 import styled from 'styled-components'
 import styles from '../../styles/Footer.module.css'
+import { IconProps, ArrowProps, State, Action } from '../types'
 import usePortfolioContext from '../hooks/usePortfoliocontext'
-
-interface ArrowProps {
-  active: string
-}
-
-interface IconProps {
-  className?: string;
-}
 
 const iconStyle = `
   transform: scale(3); 
@@ -58,16 +51,6 @@ const ACTIONS = {
   SECOND: 'second',
   THIRD: 'third',
   RESET: 'reset'
-}
-
-type State = {
-  first: string
-  second: string
-  third: string
-}
-
-type Action = {
-  type: string
 }
 
 function arrowReducer(state: State, action: Action) {
@@ -117,7 +100,7 @@ export const Footer = () => {
   const [message, setMessage] = useState<string>('')
   const [toTop, setToTop] = useState<boolean>(false)
 
-  const { bottomRef, headerRef } = usePortfolioContext()
+  const { bottomRef, headerRef, scrolling, colorGradient } = usePortfolioContext()
   const { current } = headerRef
 
 //arrows go red every 1 sec
@@ -176,43 +159,53 @@ export const Footer = () => {
     }
 
   return (
-    <footer className={ styles.footer }>
-      <div className={ styles.contact }>
-        <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
-        <form onSubmit={ e => handleInput(e) } id='form' >
-          <div className={ styles.names }>
-            <input type='name' maxLength={ 256 } name='name' aria-label='Name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
-            <input type='email' maxLength={ 256 } name='email' aria-label='Email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
-            <textarea name='message' aria-label='Message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
-          </div>
-          <input type='submit' value='Contact me' title='Send' id={ styles.ContactBtn } />
-        </form>
+    <>
+      <div  className={ styles.arrowUp } 
+            onClick={ () => setToTop(!toTop) } 
+            aria-label='button to scroll to the top'
+            style={{ background: `linear-gradient(to bottom, #f2f3f4 ${100-colorGradient}%, #fe5f55 0%)` }}
+      >
+        <div className={ styles. arrowUpInner }>
+          <FaReact  size={50}
+                    style={{ transform: `rotate(${30*(scrolling/100-2.25)}deg)` }}
+          />
+        </div>
       </div>
-      <div className={ styles.bottomContainer }>
-            <div>
-              {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
-              <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
-                <LinkedIn title='LinkedIn Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
-              </a>
-              <ArrowLeft active={ state.third }/>
-              <ArrowLeft active={ state.second }/>
-              <ArrowLeft active={ state.first }/>
+      <footer className={ styles.footer }>
+        <div className={ styles.contact }>
+          <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
+          <form onSubmit={ e => handleInput(e) } id='form' >
+            <div className={ styles.names }>
+              <input type='name' maxLength={ 256 } name='name' aria-label='Name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
+              <input type='email' maxLength={ 256 } name='email' aria-label='Email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
+              <textarea name='message' aria-label='Message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
             </div>
-            <div>
-              <ArrowRight active={ state.first }/>
-              <ArrowRight active={ state.second }/>
-              <ArrowRight active={ state.third }/>
-              <a href="https://github.com/Bponthemove" target='_blank'>
-                <GitHub title='Github Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
-              </a>
-            </div>
-      </div>
-      <p className={ styles.copyright } ref={ bottomRef }>
-        &copy; Bponthemove @ 2022
-      </p>
-      <button onClick={ () => setToTop(!toTop) } aria-label='button to scroll to the top'>
-        <ArrowTop/>
-      </button>
-    </footer>
+            <input type='submit' value='Contact me' title='Send' id={ styles.ContactBtn } />
+          </form>
+        </div>
+        <div className={ styles.bottomContainer }>
+              <div>
+                {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
+                <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
+                  <LinkedIn title='LinkedIn Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                </a>
+                <ArrowLeft active={ state.third }/>
+                <ArrowLeft active={ state.second }/>
+                <ArrowLeft active={ state.first }/>
+              </div>
+              <div>
+                <ArrowRight active={ state.first }/>
+                <ArrowRight active={ state.second }/>
+                <ArrowRight active={ state.third }/>
+                <a href="https://github.com/Bponthemove" target='_blank'>
+                  <GitHub title='Github Icon' onMouseEnter={ () => setHover(!hover) } onMouseLeave={ () => setHover(!hover) }/>
+                </a>
+              </div>
+        </div>
+        <p className={ styles.copyright } ref={ bottomRef }>
+          &copy; Bponthemove @ 2022
+        </p>
+      </footer>
+    </>
   )
 }

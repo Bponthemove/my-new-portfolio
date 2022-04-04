@@ -165,6 +165,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 @media (min-width: 55em) {
@@ -177,7 +178,7 @@
 }
 
 .certSection .graduationContainer {
-  height: auto;
+  height: 100%;
   width: 100%;
   position: relative;
 }
@@ -201,17 +202,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 @media (min-width: 55em) {
   .certSection .certificatesContainer ul {
-    height: 100%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -220,18 +217,16 @@
 }
 
 .certSection .certificatesContainer ul li {
-  width: 75%;
   padding: 0.4em 0;
-  border-bottom: 1px solid black;
   font-size: 0.9em;
   font-weight: 600;
   list-style: none;
-  text-align: center;
+  text-align: start;
 }
 
 @media (min-width: 55em) {
   .certSection .certificatesContainer ul li {
-    padding: 0.3em;
+    padding: 0.3em 1.6em;
     font-size: 1em;
     text-align: start;
     border: none;

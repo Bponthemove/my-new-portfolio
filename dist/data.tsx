@@ -62,7 +62,7 @@ export const pastTrades = [
   {
     img: '/images/trading.png',
     textOne: '"The last six years I have been working as a self employed tradesman. Renovating bathrooms was the main trade and I especially enjoy plumbing, tiling and paving."',
-    textTwo: '"I combined this with stock trading which is something I have been doing as a hobby for years. This is where I got interested in development as I was always trying to adapt the trading indicators/programs to my liking and most of them are written in Javascript"',
+    textTwo: '"I combined this with stock trading which is something I have been doing as a hobby for years. This is where I got interested in development as I was always trying to adapt the trading indicators/programs to my liking and most of them are written in Javascript."',
     id: 3
   }
 ]
@@ -112,7 +112,6 @@ export const stickmanArr = [
   '/images/paro-AL-happy.png',
   '/images/paro_AL_tired.png',
   '/images/Al-very-sad.png',
-  // '/images/AL_with_red_flag.png',
   '/images/paro-AL-hands-up.png',
   '/images/paro-AL-hip-hop.png',
   '/images/paro-AL-old-man.png',
@@ -126,66 +125,65 @@ export const certificates = [
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/front-end-development-libraries',
     title: 'Front End Development Libraries',
     company: 'freeCodeCamp',
-    id: 1
+    certId: '01'
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/data-visualization',
     title: 'Data Visualization',
     company: 'freeCodeCamp',
-    id: 2
+    certId: '02'
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/javascript-algorithms-and-data-structures',
     title: 'JavaScript Algorithms and Data Structures',
     company: 'freeCodeCamp',
-    id: 3
+    certId: '03'
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
     title: 'Responsive Web Design',
     company: 'freeCodeCamp',
-    id: 4
+    certId: '04'
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
     title: "Back End Development and Api's",
     company: 'freeCodeCamp',
-    id: 5
+    certId: '05'
   },
   {
-    url: '',
+    url: 'https://www.bbc.co.uk',
     title: 'Designated JavaScript Specialist 2020',
     company: 'FrameWork',
-    id: 6
+    certId: '06'
   },
-  {
-    url: '',
+  { url: 'https://www.bbc.co.uk',
     title: 'Designated CSS Specialist 2020',
     company: 'FrameWork',
-    id: 7
+    certId: '07'
   },
   {
-    url: '',
+    url: 'https://www.bbc.co.uk',
     title: 'JavaScript (Basic)',
     company: 'HackerRank',
-    id: 8
+    certId: '08'
   },
   {
-    url: '',
+    url: 'https://www.bbc.co.uk',
     title: 'JavaScript (Intermediate)',
     company: 'HackerRank',
-    id: 9
+    certId: '09'
   },
   {
-    url: '',
+    url: 'https://www.bbc.co.uk',
     title: 'CSS',
     company: 'HackerRank',
-    id: 10
+    certId: '10'
   },
   {
-    url: '',
+    url: 'https://www.bbc.co.uk',
     title: 'React',
     company: 'HackerRank',
-    id: 11
+    certId: '11'
   }
 ]

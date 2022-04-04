@@ -45,7 +45,7 @@
   position: absolute;
   top: 0.8em;
   right: 0.1em;
-  z-index: 999;
+  z-index: 99999;
 }
 
 .container .navContainer .hamburgerOpen {
@@ -142,7 +142,7 @@
 }
 
 .navLinksMobileContainerOpen {
-  z-index: 99;
+  z-index: 9999;
   height: 100%;
   -webkit-transition: 1s;
   transition: 1s;
