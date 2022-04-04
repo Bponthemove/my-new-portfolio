@@ -26,8 +26,8 @@ export const Interest = ({ interest, gifRef }: IInterestProps) => {
             ref={interest.id === 1 ? gifRef : null}
     >
         <h2>{ title }</h2>
+        {/* cant get Next Image to work with animated gif, so stepping back to img tag */}
         <div className={ styles.imgContainer }>
-          //cant get Next Image to work with animated gif, so stepping back to img tag
           { gif && <img src={ img } 
                           width='100%' 
                           height='100%' 

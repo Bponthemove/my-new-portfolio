@@ -2,7 +2,8 @@ My new portfolio site. A simple, lively and dynamic site, with clean lines and c
 
 It is work in progress.
 
-gifs not working in build.
+gifs not working in build. 
+  -- update -- They do work in build, but not in the browser. Checked chrome and edge. Using <img> instead of Next Image provides a short term solution.
 
 Code section needs finishing off. --done--
 Theme toggle needs finsihing and theme colors need to done in \_variables.
