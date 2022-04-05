@@ -16,6 +16,7 @@ export const Interest = ({ interest, gifRef }: IInterestProps) => {
     >
         <h2>{ title }</h2>
         {/* cant get Next Image to work with animated gif, so stepping back to img tag */}
+        {/* seems like you can only use next Image with the unoptimized prop set to true for animated images, which seems that you might as well use the img tag */}
         <div className={ styles.imgContainer }>
           { gif && <img src={ img } 
                           width='100%' 

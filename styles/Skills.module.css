@@ -432,6 +432,7 @@
     background: url("/images/spain-wide.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: bottom left;
   }
 }
 
