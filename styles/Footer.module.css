@@ -6,7 +6,7 @@
   height: 5em;
   right: 1em;
   bottom: 10em;
-  cursor: url(/images/arrowUp.jpg), pointer;
+  cursor: pointer;
   padding: 2em;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 15px -5px RGB(0 0 0/80%);
@@ -52,7 +52,7 @@
   padding: 1em 2em;
   margin: 2em auto;
   border-radius: 2em;
-  background: url("../public/images/background.png") no-repeat;
+  background: url("/images/background.jpg") no-repeat;
   background-size: cover;
 }
 

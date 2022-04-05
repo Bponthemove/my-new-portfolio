@@ -152,36 +152,36 @@ export const certificates = [
     certId: '05'
   },
   {
-    url: 'https://www.bbc.co.uk',
+    url: 'https://www.credential.net/bad3c0a0-0e43-4247-9cd2-98565ed9b5b0#gs.vs623t',
     title: 'Designated JavaScript Specialist 2020',
     company: 'FrameWork',
     certId: '06'
   },
-  { url: 'https://www.bbc.co.uk',
+  { url: 'https://www.credential.net/87a88871-67c9-4040-8ce4-8bc8a1bc3664#gs.vs60ni',
     title: 'Designated CSS Specialist 2020',
     company: 'FrameWork',
     certId: '07'
   },
   {
-    url: 'https://www.bbc.co.uk',
+    url: 'https://www.hackerrank.com/certificates/60fd8ddfb186',
     title: 'JavaScript (Basic)',
     company: 'HackerRank',
     certId: '08'
   },
   {
-    url: 'https://www.bbc.co.uk',
+    url: 'https://www.hackerrank.com/certificates/612178730f48',
     title: 'JavaScript (Intermediate)',
     company: 'HackerRank',
     certId: '09'
   },
   {
-    url: 'https://www.bbc.co.uk',
+    url: 'https://www.hackerrank.com/certificates/f1b75d297ddd',
     title: 'CSS',
     company: 'HackerRank',
     certId: '10'
   },
   {
-    url: 'https://www.bbc.co.uk',
+    url: 'https://www.hackerrank.com/certificates/3f2b4e3c3776',
     title: 'React',
     company: 'HackerRank',
     certId: '11'

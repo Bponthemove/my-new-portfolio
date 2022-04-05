@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import styles from '../../styles/Footer.module.css'
 import usePortfolioContext from '../hooks/usePortfoliocontext'

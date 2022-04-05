@@ -2,23 +2,23 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
-  //--components & types--//
+  //--components--//
 import Certificate from '../dist/components/Certificate'
 import { ListItem } from '../dist/components/ListItem'
-import { ICodeProps, IPastProps } from '../dist/types'
-  //--custom hooks--//
+import { PersonalSkills } from '../dist/components/PersonalSkills'
+import { Stickman } from '../dist/components/Stickman'
+//--custom hooks--//
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
-  //--styles--//
+//--styles--//
 import styles from '../styles/Skills.module.css'
+//--types--//
+import { ICodeProps, IPastProps } from '../dist/types'
   //--data--//
 import { media, pastTrades, myCode, certificates } from '../dist/data'
   //--images--//
 import code from '../public/images/code.jpg'
 import graduation from '../public/images/graduation.jpg'
 import stickPoint from '../public/images/stickman-pointing-right.png'
-  //--icons--//
-import { PersonalSkills } from '../dist/components/PersonalSkills'
-import { Stickman } from '../dist/components/Stickman'
 
 const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
 const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker))
@@ -65,7 +65,7 @@ const Skills: NextPage = () => {
                 <span className={ spanOpen ? styles.spanOpen : styles.spanClosed }>
                   {'>'}
                 </span>
-                { media.map((mediaItem, index) => <ListItem key={ index } mediaItem={ mediaItem} index={ index } spanOpen={ spanOpen }/>) }
+                { media.map((mediaItem, index) => <ListItem key={ index } mediaItem={ mediaItem } index={ index } spanOpen={ spanOpen }/>) }
               </ul>
             </div>
           </div>
