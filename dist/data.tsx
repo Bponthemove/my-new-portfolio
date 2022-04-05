@@ -49,7 +49,7 @@ export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scr
 export const pastTrades = [
   {
     img: '/images/salou.png',
-    textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 20 - 70 staff members (seasonal variances). I learned many valuable life skills as I ended up in situations which I could have never imagined."',
+    textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 20 - 70 staff members (seasonal variances). These very fast paced years of my life taught me determination, people skills and more determination. We hit our targets year in year out and made it into a very succesful business"',
     textTwo: '',
     id: 1
   },
