@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     const animation: ReturnType<typeof setTimeout> = setTimeout(() => {
       setH1Animate(true)
-    }, 1000)
+    }, 500)
   
     return () => clearTimeout(animation)
     }, [])
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
       </div>
 {/*--------------------------------top section-------------------------------- */}
       <section className={[ styles.sectionOne, styles.section ].join(' ')} title='plain background with code grafiti'>
-        <div>
+        <div className={ styles.IamBramContainer }>
           <h1 className={ h1Animate ? [styles.Iam, styles.IamAnimated].join(' ') : styles.Iam }>
             Iam
           </h1>

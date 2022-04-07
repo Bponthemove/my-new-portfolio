@@ -113,13 +113,13 @@
   }
 }
 
-.container .sectionOne :nth-child(1) {
+.container .sectionOne .IamBramContainer {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.container .sectionOne :nth-child(1) .Iam, .container .sectionOne :nth-child(1) .Bram {
+.container .sectionOne .IamBramContainer .Iam, .container .sectionOne .IamBramContainer .Bram {
   font-size: 12vw;
   font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
   line-height: 90%;
@@ -127,39 +127,39 @@
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne :nth-child(1) .Iam, .container .sectionOne :nth-child(1) .Bram {
+  .container .sectionOne .IamBramContainer .Iam, .container .sectionOne .IamBramContainer .Bram {
     font-size: 10vw;
     position: absolute;
   }
 }
 
-.container .sectionOne :nth-child(1) .Iam {
+.container .sectionOne .IamBramContainer .Iam {
   -webkit-transform: translateY(-1em);
           transform: translateY(-1em);
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne :nth-child(1) .Iam {
+  .container .sectionOne .IamBramContainer .Iam {
     bottom: 0.2em;
-    right: 3em;
+    right: -2em;
     opacity: 0;
-    -webkit-transition: right 2.2s ease-out, opacity 0.5s;
-    transition: right 2.2s ease-out, opacity 0.5s;
+    -webkit-transition: right 1.2s ease-out, opacity 0.5s;
+    transition: right 1.2s ease-out, opacity 0.5s;
   }
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne :nth-child(1) .Bram {
+  .container .sectionOne .IamBramContainer .Bram {
     bottom: 3em;
     right: 0.2em;
     opacity: 0;
-    -webkit-transition: bottom 0.2s ease-in 2.5s, opacity 0.3s ease-in-out 2.5s;
-    transition: bottom 0.2s ease-in 2.5s, opacity 0.3s ease-in-out 2.5s;
+    -webkit-transition: bottom 0.2s ease-in 1.4s, opacity 0.3s ease-in-out 1.4s;
+    transition: bottom 0.2s ease-in 1.4s, opacity 0.3s ease-in-out 1.4s;
   }
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne :nth-child(1) .IamAnimated {
+  .container .sectionOne .IamBramContainer .IamAnimated {
     opacity: 1;
     bottom: 0.2em;
     right: 0.2em;
@@ -167,10 +167,33 @@
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne :nth-child(1) .BramAnimated {
+  .container .sectionOne .IamBramContainer .BramAnimated {
     opacity: 1;
     bottom: 0.2em;
     right: 0.2em;
+  }
+}
+
+.container .sectionOne .IamBramContainer .IamAnimated, .container .sectionOne .IamBramContainer .BramAnimated {
+  background: -webkit-gradient(linear, right top, left top, from(#000), color-stop(80%, #000), color-stop(83%, #345255), color-stop(84%, #67A4AA), color-stop(85%, #81CDD5), color-stop(86%, #9BF6FF), color-stop(87%, #81CDD5), color-stop(88%, #67A4AA), color-stop(89%, #345255), color-stop(90%, #000), to(#000));
+  background: linear-gradient(to left, #000 0%, #000 80%, #345255 83%, #67A4AA 84%, #81CDD5 85%, #9BF6FF 86%, #81CDD5 87%, #67A4AA 88%, #345255 89%, #000 90%, #000 100%);
+  background-size: 900% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 10s linear infinite 2s;
+          animation: shine 10s linear infinite 2s;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position: 100% center;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 100% center;
   }
 }
 

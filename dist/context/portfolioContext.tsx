@@ -41,9 +41,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     useEffect(() => {
         //---------setscrolling for stickman--------//
         //no need to run stickman if we do not need it
-        
-        if (!loadStickman) return
-        
+        if (!loadStickman) return     
         window.addEventListener('scroll', scrollStickman)
         return () => window.removeEventListener('scroll', scrollStickman)
     }, [loadStickman])
