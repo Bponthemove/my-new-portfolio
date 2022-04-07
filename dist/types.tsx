@@ -9,6 +9,8 @@ export type ProviderProps = {
     desktop: boolean
     bottomRef: React.RefObject<HTMLParagraphElement>
     headerRef: React.RefObject<HTMLDivElement>
+    loadStickman: boolean
+    setLoadStickman: React.Dispatch<React.SetStateAction<boolean>>
     scroll: number
     setScroll: React.Dispatch<React.SetStateAction<number>>
     scrolling: number

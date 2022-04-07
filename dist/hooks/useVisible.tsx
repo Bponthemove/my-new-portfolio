@@ -6,6 +6,7 @@ const useVisible= (ref: any, rootMargin = "0px") => {
 //parameter needs to be type checked
 
     useEffect(() => {
+      console.log(ref)
       const observer = new IntersectionObserver(
         ([entry]) => {
           setIsVisible(entry.isIntersecting);
@@ -14,7 +15,7 @@ const useVisible= (ref: any, rootMargin = "0px") => {
           rootMargin
         }
       );
-  
+      
       const currentElement = ref?.current;
   
       if (currentElement) {
