@@ -1,7 +1,7 @@
 import React from 'react'
 import { ICertificate } from '../types'
 
-const Certificate = ({ certificate }: ICertificate) => {
+export const Certificate = ({ certificate }: ICertificate) => {
     const { url, title, company, certId } = certificate
 
   return (
@@ -13,5 +13,3 @@ const Certificate = ({ certificate }: ICertificate) => {
       </a>
   )
 }
-
-export default Certificate

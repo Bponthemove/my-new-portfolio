@@ -13,25 +13,17 @@ import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 import useVisible from '../dist/hooks/useVisible'
   //--styles--//
 import styles from '../styles/Home.module.css'
+import { H1 } from '../dist/components/H1'
 
 const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest))
 
 const Home: NextPage = () => {
-  const { themeStrings, menu } = usePortfolioContext()
+  const { menu } = usePortfolioContext()
   const [expanded, setExpanded] = useState(false)
-  const [h1Animate, setH1Animate] = useState(false)
   const router = useRouter()
   const imgRef = useRef(null)
   const gifRef = useRef<null | HTMLDivElement>(null)
   const isVisible = useVisible(imgRef, '-50%')
-
-  useEffect(() => {
-    const animation: ReturnType<typeof setTimeout> = setTimeout(() => {
-      setH1Animate(true)
-    }, 500)
-  
-    return () => clearTimeout(animation)
-    }, [])
 
   useEffect(() => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
@@ -46,23 +38,11 @@ const Home: NextPage = () => {
       
 {/*-------------------------------- running theme ticker-------------------------------- */}
       <div className={ styles.themeTicker }>
-        <div className={ styles.themeInner }>
-            {   themeStrings.map((item: string) => 
-                    <ThemeBox key={ item } item={ item }/>                               
-                )
-            }
-        </div>
+        <ThemeBox />
       </div>
 {/*--------------------------------top section-------------------------------- */}
       <section className={[ styles.sectionOne, styles.section ].join(' ')} title='plain background with code grafiti'>
-        <div className={ styles.IamBramContainer }>
-          <h1 className={ h1Animate ? [styles.Iam, styles.IamAnimated].join(' ') : styles.Iam }>
-            Iam
-          </h1>
-          <h1 className={ h1Animate ? [styles.Bram, styles.BramAnimated].join(' ') : styles.Bram }>
-            Bram
-          </h1>
-        </div>
+        <H1/>
         <aside>
           Inquisitive + creative <br/>={'>'} Front End Development
         </aside>

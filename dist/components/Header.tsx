@@ -7,12 +7,7 @@ import { navLinks } from '../data'
 import styles from '../../styles/Header.module.css'
 
 const Header: NextPage = () => {
-    const { theme, desktop, menu, setMenu, headerRef } = usePortfolioContext()
-
-    useEffect(() => {
-        document.documentElement.className = ''
-        document.documentElement.classList.add(`theme-${theme}`)
-      }, [theme])
+    const { desktop, menu, setMenu, headerRef } = usePortfolioContext()
     
     return (
         <>

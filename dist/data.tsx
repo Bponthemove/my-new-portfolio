@@ -12,6 +12,8 @@ export const navLinks = [
     },
 ]
 
+export const themeStrings: string[] = ['Standard', 'Ukraine']
+
 export const interests = [
   {
     title: 'Save our planet',

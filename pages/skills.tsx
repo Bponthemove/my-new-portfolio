@@ -1,15 +1,14 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
   //--components--//
-import Certificate from '../dist/components/Certificate'
+import { Certificate } from '../dist/components/Certificate'
 import { ListItem } from '../dist/components/ListItem'
 import { PersonalSkills } from '../dist/components/PersonalSkills'
 import { Stickman } from '../dist/components/Stickman'
 //--custom hooks--//
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
-import useVisible from '../dist/hooks/useVisible'
 //--styles--//
 import styles from '../styles/Skills.module.css'
 //--types--//
@@ -20,18 +19,18 @@ import { media, pastTrades, myCode, certificates } from '../dist/data'
 import code from '../public/images/code.jpg'
 import graduation from '../public/images/graduation.jpg'
 import stickPoint from '../public/images/stickman-pointing-right.png'
-  //--dynamic imports to improve first load--//
+//--dynamic imports to improve first load--//
 const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
 const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker))
 const DynamicCode = dynamic<ICodeProps>(() => import('../dist/components/Code').then(mod => mod.Code))
 
 const Skills: NextPage = () => {
-  const [spanOpen, setSpanOpen] = useState<boolean>(false)
-  const [sectionOpen, setSectionOpen] = useState<boolean>(false)
-  const stickmanRef = useRef<HTMLDivElement | null>(null)
-  const { desktop, loadStickman, setLoadStickman } = usePortfolioContext()
-  const stickmanVisible = useVisible(stickmanRef)
 
+  const [spanOpen, setSpanOpen] = useState<boolean>(false)
+  const [sectionOpen, setSectionOpen] = useState<boolean>(false)  
+  const { desktop } = usePortfolioContext()
+
+  
 {/* ----------------------------------rotate > after 1sec of loading--------------------------------------- */}
   useEffect(() => {
     if (spanOpen) return
@@ -41,10 +40,6 @@ const Skills: NextPage = () => {
     return () => clearTimeout(timerOne)
   }, [spanOpen])
 
-  {/* --------------if stickman in viewport set loadStickman to true to start scroll function----------------*/}
-  useEffect(() => {
-    if (stickmanVisible !== loadStickman) setLoadStickman(stickmanVisible)
-  }, [stickmanVisible])
 
   return (
     <>  
@@ -80,7 +75,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
 {/* ----------------------------------scrollAnimation--------------------------------------- */}
-      <section ref={ stickmanRef }>
+      <section>
         <Stickman/>
       </section>
 {/* ----------------------------------Certificates--------------------------------------- */}

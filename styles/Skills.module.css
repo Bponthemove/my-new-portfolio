@@ -31,7 +31,26 @@
 
 .sectionOne .mediaContainer {
   width: 100%;
+}
+
+:global(.theme-Standard) .sectionOne .mediaContainer {
   background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .sectionOne .mediaContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .sectionOne .mediaContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .sectionOne .mediaContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .sectionOne .mediaContainer {
+  background-color: #FFD500;
 }
 
 @media (min-width: 55em) {
@@ -140,13 +159,32 @@
 .scrollRoll {
   width: 100%;
   height: 25vh;
-  background-color: #fe5f55;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+:global(.theme-Standard) .scrollRoll {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .scrollRoll {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .scrollRoll {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .scrollRoll {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .scrollRoll {
+  background-color: #fe5f55;
 }
 
 .scrollRoll .imgScrollContainer {
@@ -166,6 +204,26 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+}
+
+:global(.theme-Standard) .certSection {
+  background-color: #fffffc;
+}
+
+:global(.theme-Rainbows Unicorns) .certSection {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Stephen_King) .certSection {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Random) .certSection {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Ukraine) .certSection {
+  background-color: #005BBB;
 }
 
 @media (min-width: 55em) {
@@ -224,6 +282,26 @@
   text-align: start;
 }
 
+:global(.theme-Standard) .certSection .certificatesContainer ul li {
+  color: #242423;
+}
+
+:global(.theme-Rainbows Unicorns) .certSection .certificatesContainer ul li {
+  color: #FFD500;
+}
+
+:global(.theme-Stephen_King) .certSection .certificatesContainer ul li {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .certSection .certificatesContainer ul li {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .certSection .certificatesContainer ul li {
+  color: #FFD500;
+}
+
 @media (min-width: 55em) {
   .certSection .certificatesContainer ul li {
     padding: 0.3em 1.6em;
@@ -246,13 +324,32 @@
 
 .ticker {
   width: 100%;
-  background-color: #fdffb6;
   border-top: 0.5px  solid black;
   border-bottom: 0.5px  solid black;
   padding-left: 100%;
   overflow: hidden;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+}
+
+:global(.theme-Standard) .ticker {
+  background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .ticker {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .ticker {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .ticker {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .ticker {
+  background-color: #FFD500;
 }
 
 .ticker .innerTicker {
@@ -367,8 +464,24 @@
   border-radius: 2em;
 }
 
-.personality .bottomPersonality .pActive {
+:global(.theme-Standard) .personality .bottomPersonality .pActive {
   background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .personality .bottomPersonality .pActive {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .personality .bottomPersonality .pActive {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .personality .bottomPersonality .pActive {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .personality .bottomPersonality .pActive {
+  background-color: #242423;
 }
 
 .personality .codeBtn {
@@ -378,12 +491,31 @@
   right: 0;
   margin: 0 auto;
   width: 50%;
-  background-color: #fe5f55;
   border-radius: 2em;
   padding: 1em 0;
   font-weight: 800;
   font-size: 1.6em;
   text-align: center;
+}
+
+:global(.theme-Standard) .personality .codeBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .personality .codeBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .personality .codeBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .personality .codeBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .personality .codeBtn {
+  background-color: #fe5f55;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -396,7 +528,6 @@
 }
 
 .sectionCode .codeContainer {
-  background-color: #9bf6ff;
   width: 100%;
   max-height: 499vh;
   display: -webkit-box;
@@ -411,6 +542,26 @@
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
+}
+
+:global(.theme-Standard) .sectionCode .codeContainer {
+  background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .sectionCode .codeContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .sectionCode .codeContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .sectionCode .codeContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .sectionCode .codeContainer {
+  background-color: #FFD500;
 }
 
 .sectionCode .codeContainerClosed {

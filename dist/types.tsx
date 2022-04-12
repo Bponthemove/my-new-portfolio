@@ -1,21 +1,20 @@
 import React from "react"
 
 export type ProviderProps = {
-    themeStrings: string[]
-    theme: string,
-    setTheme: React.Dispatch<React.SetStateAction<string>>
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
     desktop: boolean
     bottomRef: React.RefObject<HTMLParagraphElement>
     headerRef: React.RefObject<HTMLDivElement>
-    loadStickman: boolean
-    setLoadStickman: React.Dispatch<React.SetStateAction<boolean>>
     scroll: number
     setScroll: React.Dispatch<React.SetStateAction<number>>
     scrolling: number
-    setScrolling: React.Dispatch<React.SetStateAction<number>>
     colorGradient: number
+}
+
+export type IStickmanContextTypes = {
+    loadStickman: boolean
+    setLoadStickman: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IListItemProps{

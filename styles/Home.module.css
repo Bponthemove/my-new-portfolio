@@ -4,14 +4,32 @@
 }
 
 .container {
-  background-color: #fffffc;
   margin-top: 2em;
 }
 
 .container .themeTicker {
-  background-color: #9bf6ff;
   padding: 0.5em 0;
   overflow: hidden;
+}
+
+:global(.theme-Standard) .container .themeTicker {
+  background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .container .themeTicker {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .container .themeTicker {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .container .themeTicker {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .container .themeTicker {
+  background-color: #FFD500;
 }
 
 .container .themeTicker .themeInner {
@@ -82,22 +100,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.theme-Standard .container .sectionOne {
-  background-color: #fdffb6;
-}
-
-.theme-Rainbows Unicorns .container .sectionOne {
-  background-color: #242423;
-}
-
-.theme-Moody .container .sectionOne {
-  background-color: #242423;
-}
-
-.theme-Random .container .sectionOne {
-  background-color: #242423;
 }
 
 @media (min-width: 35em) {
@@ -235,11 +237,50 @@
       justify-self: center;
   padding: 0.75em 2em;
   border-radius: 1em;
-  background-color: #fe5f55;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   font-weight: 800;
   font-size: 0.8em;
+}
+
+:global(.theme-Standard) .container .sectionOne .download {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .container .sectionOne .download {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .container .sectionOne .download {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .container .sectionOne .download {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .container .sectionOne .download {
+  background-color: #242423;
+}
+
+:global(.theme-Standard) .container .sectionOne .download {
+  color: #242423;
+}
+
+:global(.theme-Rainbows Unicorns) .container .sectionOne .download {
+  color: #FFD500;
+}
+
+:global(.theme-Stephen_King) .container .sectionOne .download {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .container .sectionOne .download {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .container .sectionOne .download {
+  color: #FFD500;
 }
 
 @media (min-width: 35em) {
@@ -260,9 +301,23 @@
 
 @media (hover: hover) and (pointer: fine) {
   .container .sectionOne .download:hover {
-    background-color: #fa8d85;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+  }
+  :global(.theme-Standard) .container .sectionOne .download:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Rainbows Unicorns) .container .sectionOne .download:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Stephen_King) .container .sectionOne .download:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Random) .container .sectionOne .download:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Ukraine) .container .sectionOne .download:hover {
+    background-color: #fa8d85;
   }
 }
 
@@ -289,13 +344,52 @@
   padding: 1em;
 }
 
+:global(.theme-Standard) .container .sectionTwo .divOne {
+  color: #242423;
+}
+
+:global(.theme-Rainbows Unicorns) .container .sectionTwo .divOne {
+  color: #FFD500;
+}
+
+:global(.theme-Stephen_King) .container .sectionTwo .divOne {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .container .sectionTwo .divOne {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .container .sectionTwo .divOne {
+  color: #FFD500;
+}
+
 .container .sectionTwo .divQoute {
   font-family: Kalam, Caveat, Bradley Hand, cursive;
-  background-color: #9bf6ff;
   margin: 1.5em;
   padding: 6em 2em;
   border-radius: 2em;
   position: relative;
+}
+
+:global(.theme-Standard) .container .sectionTwo .divQoute {
+  background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .container .sectionTwo .divQoute {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .container .sectionTwo .divQoute {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .container .sectionTwo .divQoute {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .container .sectionTwo .divQoute {
+  background-color: #FFD500;
 }
 
 @media (min-width: 35em) {

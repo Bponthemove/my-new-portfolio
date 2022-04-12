@@ -18,15 +18,15 @@ export const ScrollIndicator = () => {
 
   return (
     <div  className={ styles.arrowUp } 
-            onClick={ () => setToTop(!toTop) } 
-            style={{ background: `linear-gradient(to bottom, #f2f3f4 ${100-colorGradient}%, #fe5f55 0%)` }}
-      >
-        <div className={ styles. arrowUpInner }>
-          <FaReact  size={50}
-                    style={{ transform: `rotate(${30*(scrolling/100-2.25)}deg)` }}
-          />
-        </div>
+          onClick={ () => setToTop(!toTop) } 
+          style={{ background: `linear-gradient(to bottom, #f2f3f4 ${100-colorGradient}%, #fe5f55 0%)` }}
+    >
+      <div className={ styles. arrowUpInner }>
+        <FaReact  size={50}
+                  style={{ transform: `rotate(${30*(scrolling/100-2.25)}deg)` }}
+        />
       </div>
+    </div>
   )
 }
 

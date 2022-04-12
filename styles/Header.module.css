@@ -15,26 +15,69 @@
           box-shadow: 6px 0 15px 0 RGB(0 0 0/5%);
 }
 
-.theme-Standard .container {
-  color: #9bf6ff;
+:global(.theme-Standard) .container {
+  background-color: #fffffc;
 }
 
-.theme-Rainbows Unicorns .container {
+:global(.theme-Rainbows Unicorns) .container {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Stephen_King) .container {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Random) .container {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Ukraine) .container {
+  background-color: #005BBB;
+}
+
+:global(.theme-Standard) .container {
   color: #242423;
 }
 
-.theme-Moody .container {
-  color: #242423;
+:global(.theme-Rainbows Unicorns) .container {
+  color: #FFD500;
 }
 
-.theme-Random .container {
-  color: #242423;
+:global(.theme-Stephen_King) .container {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .container {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .container {
+  color: #FFD500;
 }
 
 .container h1 {
   font-size: 2em;
-  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
   padding: 0.6em 0;
+}
+
+:global(.theme-Standard) .container h1 {
+  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
+}
+
+:global(.theme-Rainbows Unicorns) .container h1 {
+  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
+}
+
+:global(.theme-Stephen_King) .container h1 {
+  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
+}
+
+:global(.theme-Random) .container h1 {
+  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
+}
+
+:global(.theme-Ukraine) .container h1 {
+  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
 }
 
 .container .navContainer .hamburger {
@@ -89,6 +132,26 @@
   padding: 0.5em 1em;
   cursor: pointer;
   font-weight: 600;
+}
+
+:global(.theme-Standard) .container .navContainer .navlinkContainer .linkContainer a {
+  color: #242423;
+}
+
+:global(.theme-Rainbows Unicorns) .container .navContainer .navlinkContainer .linkContainer a {
+  color: #FFD500;
+}
+
+:global(.theme-Stephen_King) .container .navContainer .navlinkContainer .linkContainer a {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .container .navContainer .navlinkContainer .linkContainer a {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .container .navContainer .navlinkContainer .linkContainer a {
+  color: #FFD500;
 }
 
 .container .navContainer .navlinkContainer .linkContainer .aNotActive {
@@ -151,7 +214,6 @@
 .contactBtn {
   padding: 0.8em 3em;
   border-radius: 1em;
-  background-color: #fe5f55;
   font-size: 1.2em;
   font-weight: 700;
   -webkit-transition: 0.25s;
@@ -159,11 +221,45 @@
   cursor: pointer;
 }
 
+:global(.theme-Standard) .contactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .contactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .contactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .contactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .contactBtn {
+  background-color: #242423;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .contactBtn:hover {
-    background-color: #fa8d85;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+  }
+  :global(.theme-Standard) .contactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Rainbows Unicorns) .contactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Stephen_King) .contactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Random) .contactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Ukraine) .contactBtn:hover {
+    background-color: #fa8d85;
   }
 }
 

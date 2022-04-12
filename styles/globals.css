@@ -10,7 +10,26 @@ body {
   text-shadow: RGB(74 68 73/1%) 0 0 1px;
   font-family: Kanit, Titan One, Domine, Trebuchet, sans-serif, -apple-system, serif, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 16px;
+}
+
+.theme-Standard body {
   background-color: #fffffc;
+}
+
+.theme-Rainbows Unicorns body {
+  background-color: #F5F4F4;
+}
+
+.theme-Stephen_King body {
+  background-color: #F5F4F4;
+}
+
+.theme-Random body {
+  background-color: #F5F4F4;
+}
+
+.theme-Ukraine body {
+  background-color: #005BBB;
 }
 
 a, button {

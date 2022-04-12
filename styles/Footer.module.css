@@ -20,6 +20,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.12s ease-in-out;
+  transition: all 0.12s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrowUp:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    -webkit-box-shadow: 0 0 15px -3px RGB(0 0 0/100%);
+            box-shadow: 0 0 15px -3px RGB(0 0 0/100%);
+  }
 }
 
 .arrowUp .arrowUpInner {
@@ -33,8 +44,27 @@
 
 .footer {
   padding-top: 2em;
-  background-color: #9bf6ff;
   position: relative;
+}
+
+:global(.theme-Standard) .footer {
+  background-color: #9bf6ff;
+}
+
+:global(.theme-Rainbows Unicorns) .footer {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .footer {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .footer {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .footer {
+  background-color: #FFD500;
 }
 
 .footer .contact {
@@ -97,13 +127,52 @@
 
 .footer .contact form #ContactBtn {
   width: 50%;
-  background-color: #fe5f55;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   cursor: pointer;
   border: none;
   padding: 0.5em;
   font-weight: 800;
+}
+
+:global(.theme-Standard) .footer .contact form #ContactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Stephen_King) .footer .contact form #ContactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Random) .footer .contact form #ContactBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .footer .contact form #ContactBtn {
+  background-color: #242423;
+}
+
+:global(.theme-Standard) .footer .contact form #ContactBtn {
+  color: #242423;
+}
+
+:global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn {
+  color: #FFD500;
+}
+
+:global(.theme-Stephen_King) .footer .contact form #ContactBtn {
+  color: #FFD500;
+}
+
+:global(.theme-Random) .footer .contact form #ContactBtn {
+  color: #FFD500;
+}
+
+:global(.theme-Ukraine) .footer .contact form #ContactBtn {
+  color: #FFD500;
 }
 
 @media (min-width: 35em) {
@@ -114,9 +183,23 @@
 
 @media (hover: hover) and (pointer: fine) {
   .footer .contact form #ContactBtn:hover {
-    background-color: #fa8d85;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+  }
+  :global(.theme-Standard) .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Stephen_King) .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Random) .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
+  }
+  :global(.theme-Ukraine) .footer .contact form #ContactBtn:hover {
+    background-color: #fa8d85;
   }
 }
 
