@@ -104,7 +104,6 @@
 
 @media (min-width: 35em) {
   .container .sectionOne {
-    display: block;
     padding: 14em 2em 6em;
   }
 }
@@ -228,7 +227,7 @@
     top: 13em;
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
-    font-size: 1.7em;
+    font-size: 4.5vh;
   }
 }
 
@@ -286,7 +285,8 @@
 @media (min-width: 35em) {
   .container .sectionOne .download {
     position: absolute;
-    bottom: 3em;
+    bottom: -2em;
+    left: 5em;
     font-size: 1em;
     padding: 1em 2em;
   }
