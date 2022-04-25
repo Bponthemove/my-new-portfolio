@@ -92,7 +92,7 @@ export const myCode = [
   },  
   {
     img: '/images/oldPortfolio.jpg',
-    text: 'This is my old portfolio, which I made while learning Express and Mongo. Images are served from Cloudinay and authorization is with UserFront. It has a little blog page which is "members only", but sign in has test user and password, so that you dont have to sign up for real.',
+    text: 'This is my old portfolio, which I made while learning Express and Mongo. Images are served from Cloudinary and authorization is with UserFront. It has a little blog page which is "members only", but sign in has test user and password, so that you dont have to sign up for real.',
     tags: 'Express, Mongo, Mongoose, Userfront, Cloudinary, React',
     link: 'https://github.com/Bponthemove/portfolio',
     live: 'https://kind-shaw-87f836.netlify.app/',
