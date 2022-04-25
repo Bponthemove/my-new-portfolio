@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
@@ -12,9 +13,9 @@ import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 //--styles--//
 import styles from '../styles/Skills.module.css'
 //--types--//
-import { ICodeProps, IPastProps } from '../dist/types'
+import { IPastProps } from '../dist/types'
   //--data--//
-import { media, pastTrades, myCode, certificates } from '../dist/data'
+import { media, pastTrades, certificates } from '../dist/data'
   //--images--//
 import code from '../public/images/code.jpg'
 import graduation from '../public/images/graduation.jpg'
@@ -22,7 +23,6 @@ import stickPoint from '../public/images/stickman-pointing-right.png'
 //--dynamic imports to improve first load--//
 const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
 const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker))
-const DynamicCode = dynamic<ICodeProps>(() => import('../dist/components/Code').then(mod => mod.Code))
 
 const Skills: NextPage = () => {
 
@@ -100,19 +100,10 @@ const Skills: NextPage = () => {
         </div>
         <PersonalSkills/>
 {/* --------overlay container - Code button-------- */}
-        <div  className={ styles.codeBtn } 
-              onClick={ () => setSectionOpen(!sectionOpen) }
-              style={ sectionOpen ? { cursor: 'url(/images/arrowUp.png), pointer' } : { cursor: 'url(/images/arrowDown.png), pointer' }}
-        >
-              Code
-        </div>
+        <Link href="/projects">
+          <a className={ styles.codeBtn }>Code</a>
+        </Link>               
         {/* ----------------------------------------------- */}
-      </section>
-{/* ----------------------------------My Code Open & close with code button--------------------------------------- */}
-      <section className={ styles.sectionCode }>
-        <div className={ sectionOpen ? styles.codeContainer : [ styles.codeContainer, styles.codeContainerClosed ].join(' ') }>
-              { myCode.map(code => <DynamicCode code={ code } key={ code.id }/>) }
-        </div>
       </section>
 {/* ----------------------------------absolute image overlay--------------------------------------- */}
       <div className={ styles.parallax } title='beautiful landscape'>

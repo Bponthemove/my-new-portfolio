@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kanit:wght@300&family=Modak&family=Moul&family=Caveat&family=Kalam&family=Titan+One&family=Domine&display=swap");
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .header {
+  text-align: center;
+  padding: 3em;
+}
+
+.wrapper .header * {
+  padding: 0.5em 0;
+}
+
+.wrapper .outerContainer .sectionCode .codeContainer {
+  padding: 2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2vw;
+  overflow: hidden;
+}
+
+.wrapper .outerContainer .sectionCode .tile {
+  width: 90%;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4em;
+  cursor: pointer;
+  opacity: 0.6;
+  position: relative;
+}
+
+:global(.theme-Standard) .wrapper .outerContainer .sectionCode .tile {
+  background-color: #fffffc;
+}
+
+:global(.theme-Rainbows Unicorns) .wrapper .outerContainer .sectionCode .tile {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Stephen_King) .wrapper .outerContainer .sectionCode .tile {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Random) .wrapper .outerContainer .sectionCode .tile {
+  background-color: #F5F4F4;
+}
+
+:global(.theme-Ukraine) .wrapper .outerContainer .sectionCode .tile {
+  background-color: #005BBB;
+}
+
+@media (min-width: 35em) {
+  .wrapper .outerContainer .sectionCode .tile {
+    -webkit-box-flex: 45%;
+        -ms-flex: 45%;
+            flex: 45%;
+    width: 45%;
+    gap: 4em;
+  }
+}
+
+@media (min-width: 55em) {
+  .wrapper .outerContainer .sectionCode .tile {
+    -webkit-box-flex: calc(90vw * 0.33333);
+        -ms-flex: calc(90vw * 0.33333);
+            flex: calc(90vw * 0.33333);
+    width: calc(90vw * 0.33333);
+    gap: 6em;
+  }
+}
+
+@media (min-width: 55em) and (hover: hover) and (pointer: fine) {
+  .wrapper .outerContainer .sectionCode .tile:hover {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    opacity: 1;
+  }
+}
+
+.wrapper .outerContainer .sectionCode .tile img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .outerContainer .sectionCode .tile:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.wrapper .overlay {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  background-size: cover;
+}
+
+.wrapper .overlay .close {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  cursor: pointer;
+  z-index: 9998;
+}
+
+.wrapper .overlay img {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.wrapper .overlay .modalText {
+  border: solid 0.5em black;
+  background-color: #fffffc;
+  position: relative;
+  width: 80%;
+  margin: 9em auto;
+  -webkit-transition: all 0.3 ease-in-out 0.4s;
+  transition: all 0.3 ease-in-out 0.4s;
+  z-index: 999;
+}
+
+@media (min-width: 55em) {
+  .wrapper .overlay .modalText {
+    margin: 60vh auto;
+  }
+}
+
+.wrapper .overlay .modalText .slide {
+  position: absolute;
+  background-color: #fffffc;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.wrapper .overlay .modalText .slideOpen {
+  width: 0%;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.wrapper .overlay .modalText .modalInner {
+  padding: 1em;
+}
+
+@media (min-width: 35em) {
+  .wrapper .overlay .modalText .modalInner {
+    padding: 4em;
+  }
+}
+
+.wrapper .overlay .modalText .modalInner .tags {
+  font-weight: 600;
+  padding-top: 0.5em;
+}
+
+.wrapper .overlay .modalText .modalInner .linkContainer {
+  padding-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper .overlay .modalText .modalInner .linkContainer a {
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.wrapper .overlay .modalText .modalInner .linkContainer a svg {
+  border-radius: 50%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wrapper .overlay .modalText .modalInner .linkContainer a svg:hover {
+    background-color: black;
+    color: #fffffc;
+  }
+}
+
+.wrapper .overlayVisible {
+  border: solid 0.5em black;
+  top: 0;
+  height: 100vh;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  z-index: 998;
+}
+/*# sourceMappingURL=Projects.module.css.map */

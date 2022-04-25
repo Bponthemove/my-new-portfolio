@@ -496,6 +496,7 @@
   font-weight: 800;
   font-size: 1.6em;
   text-align: center;
+  cursor: pointer;
 }
 
 :global(.theme-Standard) .personality .codeBtn {
@@ -525,49 +526,6 @@
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-}
-
-.sectionCode .codeContainer {
-  width: 100%;
-  max-height: 499vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 2vw;
-  overflow: hidden;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
-}
-
-:global(.theme-Standard) .sectionCode .codeContainer {
-  background-color: #9bf6ff;
-}
-
-:global(.theme-Rainbows Unicorns) .sectionCode .codeContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Stephen_King) .sectionCode .codeContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Random) .sectionCode .codeContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Ukraine) .sectionCode .codeContainer {
-  background-color: #FFD500;
-}
-
-.sectionCode .codeContainerClosed {
-  max-height: 0;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
 }
 
 .parallax {

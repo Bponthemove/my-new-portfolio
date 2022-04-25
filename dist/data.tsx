@@ -7,6 +7,10 @@ export const navLinks = [
       path: "/skills",
     },
     {
+      name: "Live Projects",
+      path: "/projects"
+    },
+    {
       name: "Contact",
       path: '',
     },
@@ -72,38 +76,50 @@ export const pastTrades = [
 export const myCode = [
   {
     img: '/images/weather.jpg',
-    text: 'A weather app built with Next.js and served on Netlify. Easy accessible right menu for mobile hand-held devices. Weather Outlook with responsive temperature visualization, air pollution chart and weather map with various layers. Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps.',
+    text: 'A weather app built with Next.js and served on Netlify. Easy accessible right menu for mobile hand-held devices. Weather Outlook with responsive temperature visualization, air pollution chart and weather map with various layers.',
+    tags: 'Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps',
     link: 'https://github.com/Bponthemove/weatherapp',
+    live: 'https://optimistic-lewin-59be2b.netlify.app/',
     id: 1
   },
   {
     img: '/images/drump.jpg',
     text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Very first React project. Was meant to be a drum machine, but made it a little bit more fun',
+    tags: 'React',
     link: 'https://github.com/Bponthemove/Drump-machine',
+    live: 'https://drump-machine.herokuapp.com/',
     id: 2
   },  
   {
     img: '/images/oldPortfolio.jpg',
-    text: 'This is my old portfolio, which I made while learning Express and Mongo. Both client and server side are on github, the back end is served on Heroku and takes a little bit of time to load. Images are served from Cloudinay and authorization is with UserFront. It has a little blog page which is "members only", but sign in has test user and password, so that you dont have to sign up for real.',
+    text: 'This is my old portfolio, which I made while learning Express and Mongo. Images are served from Cloudinay and authorization is with UserFront. It has a little blog page which is "members only", but sign in has test user and password, so that you dont have to sign up for real.',
+    tags: 'Express, Mongo, Mongoose, Userfront, Cloudinary, React',
     link: 'https://github.com/Bponthemove/portfolio',
+    live: 'https://kind-shaw-87f836.netlify.app/',
     id: 3
   },
   {
     img: '/images/calculator.jpg',
     text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Later rewritten to practise Typescript.',
+    tags: 'TypeScript, React',
     link: 'https://github.com/Bponthemove/calculatorTS',
+    live: 'https://calculatorfcc.herokuapp.com/',
     id: 4
   },
   {
     img: '/images/memory.jpg',
-    text: 'One of the first things I built when I was learning javascript. My children absolutely love playing memory so I thought it would be a good idea to do that in js. I have later rewritten it in React and Typescript. I still have to make it responsive for smaller screens.',
+    text: 'One of the first things I built when I was learning javascript. My children absolutely love playing memory so I thought it would be a good idea to do that in js. I have later rewritten it in React. And currenlty I am adding TypeScript and making it more responsive.',
+    tags: 'JavaScript logic, board games, React',
     link: 'https://github.com/Bponthemove/Memory',
+    live: 'https://memorybp.herokuapp.com/',
     id: 5
   },
   {
     img: '/images/news.jpg',
-    text: 'News ticker run on a free tier of gNews api. Built with React, Typescript and Sass.',
+    text: 'News ticker run on a free tier of gNews api. Practising with API calls and handling data.',
+    tags: "React, Axios, API's",
     link: 'https://github.com/Bponthemove/news',
+    live: 'https://amazing-morse-8d93e7.netlify.app/',
     id: 6
   }
 ]

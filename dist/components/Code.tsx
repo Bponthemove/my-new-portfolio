@@ -1,20 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
-import { FaGithub } from 'react-icons/fa'
 import { ICodeProps } from '../types'
-import styles from '../../styles/Code.module.css'
+import styles from '../../styles/Projects.module.css'
 
-export const Code = ({ code }: ICodeProps) => {
+export const Code = ({ code, setClickedId }: ICodeProps) => {
 
   return (
-    <div className={ styles.code }>
-        <div className={ styles.imgContainer }>
-            <Image src={ code.img } width='100%' height='100%' layout='responsive' objectFit='contain' alt={code.img}></Image>
-        </div>
-        <p>{ code.text }</p>
-        <a href={ code.link } target='_blank'>
-          <FaGithub size={50}/>
-        </a>
+    <div 
+      className={ styles.tile }
+      onClick={ () => setClickedId(code.id) }
+    >
+      <Image src={ code.img } layout='fill' objectFit='cover' alt={code.img}></Image>
     </div>
   )
 }

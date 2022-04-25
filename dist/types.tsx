@@ -43,6 +43,7 @@ export interface ICodeProps {
         link: string
         id: number
     }
+    setClickedId: React.Dispatch<React.SetStateAction<number | null>>
 }
 
 export interface IPastProps {
