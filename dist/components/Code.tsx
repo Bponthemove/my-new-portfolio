@@ -10,7 +10,14 @@ export const Code = ({ code, setClickedId }: ICodeProps) => {
       className={ styles.tile }
       onClick={ () => setClickedId(code.id) }
     >
-      <Image src={ code.img } layout='fill' objectFit='cover' alt={code.img}></Image>
+      <Image 
+        src={ code.img } 
+        layout='fill' 
+        objectFit='cover' 
+        alt={ code.img } 
+        placeholder='blur' 
+        priority={ code.id < 4 ? true : false }
+      />
     </div>
   )
 }
