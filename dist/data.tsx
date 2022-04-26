@@ -50,7 +50,7 @@ export const personality =[
   'Excellent Communication skills', 'Excellent People skills', 'Multilingual'
 ]
 
-export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scrimba', 'Traversy Media', 'Udemy']
+export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scrimba', 'Framework', 'Udemy']
 
 export const pastTrades = [
   {
@@ -125,17 +125,8 @@ export const myCode = [
 ]
 
 export const stickmanArr = [
-  '/images/stickman-pointing-right.png',
-  '/images/stickman-scratching-head.png',
-  '/images/stickman-happy.png',
-  '/images/stickman-tired.png',
-  '/images/stickman-very-sad.png',
-  '/images/stickman-hands-up.png',
-  '/images/stickman-hip-hop.png',
-  '/images/stickman-old-man.png',
-  '/images/stickman-sad.png',
-  '/images/stickman-sleeping.png',
-  '/images/stickman-jumping.png'
+  '/images/stickman-pushing1.png',
+  '/images/stickman-pushing2.png'
 ]
 
 export const certificates = [
@@ -170,38 +161,44 @@ export const certificates = [
     certId: '05'
   },
   {
+    url: 'https://www.credential.net/27674766-9037-4ab4-9f92-18f4e5e99df4#gs.y1vfm5',
+    title: 'Designated HTML5 Specialist',
+    company: 'FrameWork',
+    certId: '06'
+  },
+  {
     url: 'https://www.credential.net/bad3c0a0-0e43-4247-9cd2-98565ed9b5b0#gs.vs623t',
     title: 'Designated JavaScript Specialist 2020',
     company: 'FrameWork',
-    certId: '06'
+    certId: '07'
   },
   { url: 'https://www.credential.net/87a88871-67c9-4040-8ce4-8bc8a1bc3664#gs.vs60ni',
     title: 'Designated CSS Specialist 2020',
     company: 'FrameWork',
-    certId: '07'
+    certId: '08'
   },
   {
     url: 'https://www.hackerrank.com/certificates/60fd8ddfb186',
     title: 'JavaScript (Basic)',
     company: 'HackerRank',
-    certId: '08'
+    certId: '09'
   },
   {
     url: 'https://www.hackerrank.com/certificates/612178730f48',
     title: 'JavaScript (Intermediate)',
     company: 'HackerRank',
-    certId: '09'
+    certId: '10'
   },
   {
     url: 'https://www.hackerrank.com/certificates/f1b75d297ddd',
     title: 'CSS',
     company: 'HackerRank',
-    certId: '10'
+    certId: '11'
   },
   {
     url: 'https://www.hackerrank.com/certificates/3f2b4e3c3776',
     title: 'React',
     company: 'HackerRank',
-    certId: '11'
+    certId: '12'
   }
 ]

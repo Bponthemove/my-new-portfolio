@@ -14,8 +14,7 @@ export const Code = ({ code, setClickedId }: ICodeProps) => {
         src={ code.img } 
         layout='fill' 
         objectFit='cover' 
-        alt={ code.img } 
-        placeholder='blur' 
+        alt={ code.img }  
         priority={ code.id < 4 ? true : false }
       />
     </div>

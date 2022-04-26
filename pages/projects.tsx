@@ -38,6 +38,14 @@ const projects: NextPage = () => {
                 <p>
                     Main tools used are React(some with Next), JavaScript/TypeScript, CSS with jQuery or Sass. Some focus on calling API's, I like using Axios for this. Others focus on React and its component structure. Some have some kind of back end to practise with express and database coding. Some are served on Heroku and take some time to load as Heroku puts apps to sleep after a time of inactivity. Others are on Netlify.
                 </p>
+                <div className={ styles.portfolio }>
+                    <p>
+                        This portfolio site is obviously also part of my projects. Using Next.js, TypeScript, Sass and Styled Components. 
+                    </p>
+                    <a href='https://github.com/Bponthemove/my-new-portfolio' target='_blank'>
+                        <FaGithub size={50}/>
+                    </a> 
+                </div>
             </section>
             <section className={ styles.outerContainer }>
                 <div className={ styles.sectionCode }>

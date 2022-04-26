@@ -6,15 +6,11 @@ export type ProviderProps = {
     desktop: boolean
     bottomRef: React.RefObject<HTMLParagraphElement>
     headerRef: React.RefObject<HTMLDivElement>
+    stickmanRef: React.RefObject<HTMLDivElement>
     scroll: number
     setScroll: React.Dispatch<React.SetStateAction<number>>
     scrolling: number
     colorGradient: number
-}
-
-export type IStickmanContextTypes = {
-    loadStickman: boolean
-    setLoadStickman: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IListItemProps{

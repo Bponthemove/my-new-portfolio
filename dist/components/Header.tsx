@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FiMenu } from 'react-icons/fi'
 import usePortfolioContext from '../hooks/usePortfoliocontext' 
 import { NextPage } from 'next'
@@ -18,9 +18,6 @@ const Header: NextPage = () => {
                     </h1>
                     
                 </div>
-                <p style={{color: 'red', fontWeight: 'bolder', fontSize: '1.2em', textDecoration: 'underline'}}>
-                    This site is still under construction!! 
-                </p>
                 <nav className={ styles.navContainer }>
                     { !desktop && 
                         <FiMenu

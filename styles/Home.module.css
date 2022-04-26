@@ -449,8 +449,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
-  transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+  -webkit-transition: color 0.4s linear 0.5s, background-color 0.4s linear 0.5s;
+  transition: color 0.4s linear 0.5s, background-color 0.4s linear 0.5s;
 }
 
 @media (min-width: 55em) {
@@ -462,15 +462,15 @@
 
 .container .sectionThree .divOnImg .p {
   max-height: 0;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   overflow: hidden;
 }
 
 .container .sectionThree .divOnImg .pExpanded {
   max-height: 199vh;
-  -webkit-transition: 1.8s;
-  transition: 1.8s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .container .sectionThree .divOnImg span {
@@ -482,8 +482,8 @@
   background-color: rgba(108, 117, 125, 0.85);
   border-radius: 1em;
   color: #fffffc;
-  -webkit-transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
-  transition: color 0.8s linear 1s, background-color 0.8s linear 1s;
+  -webkit-transition: color 0.4s linear 0.5s, background-color 0.4s linear 0.5s;
+  transition: color 0.4s linear 0.5s, background-color 0.4s linear 0.5s;
 }
 
 .container .sectionThree::before {
@@ -497,14 +497,14 @@
   bottom: 0px;
   left: 0px;
   opacity: 1;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .container .sectionThreeLoaded::before {
   opacity: 0.2;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .container .sectionThreeExpanded {

@@ -1,51 +1,37 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Skills.module.css'
 import { stickmanArr } from '../data'
 import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useVisible from '../hooks/useVisible'
+import useStickman from '../hooks/useStickman'
 
 export const Stickman = () => {
-  const [loadStickman, setLoadStickman] = useState(false)
-    const offset: React.MutableRefObject<number> = useRef(0)
-    const stickmanRef = useRef<HTMLDivElement | null>(null)
-    const { scroll, setScroll } = usePortfolioContext()
-    const stickmanVisible = useVisible(stickmanRef)
-
-    {/* --------------if stickman in viewport set loadStickman to true to start scroll function----------------*/}
-  useEffect(() => {
-    if (stickmanVisible !== loadStickman) setLoadStickman(stickmanVisible)
-  }, [stickmanVisible])
-
-    useEffect(() => {
-        //---------setscrolling for stickman--------//
-        //no need to run stickman if we do not need it
-        if (!loadStickman) return     
-        window.addEventListener('scroll', scrollStickman)
-        return () => window.removeEventListener('scroll', scrollStickman)
-    }, [loadStickman])
-
-    const scrollStickman = () => {
-        console.log(offset.current)
-        //check if offset is 100 more than previous, if so then increment scrolling by 1
-        let current = Math.floor((window.scrollY - offset.current) / 100)
-        if (scroll === current) return
-        return current < 11 ? setScroll(current) : setScroll(0)        
-    }
-
+  
+  const { desktop, stickmanRef } = usePortfolioContext()
+  const stickman = useStickman()
+      
   return (
     <div  className={ styles.scrollRoll }
           ref={ stickmanRef }
     >
-        <div  className={ styles.imgScrollContainer } 
-              style={ { transform: `translateX(${scroll * (100 / 12)}vw)`, transition: 'transform 0.05s ease-in-out' } }
-        >
-          <Image  src={ stickmanArr[scroll] } 
+      <p className={ styles.text }>
+        { desktop ? 'Certificates earned through FreeCodeCamp, Hackerrank and Framework. Also passed several LinkedIn skill tests.' : 'Certificates earned.' }
+      </p>
+      <div  className={ styles.imgScrollContainer } 
+            style={{ width: `${ 100 - (stickman * 5) }%` }}
+      >
+      </div>
+      <div  className={ styles.pushing }
+            style={{ transform: `translateX(${ (stickman - 2) * 50 }%)` }}
+      >
+        <div className={ styles.imgWrapper }>
+          <Image  src={ stickman % 2 === 0 ? stickmanArr[0] : stickmanArr[1] } 
                   objectFit='contain' 
                   layout='fill' 
-                  alt={ stickmanArr[scroll].slice(8, stickmanArr[scroll].length - 4) }
+                  alt='stickman pushing'
           />
         </div>
       </div>
+    </div>
   )
 }

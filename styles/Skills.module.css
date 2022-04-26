@@ -159,12 +159,7 @@
 .scrollRoll {
   width: 100%;
   height: 25vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
 }
 
 :global(.theme-Standard) .scrollRoll {
@@ -187,10 +182,54 @@
   background-color: #fe5f55;
 }
 
+.scrollRoll .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 .scrollRoll .imgScrollContainer {
-  height: 80%;
-  width: 20%;
+  height: 100%;
+  width: 90%;
+  position: absolute;
+  right: 0;
+}
+
+:global(.theme-Standard) .scrollRoll .imgScrollContainer {
+  background-color: #fdffb6;
+}
+
+:global(.theme-Rainbows Unicorns) .scrollRoll .imgScrollContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Stephen_King) .scrollRoll .imgScrollContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Random) .scrollRoll .imgScrollContainer {
+  background-color: #242423;
+}
+
+:global(.theme-Ukraine) .scrollRoll .imgScrollContainer {
+  background-color: #005BBB;
+}
+
+.scrollRoll .pushing {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+}
+
+.scrollRoll .pushing .imgWrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .certSection {

@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
     if (!isVisible && expanded) {
       setExpanded(false)
-      if (gifRef.current) gifRef.current.scrollIntoView()
+      if (gifRef.current) gifRef.current.scrollIntoView({block: 'center'})
     }
   }, [isVisible])
   
