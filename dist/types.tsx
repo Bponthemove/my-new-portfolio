@@ -1,6 +1,8 @@
 import React from "react"
 
 export type ProviderProps = {
+    leaveHiddenOpen: number
+    setLeaveHiddenOpen: React.Dispatch<React.SetStateAction<number>>
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
     toBottom: boolean

@@ -8,6 +8,7 @@ export const PortfolioContext = createContext<ProviderProps | undefined>(undefin
 export const PortfolioContextProvider:React.FC = ({ children }) => {
     // const [theme, setTheme] = useState<string>('standard')
     const [menu, setMenu] = useState<boolean>(false)
+    const [leaveHiddenOpen, setLeaveHiddenOpen] = useState(0)
     const [toBottom, setToBottom] = useState(false)
     const [scroll, setScroll] = useState(2)
     const [scrolling, setScrolling] = useState(0)
@@ -33,6 +34,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
             //wait for useRouter on page load
         if (!router.pathname) return
             //than add listener
+        if (router.pathname !== '/') setLeaveHiddenOpen(0)
         window.addEventListener('scroll', scrollHandler)
         return () => window.removeEventListener('scroll', scrollHandler)
     }, [router])
@@ -50,7 +52,8 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
 
     const value: ProviderProps = { 
         notMobile, desktop, menu, setMenu, bottomRef, headerRef, gearRef, scroll,
-        scrolling, setScroll, colorGradient, stickmanRef, toBottom, setToBottom
+        scrolling, setScroll, colorGradient, stickmanRef, toBottom, setToBottom, 
+        leaveHiddenOpen, setLeaveHiddenOpen
     }
 
     return(

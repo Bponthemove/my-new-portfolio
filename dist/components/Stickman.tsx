@@ -29,6 +29,7 @@ export const Stickman = () => {
                   objectFit='contain' 
                   layout='fill' 
                   alt='stickman pushing'
+                  priority={ true }
           />
         </div>
       </div>

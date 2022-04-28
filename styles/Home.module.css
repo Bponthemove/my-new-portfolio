@@ -5,7 +5,6 @@
 
 .container {
   margin-top: 2em;
-  position: relative;
   overflow: hidden;
 }
 
@@ -23,7 +22,7 @@
 @media (min-width: 35em) {
   .container .gearContainer {
     width: 500px;
-    top: 30em;
+    top: 40em;
     left: -16em;
   }
 }
@@ -31,7 +30,7 @@
 @media (min-width: 60em) {
   .container .gearContainer {
     width: 700px;
-    top: 25em;
+    top: 30em;
     left: -22em;
   }
 }
@@ -108,7 +107,6 @@
 @media (min-width: 35em) {
   .container .sectionOne .IamBramContainer .Iam, .container .sectionOne .IamBramContainer .Bram {
     font-size: 10vw;
-    position: absolute;
   }
 }
 
@@ -120,34 +118,12 @@
 @media (min-width: 35em) {
   .container .sectionOne .IamBramContainer .Iam {
     bottom: 0.2em;
-    right: -2em;
-    opacity: 0;
-    -webkit-transition: right 1.2s ease-out, opacity 0.5s;
-    transition: right 1.2s ease-out, opacity 0.5s;
+    right: 0.2em;
   }
 }
 
 @media (min-width: 35em) {
   .container .sectionOne .IamBramContainer .Bram {
-    bottom: 3em;
-    right: 0.2em;
-    opacity: 0;
-    -webkit-transition: bottom 0.2s ease-in 1.4s, opacity 0.3s ease-in-out 1.4s;
-    transition: bottom 0.2s ease-in 1.4s, opacity 0.3s ease-in-out 1.4s;
-  }
-}
-
-@media (min-width: 35em) {
-  .container .sectionOne .IamBramContainer .IamAnimated {
-    opacity: 1;
-    bottom: 0.2em;
-    right: 0.2em;
-  }
-}
-
-@media (min-width: 35em) {
-  .container .sectionOne .IamBramContainer .BramAnimated {
-    opacity: 1;
     bottom: 0.2em;
     right: 0.2em;
   }
@@ -256,6 +232,10 @@
   overflow: hidden;
   -webkit-transition: height 0.12s ease-in-out;
   transition: height 0.12s ease-in-out;
+  position: relative;
+}
+
+.container .hiddenContainer .hiddenInnerContainer {
   margin: 2em 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,20 +251,20 @@
 }
 
 @media (min-width: 35em) {
-  .container .hiddenContainer {
+  .container .hiddenContainer .hiddenInnerContainer {
     margin: 2em 4em 0 8em;
     text-align: unset;
   }
 }
 
 @media (min-width: 60em) {
-  .container .hiddenContainer {
-    margin: 8em 7em 0 10vw;
+  .container .hiddenContainer .hiddenInnerContainer {
+    margin: 4em 7em 0 10vw;
     text-align: unset;
   }
 }
 
-.container .hiddenContainer .hiddenHeaderContainer {
+.container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,7 +275,7 @@
 }
 
 @media (min-width: 35em) {
-  .container .hiddenContainer .hiddenHeaderContainer {
+  .container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -305,7 +285,7 @@
   }
 }
 
-.container .hiddenContainer .hiddenHeaderContainer .meWrapper {
+.container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .meWrapper {
   background: url("/images/me.jpg") no-repeat;
   background-size: cover;
   width: 10em;
@@ -317,7 +297,7 @@
       align-self: flex-end;
 }
 
-.container .hiddenContainer .hiddenHeaderContainer .headerTextWrapper {
+.container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .headerTextWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,41 +308,41 @@
 }
 
 @media (min-width: 35em) {
-  .container .hiddenContainer .hiddenHeaderContainer .headerTextWrapper {
+  .container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .headerTextWrapper {
     margin-left: 4em;
     margin: 0 2em;
   }
 }
 
-.container .hiddenContainer .hiddenHeaderContainer .headerTextWrapper h2 {
+.container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .headerTextWrapper h2 {
   font-size: 2em;
 }
 
-.container .hiddenContainer .hiddenHeaderContainer .headerTextWrapper h4 {
+.container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .headerTextWrapper h4 {
   margin-top: 1em;
   font-size: 1.3em;
 }
 
 @media (min-width: 35em) {
-  .container .hiddenContainer .hiddenHeaderContainer .headerTextWrapper h4 {
+  .container .hiddenContainer .hiddenInnerContainer .hiddenHeaderContainer .headerTextWrapper h4 {
     margin-left: 0;
   }
 }
 
-.container .hiddenContainer > p {
+.container .hiddenContainer .hiddenInnerContainer > p {
   padding: 1em 0;
   margin-top: 0.5em;
   font-size: 1.1em;
 }
 
 @media (min-width: 60em) {
-  .container .hiddenContainer > p {
+  .container .hiddenContainer .hiddenInnerContainer > p {
     margin-left: 5em;
     padding-left: 2em;
   }
 }
 
-.container .hiddenContainer .oldMan {
+.container .hiddenContainer .hiddenInnerContainer .oldMan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,20 +352,31 @@
   font-size: 1.1em;
 }
 
-.container .hiddenContainer .oldMan > div {
+.container .hiddenContainer .hiddenInnerContainer .oldMan > div {
   max-height: 90%;
   width: 12em;
 }
 
-.container .hiddenContainer .oldMan > p {
+.container .hiddenContainer .hiddenInnerContainer .oldMan > p {
   padding-top: 1em;
 }
 
-.container .hiddenContainer .hiddenBottomBorder {
-  width: 100%;
-  height: 5px;
-  margin-top: 2em;
-  background-color: #000;
+.container .hiddenContainer .hiddenInnerContainer::before {
+  content: '';
+  top: 35%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: url("/images/wave_background_hidden.png") no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 35em) {
+  .container .hiddenContainer .hiddenInnerContainer::before {
+    top: 80%;
+    background-size: contain;
+  }
 }
 
 .container .sectionTwo {
@@ -565,13 +556,18 @@
 }
 
 .container .sectionFour {
-  margin: 4em auto;
+  position: relative;
+  padding: 6em 0;
+}
+
+.container .sectionFour .sectionFourInner {
+  margin: 0 auto;
   text-align: center;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 @media (min-width: 60em) {
-  .container .sectionFour {
+  .container .sectionFour .sectionFourInner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -583,6 +579,40 @@
     max-width: 1100px;
     width: 85%;
     height: 45em;
+  }
+}
+
+.container .sectionFour .sectionFourInner::before {
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: url("/images/curvy_background.png") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media (min-width: 60em) {
+  .container .sectionFour .sectionFourInner::before {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 60em) {
+  .container .sectionFour .sectionFourInner::after {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background: url("/images/curvy_background.png") no-repeat;
+    background-size: contain;
+    z-index: -1;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

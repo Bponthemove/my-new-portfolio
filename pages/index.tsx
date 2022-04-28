@@ -23,7 +23,7 @@ import oldMan from '../public/images/stickman-old-man.png'
 const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest))
 
 const Home: NextPage = () => {
-  const { menu, notMobile, toBottom } = usePortfolioContext()
+  const { menu, notMobile, toBottom, leaveHiddenOpen, setLeaveHiddenOpen } = usePortfolioContext()
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const imgRef = useRef(null)
@@ -35,6 +35,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
+    if (oilImgVisible) setLeaveHiddenOpen(gears)
     if (!oilImgVisible && expanded) {
       setExpanded(false)
       if (gifOneRef.current) gifOneRef.current.scrollIntoView({block: 'center'})
@@ -63,24 +64,29 @@ const Home: NextPage = () => {
       </section>
 {/*--------------------------------hidden gear section-------------------------------- */}
       <section  className={ styles.hiddenContainer }
-                style={ toBottom ? { height: 0 } : { height: `${ (gears - 2) * 28 }px` }}
+                style={ leaveHiddenOpen !== 0 && notMobile ? { height: `${ (leaveHiddenOpen - 2) * 50 }px` }
+                        : leaveHiddenOpen !== 0 ? { height: `${ (leaveHiddenOpen - 2) * 35 }px` }  
+                        : toBottom ? { height: 0 }
+                        : notMobile ? { height: `${ (gears - 2) * 50 }px` }
+                        : { height: `${ (gears - 2) * 35 }px` }}
       >
-        <div className={ styles.hiddenHeaderContainer }>
-          <div className={ styles.meWrapper }/>
-          <div className={ styles.headerTextWrapper }>
-            <h2>Hello World</h2>
-            <h4>I am Bram, a web developer based near Reading, UK.</h4>
+        <div className={ styles.hiddenInnerContainer }>
+          <div className={ styles.hiddenHeaderContainer }>
+            <div className={ styles.meWrapper }/>
+            <div className={ styles.headerTextWrapper }>
+              <h2>Hello World</h2>
+              <h4>I am Bram, a web developer based near Reading, UK.</h4>
+            </div>
           </div>
+          <p>Web development has become my passion and I am very excited. Although having a degree in Hospitality Management, I am now pursuing my old passion and making a career of it.</p>
+          { notMobile && 
+          <div className={ styles.oldMan }>
+            <div className={ styles.oldManImgWrapper }>
+              <Image  src={ oldMan } />
+            </div>
+            <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
+          </div> }
         </div>
-        <p>Web development has become my passion and I am very excited. Although having a degree in Hospitality Management, I am now pursuing my old passion and making a career of it.</p>
-        { notMobile && 
-        <div className={ styles.oldMan }>
-          <div className={ styles.oldManImgWrapper }>
-            <Image  src={ oldMan } />
-          </div>
-          <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
-        </div> }
-        <div className={ styles.hiddenBottomBorder }/>
       </section>     
 {/*--------------------------------qoute section-------------------------------- */}
       <section className={[ styles.sectionTwo, styles.section ].join(' ')}> 
@@ -130,13 +136,15 @@ const Home: NextPage = () => {
       </section>
 {/*--------------------------------my important things section-------------------------------- */}
       <section className={ styles.sectionFour }>
-        { interests.map(interest => 
-          <DynamicInterest  gifOneRef={ gifOneRef } 
-                            gifTwoRef={ gifTwoRef } 
-                            gifThreeRef={ gifThreeRef }
-                            key={ interest.id } 
-                            interest={ interest } />
-        )}
+        <div className={ styles.sectionFourInner }>
+          { interests.map(interest => 
+            <DynamicInterest  gifOneRef={ gifOneRef } 
+                              gifTwoRef={ gifTwoRef } 
+                              gifThreeRef={ gifThreeRef }
+                              key={ interest.id } 
+                              interest={ interest } />
+          )}
+        </div>
       </section>
     </div>
   )
