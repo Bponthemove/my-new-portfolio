@@ -19,36 +19,12 @@
   background-color: #fffffc;
 }
 
-:global(.theme-Rainbows Unicorns) .container {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Stephen_King) .container {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Random) .container {
-  background-color: #F5F4F4;
-}
-
 :global(.theme-Ukraine) .container {
   background-color: #005BBB;
 }
 
 :global(.theme-Standard) .container {
   color: #242423;
-}
-
-:global(.theme-Rainbows Unicorns) .container {
-  color: #FFD500;
-}
-
-:global(.theme-Stephen_King) .container {
-  color: #FFD500;
-}
-
-:global(.theme-Random) .container {
-  color: #FFD500;
 }
 
 :global(.theme-Ukraine) .container {
@@ -61,18 +37,6 @@
 }
 
 :global(.theme-Standard) .container h1 {
-  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
-}
-
-:global(.theme-Rainbows Unicorns) .container h1 {
-  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
-}
-
-:global(.theme-Stephen_King) .container h1 {
-  font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
-}
-
-:global(.theme-Random) .container h1 {
   font-family: Alfa Slab One, Moul, Modak, Impact, monospace;
 }
 
@@ -104,7 +68,7 @@
   display: none;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .container .navContainer .navlinkContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -136,18 +100,6 @@
 
 :global(.theme-Standard) .container .navContainer .navlinkContainer .linkContainer a {
   color: #242423;
-}
-
-:global(.theme-Rainbows Unicorns) .container .navContainer .navlinkContainer .linkContainer a {
-  color: #FFD500;
-}
-
-:global(.theme-Stephen_King) .container .navContainer .navlinkContainer .linkContainer a {
-  color: #FFD500;
-}
-
-:global(.theme-Random) .container .navContainer .navlinkContainer .linkContainer a {
-  color: #FFD500;
 }
 
 :global(.theme-Ukraine) .container .navContainer .navlinkContainer .linkContainer a {
@@ -225,18 +177,6 @@
   background-color: #fe5f55;
 }
 
-:global(.theme-Rainbows Unicorns) .contactBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Stephen_King) .contactBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Random) .contactBtn {
-  background-color: #fe5f55;
-}
-
 :global(.theme-Ukraine) .contactBtn {
   background-color: #242423;
 }
@@ -249,21 +189,12 @@
   :global(.theme-Standard) .contactBtn:hover {
     background-color: #fa8d85;
   }
-  :global(.theme-Rainbows Unicorns) .contactBtn:hover {
-    background-color: #fa8d85;
-  }
-  :global(.theme-Stephen_King) .contactBtn:hover {
-    background-color: #fa8d85;
-  }
-  :global(.theme-Random) .contactBtn:hover {
-    background-color: #fa8d85;
-  }
   :global(.theme-Ukraine) .contactBtn:hover {
     background-color: #fa8d85;
   }
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .contactBtn {
     margin-left: 1em;
     font-size: 1em;

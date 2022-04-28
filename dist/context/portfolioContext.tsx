@@ -8,13 +8,16 @@ export const PortfolioContext = createContext<ProviderProps | undefined>(undefin
 export const PortfolioContextProvider:React.FC = ({ children }) => {
     // const [theme, setTheme] = useState<string>('standard')
     const [menu, setMenu] = useState<boolean>(false)
+    const [toBottom, setToBottom] = useState(false)
     const [scroll, setScroll] = useState(2)
     const [scrolling, setScrolling] = useState(0)
     const [colorGradient, setColorGradient] = useState(0)
-    const desktop = useMediaQuery('(min-width: 55em)')
+    const notMobile = useMediaQuery('(min-width: 35em)')
+    const desktop = useMediaQuery('(min-width: 60em)')
     const bottomRef = useRef(null) 
     const headerRef = useRef(null)
     const stickmanRef = useRef(null)
+    const gearRef = useRef(null)
     const router = useRouter()
 
     useEffect(() => {
@@ -46,8 +49,8 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     }
 
     const value: ProviderProps = { 
-        desktop, menu, setMenu, bottomRef, headerRef, scroll,
-        scrolling, setScroll, colorGradient, stickmanRef
+        notMobile, desktop, menu, setMenu, bottomRef, headerRef, gearRef, scroll,
+        scrolling, setScroll, colorGradient, stickmanRef, toBottom, setToBottom
     }
 
     return(

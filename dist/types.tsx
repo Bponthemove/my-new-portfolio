@@ -3,10 +3,14 @@ import React from "react"
 export type ProviderProps = {
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
+    toBottom: boolean
+    setToBottom: React.Dispatch<React.SetStateAction<boolean>>
+    notMobile: boolean
     desktop: boolean
     bottomRef: React.RefObject<HTMLParagraphElement>
     headerRef: React.RefObject<HTMLDivElement>
     stickmanRef: React.RefObject<HTMLDivElement>
+    gearRef: React.RefObject<HTMLDivElement>
     scroll: number
     setScroll: React.Dispatch<React.SetStateAction<number>>
     scrolling: number
@@ -20,7 +24,9 @@ export interface IListItemProps{
 }
 
 export type IInterestProps = {
-    gifRef: React.LegacyRef<HTMLDivElement>
+    gifOneRef: React.RefObject<HTMLDivElement>
+    gifTwoRef: React.RefObject<HTMLDivElement>
+    gifThreeRef: React.RefObject<HTMLDivElement>
     interest: {
         title: string
         gif: string

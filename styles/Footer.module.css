@@ -51,18 +51,6 @@
   background-color: #9bf6ff;
 }
 
-:global(.theme-Rainbows Unicorns) .footer {
-  background-color: #242423;
-}
-
-:global(.theme-Stephen_King) .footer {
-  background-color: #242423;
-}
-
-:global(.theme-Random) .footer {
-  background-color: #242423;
-}
-
 :global(.theme-Ukraine) .footer {
   background-color: #FFD500;
 }
@@ -86,7 +74,7 @@
   background-size: cover;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .footer .contact {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -139,36 +127,12 @@
   background-color: #fe5f55;
 }
 
-:global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Stephen_King) .footer .contact form #ContactBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Random) .footer .contact form #ContactBtn {
-  background-color: #fe5f55;
-}
-
 :global(.theme-Ukraine) .footer .contact form #ContactBtn {
   background-color: #242423;
 }
 
 :global(.theme-Standard) .footer .contact form #ContactBtn {
   color: #242423;
-}
-
-:global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn {
-  color: #FFD500;
-}
-
-:global(.theme-Stephen_King) .footer .contact form #ContactBtn {
-  color: #FFD500;
-}
-
-:global(.theme-Random) .footer .contact form #ContactBtn {
-  color: #FFD500;
 }
 
 :global(.theme-Ukraine) .footer .contact form #ContactBtn {
@@ -189,15 +153,6 @@
   :global(.theme-Standard) .footer .contact form #ContactBtn:hover {
     background-color: #fa8d85;
   }
-  :global(.theme-Rainbows Unicorns) .footer .contact form #ContactBtn:hover {
-    background-color: #fa8d85;
-  }
-  :global(.theme-Stephen_King) .footer .contact form #ContactBtn:hover {
-    background-color: #fa8d85;
-  }
-  :global(.theme-Random) .footer .contact form #ContactBtn:hover {
-    background-color: #fa8d85;
-  }
   :global(.theme-Ukraine) .footer .contact form #ContactBtn:hover {
     background-color: #fa8d85;
   }
@@ -212,7 +167,7 @@
           justify-content: space-between;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .footer .bottomContainer {
     padding: 1em;
   }

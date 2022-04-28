@@ -4,9 +4,8 @@ const useVisible= (ref: any, rootMargin = "0px") => {
     const [isVisible, setIsVisible] = useState(false);
   
 //parameter needs to be type checked
-
     useEffect(() => {
-      console.log(ref)
+  
       const observer = new IntersectionObserver(
         ([entry]) => {
           setIsVisible(entry.isIntersecting);

@@ -79,18 +79,6 @@
   background-color: #fffffc;
 }
 
-:global(.theme-Rainbows Unicorns) .wrapper .outerContainer .sectionCode .tile {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Stephen_King) .wrapper .outerContainer .sectionCode .tile {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Random) .wrapper .outerContainer .sectionCode .tile {
-  background-color: #F5F4F4;
-}
-
 :global(.theme-Ukraine) .wrapper .outerContainer .sectionCode .tile {
   background-color: #005BBB;
 }
@@ -105,7 +93,7 @@
   }
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .wrapper .outerContainer .sectionCode .tile {
     -webkit-box-flex: calc(90vw * 0.33333);
         -ms-flex: calc(90vw * 0.33333);
@@ -115,7 +103,7 @@
   }
 }
 
-@media (min-width: 55em) and (hover: hover) and (pointer: fine) {
+@media (min-width: 60em) and (hover: hover) and (pointer: fine) {
   .wrapper .outerContainer .sectionCode .tile:hover {
     -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -167,7 +155,7 @@
   z-index: 999;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .wrapper .overlay .modalText {
     margin: 60vh auto;
   }

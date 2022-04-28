@@ -3,12 +3,12 @@ import Image from 'next/image'
 import styles from '../../styles/Skills.module.css'
 import { stickmanArr } from '../data'
 import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useStickman from '../hooks/useStickman'
+import useScroll from '../hooks/useScroll'
 
 export const Stickman = () => {
   
   const { desktop, stickmanRef } = usePortfolioContext()
-  const stickman = useStickman()
+  const stickman = useScroll()
       
   return (
     <div  className={ styles.scrollRoll }

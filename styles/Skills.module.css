@@ -3,7 +3,7 @@
   height: 100%;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .sectionOne {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -37,23 +37,11 @@
   background-color: #9bf6ff;
 }
 
-:global(.theme-Rainbows Unicorns) .sectionOne .mediaContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Stephen_King) .sectionOne .mediaContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Random) .sectionOne .mediaContainer {
-  background-color: #242423;
-}
-
 :global(.theme-Ukraine) .sectionOne .mediaContainer {
   background-color: #FFD500;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .sectionOne .mediaContainer {
     width: 50%;
     display: -webkit-box;
@@ -113,7 +101,7 @@
       align-content: center;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .sectionOne .mediaContainer .textCodeContainer .mediaList ul {
     -ms-flex-item-align: end;
         align-self: flex-end;
@@ -166,18 +154,6 @@
   background-color: #fe5f55;
 }
 
-:global(.theme-Rainbows Unicorns) .scrollRoll {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Stephen_King) .scrollRoll {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Random) .scrollRoll {
-  background-color: #fe5f55;
-}
-
 :global(.theme-Ukraine) .scrollRoll {
   background-color: #fe5f55;
 }
@@ -204,18 +180,6 @@
   background-color: #fdffb6;
 }
 
-:global(.theme-Rainbows Unicorns) .scrollRoll .imgScrollContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Stephen_King) .scrollRoll .imgScrollContainer {
-  background-color: #242423;
-}
-
-:global(.theme-Random) .scrollRoll .imgScrollContainer {
-  background-color: #242423;
-}
-
 :global(.theme-Ukraine) .scrollRoll .imgScrollContainer {
   background-color: #005BBB;
 }
@@ -229,7 +193,15 @@
 .scrollRoll .pushing .imgWrapper {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@media (min-width: 60em) {
+  .scrollRoll .pushing .imgWrapper {
+    height: 100%;
+  }
 }
 
 .certSection {
@@ -249,23 +221,11 @@
   background-color: #fffffc;
 }
 
-:global(.theme-Rainbows Unicorns) .certSection {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Stephen_King) .certSection {
-  background-color: #F5F4F4;
-}
-
-:global(.theme-Random) .certSection {
-  background-color: #F5F4F4;
-}
-
 :global(.theme-Ukraine) .certSection {
   background-color: #005BBB;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .certSection {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -280,7 +240,7 @@
   position: relative;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .certSection .graduationContainer {
     height: 100%;
     width: 50%;
@@ -304,7 +264,7 @@
           align-items: flex-start;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .certSection .certificatesContainer ul {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -325,23 +285,11 @@
   color: #242423;
 }
 
-:global(.theme-Rainbows Unicorns) .certSection .certificatesContainer ul li {
-  color: #FFD500;
-}
-
-:global(.theme-Stephen_King) .certSection .certificatesContainer ul li {
-  color: #FFD500;
-}
-
-:global(.theme-Random) .certSection .certificatesContainer ul li {
-  color: #FFD500;
-}
-
 :global(.theme-Ukraine) .certSection .certificatesContainer ul li {
   color: #FFD500;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .certSection .certificatesContainer ul li {
     padding: 0.3em 1.6em;
     font-size: 1em;
@@ -353,7 +301,7 @@
   }
 }
 
-@media (min-width: 55em) and (hover: hover) and (pointer: fine) {
+@media (min-width: 60em) and (hover: hover) and (pointer: fine) {
   .certSection .certificatesContainer ul li:hover {
     background-color: azure;
     -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -373,18 +321,6 @@
 
 :global(.theme-Standard) .ticker {
   background-color: #9bf6ff;
-}
-
-:global(.theme-Rainbows Unicorns) .ticker {
-  background-color: #242423;
-}
-
-:global(.theme-Stephen_King) .ticker {
-  background-color: #242423;
-}
-
-:global(.theme-Random) .ticker {
-  background-color: #242423;
 }
 
 :global(.theme-Ukraine) .ticker {
@@ -490,7 +426,7 @@
           align-items: center;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .personality .bottomPersonality {
     font-size: 1.4vw;
     width: 80%;
@@ -504,18 +440,6 @@
 }
 
 :global(.theme-Standard) .personality .bottomPersonality .pActive {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Rainbows Unicorns) .personality .bottomPersonality .pActive {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Stephen_King) .personality .bottomPersonality .pActive {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Random) .personality .bottomPersonality .pActive {
   background-color: #fe5f55;
 }
 
@@ -542,18 +466,6 @@
   background-color: #fe5f55;
 }
 
-:global(.theme-Rainbows Unicorns) .personality .codeBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Stephen_King) .personality .codeBtn {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Random) .personality .codeBtn {
-  background-color: #fe5f55;
-}
-
 :global(.theme-Ukraine) .personality .codeBtn {
   background-color: #fe5f55;
 }
@@ -575,7 +487,7 @@
   background-size: cover;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax {
     background: url("/images/spain-wide.jpg") no-repeat;
     background-attachment: fixed;
@@ -605,7 +517,7 @@
           align-items: center;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax .nonTechSection .pastContainer {
     width: 90%;
     margin: 0 auto;
@@ -622,7 +534,7 @@
   height: auto;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax .nonTechSection .pastContainer .pastImgContainer {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -630,7 +542,7 @@
   }
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax .nonTechSection .pastContainer .spacer {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -644,7 +556,7 @@
   line-height: 120%;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax .nonTechSection .pastContainer .pastTextContainer {
     font-size: 1em;
     -webkit-box-flex: 2;
@@ -657,7 +569,7 @@
   margin: 80vh auto;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
   .parallax .nonTechSection > :nth-child(even) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;

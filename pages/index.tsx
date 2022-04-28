@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
   //--components--//
 import { ThemeBox } from '../dist/components/ThemeBox'
+import { Gear } from '../dist/components/Gear'
+import { H1 } from '../dist/components/H1'
   //--data--//
 import { interests } from '../dist/data'
   //--types--//
@@ -11,36 +14,42 @@ import { IInterestProps } from '../dist/types'
   //--hooks--//
 import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
 import useVisible from '../dist/hooks/useVisible'
+import useScroll from '../dist/hooks/useScroll'
   //--styles--//
 import styles from '../styles/Home.module.css'
-import { H1 } from '../dist/components/H1'
+  //--images--//
+import oldMan from '../public/images/stickman-old-man.png'
 
 const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest))
 
 const Home: NextPage = () => {
-  const { menu } = usePortfolioContext()
+  const { menu, notMobile, toBottom } = usePortfolioContext()
   const [expanded, setExpanded] = useState(false)
   const router = useRouter()
   const imgRef = useRef(null)
-  const gifRef = useRef<null | HTMLDivElement>(null)
-  const isVisible = useVisible(imgRef, '-50%')
+  const gifOneRef = useRef<null | HTMLDivElement>(null)
+  const gifTwoRef = useRef<null | HTMLDivElement>(null)
+  const gifThreeRef = useRef<null | HTMLDivElement>(null)
+  const oilImgVisible = useVisible(imgRef, '-50%')
+  const gears = useScroll()
 
   useEffect(() => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
-    if (!isVisible && expanded) {
+    if (!oilImgVisible && expanded) {
       setExpanded(false)
-      if (gifRef.current) gifRef.current.scrollIntoView({block: 'center'})
+      if (gifOneRef.current) gifOneRef.current.scrollIntoView({block: 'center'})
     }
-  }, [isVisible])
+  }, [oilImgVisible])
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
-      
 {/*-------------------------------- running theme ticker-------------------------------- */}
-      <div className={ styles.themeTicker }>
+      <div className={ styles.themeContainer }>
         <ThemeBox />
       </div>
-{/*--------------------------------top section-------------------------------- */}
+{/*-------------------------------- gear spinner-------------------------------- */}
+      <Gear/>
+{/*--------------------------------iambram section-------------------------------- */}
       <section className={[ styles.sectionOne, styles.section ].join(' ')} title='plain background with code grafiti'>
         <H1/>
         <aside>
@@ -52,6 +61,27 @@ const Home: NextPage = () => {
           </a>
         </div>
       </section>
+{/*--------------------------------hidden gear section-------------------------------- */}
+      <section  className={ styles.hiddenContainer }
+                style={ toBottom ? { height: 0 } : { height: `${ (gears - 2) * 28 }px` }}
+      >
+        <div className={ styles.hiddenHeaderContainer }>
+          <div className={ styles.meWrapper }/>
+          <div className={ styles.headerTextWrapper }>
+            <h2>Hello World</h2>
+            <h4>I am Bram, a web developer based near Reading, UK.</h4>
+          </div>
+        </div>
+        <p>Web development has become my passion and I am very excited. Although having a degree in Hospitality Management, I am now pursuing my old passion and making a career of it.</p>
+        { notMobile && 
+        <div className={ styles.oldMan }>
+          <div className={ styles.oldManImgWrapper }>
+            <Image  src={ oldMan } />
+          </div>
+          <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
+        </div> }
+        <div className={ styles.hiddenBottomBorder }/>
+      </section>     
 {/*--------------------------------qoute section-------------------------------- */}
       <section className={[ styles.sectionTwo, styles.section ].join(' ')}> 
         <div className={ styles.divOne }>
@@ -71,13 +101,13 @@ const Home: NextPage = () => {
         </div>
       </section>
 {/*--------------------------------oil image section-------------------------------- */}
-      <section className={ expanded && isVisible ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ')
-                          : isVisible ? [styles.sectionThree, styles.sectionThreeLoaded].join(' ')  
+      <section className={ expanded && oilImgVisible ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ')
+                          : oilImgVisible ? [styles.sectionThree, styles.sectionThreeLoaded].join(' ')  
                           : styles.sectionThree }  
                           ref={ imgRef }
                           title='image of village in oil filter style'
       >
-        <div className={ isVisible ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
+        <div className={ oilImgVisible ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
           <p>
             What I love is most things associated with family, friends, good food and the outdoors.  I enjoy a good party, but also an evening with friends doing board games. 
           </p> 
@@ -91,7 +121,7 @@ const Home: NextPage = () => {
             I have always enjoyed working/volunteering and chosen life/work style over steady career/money. I have travelled a lot and worked in France, Switzerland, Spain, Austria, Germany, New Zealand. Some seasonal, some volunteering and some for longer term, full-time employement. I have never been intimidated by learning new skills and languages and have always seen this as an opportunity rather than an obstacle.
             <br/>
             <br/>
-              Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. This turned out to be Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
+              Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. These were mainly written in Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
             <br/>
             <br/> 
             Time has really flown by and the combination of the visual and the problem solving has really got me hooked. I would love to keep on learning new things and one day have a dream job, helping to develop something that will have a positive impact on our planet and its people.
@@ -100,7 +130,13 @@ const Home: NextPage = () => {
       </section>
 {/*--------------------------------my important things section-------------------------------- */}
       <section className={ styles.sectionFour }>
-        { interests.map(interest => <DynamicInterest gifRef={ gifRef } key={ interest.id } interest={ interest } />) }
+        { interests.map(interest => 
+          <DynamicInterest  gifOneRef={ gifOneRef } 
+                            gifTwoRef={ gifTwoRef } 
+                            gifThreeRef={ gifThreeRef }
+                            key={ interest.id } 
+                            interest={ interest } />
+        )}
       </section>
     </div>
   )

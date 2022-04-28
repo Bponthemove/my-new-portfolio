@@ -26,8 +26,7 @@ const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsT
 
 const Skills: NextPage = () => {
 
-  const [spanOpen, setSpanOpen] = useState<boolean>(false)
-  const [sectionOpen, setSectionOpen] = useState<boolean>(false)  
+  const [spanOpen, setSpanOpen] = useState<boolean>(false)  
   const { desktop } = usePortfolioContext()
 
   

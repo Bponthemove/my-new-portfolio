@@ -1,21 +1,17 @@
 import { useEffect, useRef } from 'react'
 import usePortfolioContext from './usePortfoliocontext'
-import useVisible from './useVisible'
 
-const useStickman = () => {
+const useScroll = () => {
     const offset: React.MutableRefObject<number> = useRef(0)
-    const { stickmanRef, scroll, setScroll } = usePortfolioContext()
-    const visible = useVisible(stickmanRef)
-
+    const { scroll, setScroll } = usePortfolioContext()
+ 
     useEffect(() => {
-        //no need to run stickman if we do not need it
-        if (!visible) return     
-        window.addEventListener('scroll', scrollStickman)
-        return () => window.removeEventListener('scroll', scrollStickman)
-    }, [visible])
+        //no need to run stickman if we do not need it   
+        window.addEventListener('scroll', scrollControl)
+        return () => window.removeEventListener('scroll', scrollControl)
+    }, [])
 
-    const scrollStickman = () => {
-      if (!visible) return
+    const scrollControl = () => {
         //set offset first time to scrollY so that stickman starts with the correct scroll
       if (offset.current === 0) offset.current = window.scrollY
             //check if offset is 50 more than previous, if so then increment scrolling by 1
@@ -28,4 +24,4 @@ const useStickman = () => {
     return scroll
 }
 
-export default useStickman
+export default useScroll
