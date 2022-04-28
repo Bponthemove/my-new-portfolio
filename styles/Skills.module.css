@@ -34,7 +34,7 @@
 }
 
 :global(.theme-Standard) .sectionOne .mediaContainer {
-  background-color: #9bf6ff;
+  background-color: #7fdcff;
 }
 
 :global(.theme-Ukraine) .sectionOne .mediaContainer {
@@ -320,7 +320,7 @@
 }
 
 :global(.theme-Standard) .ticker {
-  background-color: #9bf6ff;
+  background-color: #7fdcff;
 }
 
 :global(.theme-Ukraine) .ticker {

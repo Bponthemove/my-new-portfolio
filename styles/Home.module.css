@@ -51,7 +51,7 @@
 }
 
 :global(.theme-Standard) .container .themeTicker {
-  background-color: #9bf6ff;
+  background-color: #7fdcff;
 }
 
 :global(.theme-Ukraine) .container .themeTicker {
@@ -428,7 +428,7 @@
 }
 
 :global(.theme-Standard) .container .sectionTwo .divQoute {
-  background-color: #9bf6ff;
+  background-color: #7fdcff;
 }
 
 :global(.theme-Ukraine) .container .sectionTwo .divQoute {
