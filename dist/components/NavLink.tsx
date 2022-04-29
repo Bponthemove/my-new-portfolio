@@ -1,27 +1,27 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import styles from '../../styles/Header.module.css'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useVisible from '../hooks/useVisible'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
+import styles from '../../styles/Header.module.css';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import useVisible from '../hooks/useVisible';
 
 export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
-  const { toBottom, setToBottom, menu, setMenu, desktop, bottomRef } = usePortfolioContext()
-  const router = useRouter()
-  const { current } = bottomRef
-  const reachedBottom = useVisible(bottomRef)
+  const { toBottom, setToBottom, menu, setMenu, desktop, bottomRef } = usePortfolioContext();
+  const router = useRouter();
+  const { current } = bottomRef;
+  const reachedBottom = useVisible(bottomRef);
 
   useEffect(() => {
     if (toBottom && current) {
       current.scrollIntoView({behavior: 'smooth'})
       if (!desktop) setMenu(!menu)
     }
-  }, [toBottom])
+  }, [toBottom]);
 
 //this useEffect runs when we have reached the bottom and then sets toBottom to false so that the hidden gear section does not open when clicking contact.
   useEffect(() => {
     if (reachedBottom) setToBottom(!toBottom)
-  }, [reachedBottom])
+  }, [reachedBottom]);
 
   return (
     <div 
@@ -40,6 +40,6 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
         </button>        
       }
     </div>
-  )
-}
+  );
+};
 

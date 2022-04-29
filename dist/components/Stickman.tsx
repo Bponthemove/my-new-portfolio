@@ -1,14 +1,14 @@
-import React from 'react'
-import Image from 'next/image'
-import styles from '../../styles/Skills.module.css'
-import { stickmanArr } from '../data'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useScroll from '../hooks/useScroll'
+import React from 'react';
+import Image from 'next/image';
+import styles from '../../styles/Skills.module.css';
+import { stickmanArr } from '../data';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import useScroll from '../hooks/useScroll';
 
 export const Stickman = () => {
   
-  const { desktop, stickmanRef } = usePortfolioContext()
-  const stickman = useScroll()
+  const { desktop, stickmanRef } = usePortfolioContext();
+  const stickman = useScroll();
       
   return (
     <div  className={ styles.scrollRoll }
@@ -34,5 +34,5 @@ export const Stickman = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

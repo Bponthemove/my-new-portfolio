@@ -1,46 +1,46 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
   //--components--//
-import { ThemeBox } from '../dist/components/ThemeBox'
-import { Gear } from '../dist/components/Gear'
-import { H1 } from '../dist/components/H1'
+import { ThemeBox } from '../dist/components/ThemeBox';
+import { Gear } from '../dist/components/Gear';
+import { H1 } from '../dist/components/H1';
   //--data--//
-import { interests } from '../dist/data'
+import { interests } from '../dist/data';
   //--types--//
-import { IInterestProps } from '../dist/types'
+import { IInterestProps } from '../dist/types';
   //--hooks--//
-import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
-import useVisible from '../dist/hooks/useVisible'
-import useScroll from '../dist/hooks/useScroll'
+import usePortfolioContext from '../dist/hooks/usePortfoliocontext';
+import useVisible from '../dist/hooks/useVisible';
+import useScroll from '../dist/hooks/useScroll';
   //--styles--//
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
   //--images--//
-import oldMan from '../public/images/stickman-old-man.png'
+import oldMan from '../public/images/stickman-old-man.png';
 
-const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest))
+const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components/Interest').then(mod => mod.Interest));
 
 const Home: NextPage = () => {
-  const { menu, notMobile, toBottom, leaveHiddenOpen, setLeaveHiddenOpen } = usePortfolioContext()
-  const [expanded, setExpanded] = useState(false)
-  const router = useRouter()
-  const imgRef = useRef(null)
-  const gifOneRef = useRef<null | HTMLDivElement>(null)
-  const gifTwoRef = useRef<null | HTMLDivElement>(null)
-  const gifThreeRef = useRef<null | HTMLDivElement>(null)
-  const oilImgVisible = useVisible(imgRef, '-50%')
-  const gears = useScroll()
+  const { menu, notMobile, toBottom, leaveHiddenOpen, setLeaveHiddenOpen } = usePortfolioContext();
+  const [expanded, setExpanded] = useState(false);
+  const router = useRouter();
+  const imgRef = useRef(null);
+  const gifOneRef = useRef<null | HTMLDivElement>(null);
+  const gifTwoRef = useRef<null | HTMLDivElement>(null);
+  const gifThreeRef = useRef<null | HTMLDivElement>(null);
+  const oilImgVisible = useVisible(imgRef, '-50%');
+  const gears = useScroll();
 
   useEffect(() => {
     //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
-    if (oilImgVisible) setLeaveHiddenOpen(gears)
+    if (oilImgVisible) setLeaveHiddenOpen(gears);
     if (!oilImgVisible && expanded) {
       setExpanded(false)
-      if (gifOneRef.current) gifOneRef.current.scrollIntoView({block: 'center'})
-    }
-  }, [oilImgVisible])
+      if (gifOneRef.current) gifOneRef.current.scrollIntoView({block: 'center'});
+    };
+  }, [oilImgVisible]);
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

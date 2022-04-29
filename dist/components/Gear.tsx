@@ -1,13 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
-import gear from '../../public/images/gear.png'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useScroll from '../hooks/useScroll'
+import React from 'react';
+import Image from 'next/image';
+import styles from '../../styles/Home.module.css';
+import gear from '../../public/images/gear.png';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import useScroll from '../hooks/useScroll';
 
 export const Gear = () => {
-    const { gearRef, leaveHiddenOpen } = usePortfolioContext()
-    const gears = useScroll()
+    const { gearRef, leaveHiddenOpen } = usePortfolioContext();
+    const gears = useScroll();
 
   return (
     <div 
@@ -25,5 +25,5 @@ export const Gear = () => {
             priority={ true }
         />
     </div>   
-  )
-}
+  );
+};

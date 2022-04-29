@@ -1,8 +1,8 @@
-import React from 'react'
-import { ICertificate } from '../types'
+import React from 'react';
+import { ICertificate } from '../types';
 
 export const Certificate = ({ certificate }: ICertificate) => {
-    const { url, title, company, certId } = certificate
+    const { url, title, company, certId } = certificate;
 
   return (
       <a href={ url } target='_blank'>
@@ -11,5 +11,5 @@ export const Certificate = ({ certificate }: ICertificate) => {
             <h6>{ company }</h6>
         </li>
       </a>
-  )
-}
+  );
+};

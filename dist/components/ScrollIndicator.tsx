@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { FaReact } from 'react-icons/fa'
-import styles from '../../styles/Footer.module.css'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
+import React, { useState, useEffect } from 'react';
+import { FaReact } from 'react-icons/fa';
+import styles from '../../styles/Footer.module.css';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
 
 export const ScrollIndicator = () => {
-    const [toTop, setToTop] = useState<boolean>(false)
-    const { scrolling, colorGradient, headerRef } = usePortfolioContext()
-    const { current } = headerRef
+    const [toTop, setToTop] = useState<boolean>(false);
+    const { scrolling, colorGradient, headerRef } = usePortfolioContext();
+    const { current } = headerRef;
 
         //arrow to go back to top
     useEffect(() => {
@@ -14,7 +14,7 @@ export const ScrollIndicator = () => {
         current.scrollIntoView({behavior: 'smooth'})
         setToTop(!toTop)
         }
-    }, [toTop])
+    }, [toTop]);
 
   return (
     <div  className={ styles.arrowUp } 
@@ -27,6 +27,6 @@ export const ScrollIndicator = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 

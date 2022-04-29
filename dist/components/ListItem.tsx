@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from '../../styles/Skills.module.css'
-import { IListItemProps } from '../types'
+import React from 'react';
+import styles from '../../styles/Skills.module.css';
+import { IListItemProps } from '../types';
 
 export const ListItem = ({ mediaItem, index, spanOpen }: IListItemProps) => {
   return (
@@ -10,6 +10,6 @@ export const ListItem = ({ mediaItem, index, spanOpen }: IListItemProps) => {
     >
         { mediaItem }
     </li>
-  )
-}
+  );
+};
 

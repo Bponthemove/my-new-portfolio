@@ -11,7 +11,7 @@ const useVisible= (ref: any, rootMargin = "0px") => {
           setIsVisible(entry.isIntersecting);
         },
         {
-          rootMargin
+          rootMargin,
         }
       );
       
@@ -29,4 +29,4 @@ const useVisible= (ref: any, rootMargin = "0px") => {
     return isVisible;
   };
   
-  export default useVisible
+  export default useVisible;

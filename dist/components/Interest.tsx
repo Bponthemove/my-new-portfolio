@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react'
-//import Image from 'next/image'
-import { IInterestProps } from '../types'
-import styles from '../../styles/Interest.module.css'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
-import useVisible from '../hooks/useVisible'
+import React, { useState, useEffect } from 'react';
+import { IInterestProps } from '../types';
+import styles from '../../styles/Interest.module.css';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import useVisible from '../hooks/useVisible';
 
 export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInterestProps) => {
-    const {title, gif, gif_static, text, bg} = interest
-    const { desktop } = usePortfolioContext()
-    const [img, setImg] = useState(gif_static) 
-    const gifOneVisible = useVisible(gifOneRef, '-50%')
-    const gifTwoVisible = useVisible(gifTwoRef, '-50%')
-    const gifThreeVisible = useVisible(gifThreeRef, '-50%')
+    const { title, gif, gif_static, text, bg } = interest;
+    const { desktop } = usePortfolioContext();
+    const [img, setImg] = useState(gif_static);
+    const gifOneVisible = useVisible(gifOneRef, '-50%');
+    const gifTwoVisible = useVisible(gifTwoRef, '-50%');
+    const gifThreeVisible = useVisible(gifThreeRef, '-50%');
 
     useEffect(() => {
       if (desktop) return
@@ -21,11 +20,11 @@ export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInter
       if (!gifOneVisible && interest.id === 1) setImg(gif_static)
       if (!gifTwoVisible && interest.id === 2) setImg(gif_static)
       if (!gifThreeVisible && interest.id === 3) setImg(gif_static)
-    }, [gifOneVisible, gifTwoVisible, gifThreeVisible])
+    }, [gifOneVisible, gifTwoVisible, gifThreeVisible]);
 
   return (
     <div    className={ styles.interest } 
-            style={{backgroundColor: bg}}
+            style={ {backgroundColor: bg }}
             onMouseEnter={ desktop ? () => setImg(gif) : undefined }
             onMouseLeave={ desktop ? () => setImg(gif_static) : undefined }
             ref={ interest.id === 1 ? gifOneRef 
@@ -48,5 +47,5 @@ export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInter
         </div>
         <p>{ text }</p>
     </div>
-  )
-}
+  );
+};

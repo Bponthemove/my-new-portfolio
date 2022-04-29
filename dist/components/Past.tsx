@@ -1,7 +1,7 @@
-import React from 'react'
-import Image from 'next/image'
-import { IPastProps } from '../types'
-import styles from '../../styles/Skills.module.css'
+import React from 'react';
+import Image from 'next/image';
+import { IPastProps } from '../types';
+import styles from '../../styles/Skills.module.css';
 
 export const Past = ({ past }: IPastProps) => {
 
@@ -17,5 +17,5 @@ export const Past = ({ past }: IPastProps) => {
                 <p>{ past.textTwo }</p>
             </div>
         </div>
-    )
-}
+    );
+};

@@ -1,16 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import styles from '../../styles/Home.module.css'
+import React from 'react';
+import styles from '../../styles/Home.module.css';
 
 export const H1 = () => {
-    // const [h1Animate, setH1Animate] = useState(false)
-
-    // useEffect(() => {
-    //     const animation: ReturnType<typeof setTimeout> = setTimeout(() => {
-    //       setH1Animate(true)
-    //     }, 500)
-      
-    //     return () => clearTimeout(animation)
-    // }, [])
 
     return (
         <div className={ styles.IamBramContainer }>
@@ -21,5 +12,5 @@ export const H1 = () => {
             Bram
             </h1>
         </div>
-    )
-}
+    );
+};

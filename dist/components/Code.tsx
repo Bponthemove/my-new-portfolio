@@ -1,7 +1,7 @@
-import React from 'react'
-import Image from 'next/image'
-import { ICodeProps } from '../types'
-import styles from '../../styles/Projects.module.css'
+import React from 'react';
+import Image from 'next/image';
+import { ICodeProps } from '../types';
+import styles from '../../styles/Projects.module.css';
 
 export const Code = ({ code, setClickedId }: ICodeProps) => {
 
@@ -18,5 +18,5 @@ export const Code = ({ code, setClickedId }: ICodeProps) => {
         priority={ code.id < 4 ? true : false }
       />
     </div>
-  )
-}
+  );
+};

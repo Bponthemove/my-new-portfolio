@@ -7,29 +7,29 @@ import { FaRegWindowClose, FaGithub, FaRegCaretSquareRight } from 'react-icons/f
 //--data--//
 import { myCode } from '../dist/data';
 //--types--//
-import { ICodeProps } from '../dist/types'
+import { ICodeProps } from '../dist/types';
 //--styles--//
-import styles from '../styles/Projects.module.css'
+import styles from '../styles/Projects.module.css';
 import usePortfolioContext from "../dist/hooks/usePortfoliocontext";
 
 const DynamicCode = dynamic<ICodeProps>(() => import('../dist/components/Code').then(mod => mod.Code));
 
-const projects: NextPage = () => {
-    const { clickedId, setClickedId } = usePortfolioContext()
-    const [slideOpen, setSlideOpen] = useState<boolean>(false)
+const Projects: NextPage = () => {
+    const { clickedId, setClickedId } = usePortfolioContext();
+    const [slideOpen, setSlideOpen] = useState<boolean>(false);
 
     useEffect(() => {
-        if (!clickedId) return
+        if (!clickedId) return;
         const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
             setSlideOpen(true)
-        }, 300)
-        return () => clearTimeout(timer)
-    }, [clickedId])
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [clickedId]);
 
     const closeHandler = () => {
-        setClickedId(null)
-        setSlideOpen(false)
-    }
+        setClickedId(null);
+        setSlideOpen(false);
+    };
 
     return (
         <div className={ styles.wrapper }>
@@ -37,13 +37,13 @@ const projects: NextPage = () => {
                 <h1>My Projects</h1>
                 <h3>Various projects either built for earning certain certifications or to practise.</h3>
                 <p>
-                    Main tools used are React(some with Next), JavaScript/TypeScript, CSS with jQuery or Sass. Some focus on calling API's, I like using Axios for this. Others focus on React and its component structure. Some have some kind of back end to practise with express and database coding. Some are served on Heroku and take some time to load as Heroku puts apps to sleep after a time of inactivity. Others are on Netlify.
+                    Main tools used are React(some with Next), JavaScript/TypeScript, CSS with jQuery or Sass. Some focus on calling API‘s, I like using Axios for this. Others focus on React and its component structure. Some have some kind of back end to practise with express and database coding. Some are served on Heroku and take some time to load as Heroku puts apps to sleep after a time of inactivity. Others are on Netlify.
                 </p>
                 <div className={ styles.portfolio }>
                     <p>
                         This portfolio site is obviously also part of my projects. Using Next.js, TypeScript, Sass and Styled Components. 
                     </p>
-                    <a href='https://github.com/Bponthemove/my-new-portfolio' target='_blank'>
+                    <a href='https://github.com/Bponthemove/my-new-portfolio' target='_blank' rel="noreferrer">
                         <FaGithub size={50}/>
                     </a> 
                 </div>
@@ -78,10 +78,10 @@ const projects: NextPage = () => {
                                 { myCode[clickedId - 1].tags }
                             </p>
                             <div className={ styles.linkContainer }>
-                                <a href={ myCode[clickedId - 1].link } target='_blank'>
+                                <a href={ myCode[clickedId - 1].link } target='_blank' rel="noreferrer">
                                     <FaGithub size={50}/>
                                 </a>
-                                <a href={ myCode[clickedId - 1].live } target='_blank'>
+                                <a href={ myCode[clickedId - 1].live } target='_blank' rel="noreferrer">
                                     <FaRegCaretSquareRight size={50}/>
                                 </a>
                             </div>
@@ -92,7 +92,7 @@ const projects: NextPage = () => {
 
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default projects
+export default Projects

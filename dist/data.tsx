@@ -1,6 +1,6 @@
 export const navLinks = [
     { name: "Who I am", 
-     path: "/" 
+     path: "/",
     },
     {
       name: "What I bring",
@@ -8,7 +8,7 @@ export const navLinks = [
     },
     {
       name: "Live Projects",
-      path: "/projects"
+      path: "/projects",
     },
     {
       name: "Contact",
@@ -23,7 +23,7 @@ export const interests = [
     gif_static: '/images/trees_static.jpg',
     text: 'The fight against desctruction of habitat and pollution of our atmospheres for the gain of a few is something that is very close to my heart...',
     bg: '#9bf6ff',
-    id: 1
+    id: 1,
   },
   {
     title: 'Balanced Societies',
@@ -31,7 +31,7 @@ export const interests = [
     gif_static: '/images/equal_static.jpg',
     text: 'together with the right for a safe, peaceful and meaningful environment to live in, for every person on this planet...',
     bg: '#fe5f55',
-    id: 2
+    id: 2,
   },
   {
     title: 'Clean Tech to the rescue',
@@ -39,7 +39,7 @@ export const interests = [
     gif_static: '/images/tech_static.jpg',
     text: 'are the reasons for me to change my life and get into development. I believe that technology is one of the big solutions and I am hoping to contribute in my own small way.',
     bg: '#fdffb6',
-    id: 3
+    id: 3,
   }
 ]
 
@@ -55,19 +55,19 @@ export const pastTrades = [
     img: '/images/salou.png',
     textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 20 - 70 staff members (seasonal variances). These very fast paced years of my life taught me determination, people skills and more determination. We hit our targets year in year out and made it into a very succesful business"',
     textTwo: '',
-    id: 1
+    id: 1,
   },
   {
     img: '/images/farming.png',
     textOne: '"Lived in France for several years, managing a large beef farm with one other member of staff (only french speaking). Living and working in very remote places teaches you to be inventive, quick thinking, responsible and problem solving skills."',
     textTwo: '"Also spent several seasons working as a snowsports instructor, taking many students into off-piste areas. Teaching me risk-assesment and people skills."',
-    id: 2
+    id: 2,
   },
   {
     img: '/images/trading.png',
     textOne: '"The last six years I have been working as a self employed tradesman. Renovating bathrooms was the main trade and I especially enjoy plumbing, tiling and paving."',
     textTwo: '"I combined this with stock trading which is something I have been doing as a hobby for years. This is where I got interested in development as I was always trying to adapt the trading indicators/programs to my liking and most of them are written in Javascript."',
-    id: 3
+    id: 3,
   }
 ]
 
@@ -78,7 +78,7 @@ export const myCode = [
     tags: 'Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps',
     link: 'https://github.com/Bponthemove/weatherapp',
     live: 'https://optimistic-lewin-59be2b.netlify.app/',
-    id: 1
+    id: 1,
   },
   {
     img: '/images/drump.jpg',
@@ -86,7 +86,7 @@ export const myCode = [
     tags: 'React',
     link: 'https://github.com/Bponthemove/Drump-machine',
     live: 'https://drump-machine.herokuapp.com/',
-    id: 2
+    id: 2,
   },  
   {
     img: '/images/oldPortfolio.jpg',
@@ -94,7 +94,7 @@ export const myCode = [
     tags: 'Express, Mongo, Mongoose, Userfront, Cloudinary, React',
     link: 'https://github.com/Bponthemove/portfolio',
     live: 'https://kind-shaw-87f836.netlify.app/',
-    id: 3
+    id: 3,
   },
   {
     img: '/images/calculator.jpg',
@@ -102,7 +102,7 @@ export const myCode = [
     tags: 'TypeScript, React',
     link: 'https://github.com/Bponthemove/calculatorTS',
     live: 'https://calculatorfcc.herokuapp.com/',
-    id: 4
+    id: 4,
   },
   {
     img: '/images/memory.jpg',
@@ -110,7 +110,7 @@ export const myCode = [
     tags: 'JavaScript logic, board games, React',
     link: 'https://github.com/Bponthemove/Memory',
     live: 'https://memorybp.herokuapp.com/',
-    id: 5
+    id: 5,
   },
   {
     img: '/images/news.jpg',
@@ -118,7 +118,7 @@ export const myCode = [
     tags: "React, Axios, API's",
     link: 'https://github.com/Bponthemove/news',
     live: 'https://amazing-morse-8d93e7.netlify.app/',
-    id: 6
+    id: 6,
   }
 ]
 
@@ -132,71 +132,71 @@ export const certificates = [
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/front-end-development-libraries',
     title: 'Front End Development Libraries',
     company: 'freeCodeCamp',
-    certId: '01'
+    certId: '01',
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/data-visualization',
     title: 'Data Visualization',
     company: 'freeCodeCamp',
-    certId: '02'
+    certId: '02',
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/javascript-algorithms-and-data-structures',
     title: 'JavaScript Algorithms and Data Structures',
     company: 'freeCodeCamp',
-    certId: '03'
+    certId: '03',
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
     title: 'Responsive Web Design',
     company: 'freeCodeCamp',
-    certId: '04'
+    certId: '04',
   },
   {
     url: 'https://www.freecodecamp.org/certification/bpvanzalk/responsive-web-design',
     title: "Back End Development and Api's",
     company: 'freeCodeCamp',
-    certId: '05'
+    certId: '05',
   },
   {
     url: 'https://www.credential.net/27674766-9037-4ab4-9f92-18f4e5e99df4#gs.y1vfm5',
     title: 'Designated HTML5 Specialist',
     company: 'FrameWork',
-    certId: '06'
+    certId: '06',
   },
   {
     url: 'https://www.credential.net/bad3c0a0-0e43-4247-9cd2-98565ed9b5b0#gs.vs623t',
     title: 'Designated JavaScript Specialist 2020',
     company: 'FrameWork',
-    certId: '07'
+    certId: '07',
   },
   { url: 'https://www.credential.net/87a88871-67c9-4040-8ce4-8bc8a1bc3664#gs.vs60ni',
     title: 'Designated CSS Specialist 2020',
     company: 'FrameWork',
-    certId: '08'
+    certId: '08',
   },
   {
     url: 'https://www.hackerrank.com/certificates/60fd8ddfb186',
     title: 'JavaScript (Basic)',
     company: 'HackerRank',
-    certId: '09'
+    certId: '09',
   },
   {
     url: 'https://www.hackerrank.com/certificates/612178730f48',
     title: 'JavaScript (Intermediate)',
     company: 'HackerRank',
-    certId: '10'
+    certId: '10',
   },
   {
     url: 'https://www.hackerrank.com/certificates/f1b75d297ddd',
     title: 'CSS',
     company: 'HackerRank',
-    certId: '11'
+    certId: '11',
   },
   {
     url: 'https://www.hackerrank.com/certificates/3f2b4e3c3776',
     title: 'React',
     company: 'HackerRank',
-    certId: '12'
+    certId: '12',
   }
 ]

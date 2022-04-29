@@ -1,13 +1,13 @@
-import React from 'react'
-import { FiMenu } from 'react-icons/fi'
-import usePortfolioContext from '../hooks/usePortfoliocontext' 
-import { NextPage } from 'next'
-import { NavLink } from './NavLink'
-import { navLinks } from '../data'
-import styles from '../../styles/Header.module.css'
+import React from 'react';
+import { FiMenu } from 'react-icons/fi';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import { NextPage } from 'next';
+import { NavLink } from './NavLink';
+import { navLinks } from '../data';
+import styles from '../../styles/Header.module.css';
 
 const Header: NextPage = () => {
-    const { desktop, menu, setMenu, headerRef } = usePortfolioContext()
+    const { desktop, menu, setMenu, headerRef } = usePortfolioContext();
     
     return (
         <>
@@ -44,7 +44,7 @@ const Header: NextPage = () => {
             :
             null }     
         </>
-  )
-}
+  );
+};
 
 export default Header

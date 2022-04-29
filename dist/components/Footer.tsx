@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
-import emailjs from 'emailjs-com'
-import styles from '../../styles/Footer.module.css'
-import usePortfolioContext from '../hooks/usePortfoliocontext'
-import { LinksFooter } from './LinksFooter'
-import { ScrollIndicator } from './ScrollIndicator'
+import emailjs from 'emailjs-com';
+import styles from '../../styles/Footer.module.css';
+import usePortfolioContext from '../hooks/usePortfoliocontext';
+import { LinksFooter } from './LinksFooter';
+import { ScrollIndicator } from './ScrollIndicator';
 
 export const Footer = () => {
 
-  const [name, setName] = useState<string>('')
-  const [email, setEmail] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-  const { bottomRef } = usePortfolioContext()
+  const { bottomRef } = usePortfolioContext();
 
 //email me through emailjs. Still have to set up netlify functions to hide credentials
   const handleInput = (e: React.FormEvent<HTMLFormElement> ) => {
-    console.log(e.currentTarget.message.value)
-    e.preventDefault()
+    e.preventDefault();
     
     emailjs
       .sendForm(
@@ -40,7 +39,7 @@ export const Footer = () => {
         setEmail('')
         setMessage('')
       })
-    }
+    };
 
   return (
     <>
@@ -50,9 +49,35 @@ export const Footer = () => {
           <p>Feel free to leave me a message<br/>for support, feedback or some more info!</p>
           <form onSubmit={ e => handleInput(e) } id='form' >
             <div className={ styles.names }>
-              <input type='name' maxLength={ 256 } name='name' aria-label='Name' placeholder='Name' id='name' value={ name } onChange={ e => setName(e.currentTarget.value)} required/>
-              <input type='email' maxLength={ 256 } name='email' aria-label='Email' placeholder='Email' id='Email' value={ email } onChange={ e => setEmail(e.currentTarget.value)} required/>
-              <textarea name='message' aria-label='Message' id='Message' placeholder='Your message' rows={6} value={ message } onChange={ e => setMessage(e.currentTarget.value)} required/>
+              <input 
+                type='name' 
+                maxLength={ 256 } 
+                name='name' 
+                aria-label='Name' 
+                placeholder='Name' 
+                id='name' 
+                value={ name } 
+                onChange={ e => setName(e.currentTarget.value)} required
+              />
+              <input 
+                type='email' 
+                maxLength={ 256 } 
+                name='email' 
+                aria-label='Email' 
+                placeholder='Email' 
+                id='Email' 
+                value={ email } 
+                onChange={ e => setEmail(e.currentTarget.value)} required
+              />
+              <textarea 
+                name='message' 
+                aria-label='Message' 
+                id='Message' 
+                placeholder='Your message' 
+                rows={6} 
+                value={ message } 
+                onChange={ e => setMessage(e.currentTarget.value)} required
+              />
             </div>
             <input type='submit' value='Contact me' title='Send' id={ styles.ContactBtn } />
           </form>
@@ -63,5 +88,5 @@ export const Footer = () => {
         </p>
       </footer>
     </>
-  )
-}
+  );
+};

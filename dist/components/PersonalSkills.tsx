@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { personality } from '../../dist/data'
-import styles from '../../styles/Skills.module.css'
+import React, { useEffect, useState } from 'react';
+import { personality } from '../../dist/data';
+import styles from '../../styles/Skills.module.css';
 
 export const PersonalSkills = () => {
-    const [random, setRandom] = useState<number>(10)
+    const [random, setRandom] = useState<number>(10);
 
     {/* ----------------------------random to randomly highlight skill in section personal skills---------------------------------- */}
   useEffect(() => {
@@ -11,7 +11,7 @@ export const PersonalSkills = () => {
       setRandom(Math.floor(Math.random() * 8))
     }, 2000)
     return () => clearInterval(skills)
-  }, [])
+  }, []);
 
   return (
     <div className={ styles.bottomPersonality }>
@@ -19,5 +19,5 @@ export const PersonalSkills = () => {
             <p key={ index } className={ index === random ? styles.pActive : undefined }>{ skill }</p>
           )}
     </div>
-  )
-}
+  );
+};

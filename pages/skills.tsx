@@ -1,43 +1,43 @@
-import { NextPage } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
-import React, { useEffect, useState } from 'react'
+import { NextPage } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
   //--components--//
-import { Certificate } from '../dist/components/Certificate'
-import { ListItem } from '../dist/components/ListItem'
-import { PersonalSkills } from '../dist/components/PersonalSkills'
-import { Stickman } from '../dist/components/Stickman'
+import { Certificate } from '../dist/components/Certificate';
+import { ListItem } from '../dist/components/ListItem';
+import { PersonalSkills } from '../dist/components/PersonalSkills';
+import { Stickman } from '../dist/components/Stickman';
 //--custom hooks--//
-import usePortfolioContext from '../dist/hooks/usePortfoliocontext'
+import usePortfolioContext from '../dist/hooks/usePortfoliocontext';
 //--styles--//
-import styles from '../styles/Skills.module.css'
+import styles from '../styles/Skills.module.css';
 //--types--//
-import { IPastProps } from '../dist/types'
+import { IPastProps } from '../dist/types';
   //--data--//
-import { media, pastTrades, certificates } from '../dist/data'
+import { media, pastTrades, certificates } from '../dist/data';
   //--images--//
-import code from '../public/images/code.jpg'
-import graduation from '../public/images/graduation.jpg'
-import stickPoint from '../public/images/stickman-pointing-right.png'
+import code from '../public/images/code.jpg';
+import graduation from '../public/images/graduation.jpg';
+import stickPoint from '../public/images/stickman-pointing-right.png';
 //--dynamic imports to improve first load--//
-const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past))
-const DynamicSkillsTicker = dynamic<{}>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker))
+const DynamicPast = dynamic<IPastProps>(() => import('../dist/components/Past').then(mod => mod.Past));
+const DynamicSkillsTicker = dynamic<Record<string, never>>(() => import('../dist/components/SkillsTicker').then(mod => mod.SkillsTicker));
 
 const Skills: NextPage = () => {
 
-  const [spanOpen, setSpanOpen] = useState<boolean>(false)  
-  const { desktop } = usePortfolioContext()
+  const [spanOpen, setSpanOpen] = useState<boolean>(false);
+  const { desktop } = usePortfolioContext();
 
   
 {/* ----------------------------------rotate > after 1sec of loading--------------------------------------- */}
   useEffect(() => {
-    if (spanOpen) return
+    if (spanOpen) return;
     const timerOne: ReturnType<typeof setTimeout> = setTimeout(() => {
-      setSpanOpen(true)
-    }, 1000)
-    return () => clearTimeout(timerOne)
-  }, [spanOpen])
+      setSpanOpen(true);
+    }, 1000);
+    return () => clearTimeout(timerOne);
+  }, [spanOpen]);
 
 
   return (
@@ -112,7 +112,7 @@ const Skills: NextPage = () => {
         </section>   
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
