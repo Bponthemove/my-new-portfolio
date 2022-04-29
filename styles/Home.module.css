@@ -375,7 +375,6 @@
 @media (max-width: 35em) {
   .container .hiddenContainer .hiddenInnerContainer::before {
     top: 80%;
-    background-size: contain;
   }
 }
 

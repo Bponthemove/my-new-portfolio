@@ -52,7 +52,7 @@
   position: absolute;
   top: 0.8em;
   right: 0.1em;
-  z-index: 99999;
+  z-index: 99;
 }
 
 .container .navContainer .hamburgerOpen {

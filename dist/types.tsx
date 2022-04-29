@@ -5,6 +5,8 @@ export type ProviderProps = {
     setLeaveHiddenOpen: React.Dispatch<React.SetStateAction<number>>
     menu: boolean
     setMenu: React.Dispatch<React.SetStateAction<boolean>>
+    clickedId: number | null
+    setClickedId: React.Dispatch<React.SetStateAction<number | null>>
     toBottom: boolean
     setToBottom: React.Dispatch<React.SetStateAction<boolean>>
     notMobile: boolean

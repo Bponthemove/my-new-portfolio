@@ -118,7 +118,7 @@
 }
 
 .wrapper .outerContainer .sectionCode .tile:after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 100%;
 }
@@ -147,18 +147,15 @@
 .wrapper .overlay .modalText {
   border: solid 0.5em black;
   background-color: #fffffc;
-  position: relative;
+  position: absolute;
   width: 80%;
-  margin: 9em auto;
-  -webkit-transition: all 0.3 ease-in-out 0.4s;
-  transition: all 0.3 ease-in-out 0.4s;
+  bottom: 3em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.3s ease-in-out 0.4s;
+  transition: all 0.3s ease-in-out 0.4s;
   z-index: 999;
-}
-
-@media (min-width: 60em) {
-  .wrapper .overlay .modalText {
-    margin: 60vh auto;
-  }
 }
 
 .wrapper .overlay .modalText .slide {

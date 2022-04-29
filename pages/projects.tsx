@@ -10,11 +10,12 @@ import { myCode } from '../dist/data';
 import { ICodeProps } from '../dist/types'
 //--styles--//
 import styles from '../styles/Projects.module.css'
+import usePortfolioContext from "../dist/hooks/usePortfoliocontext";
 
 const DynamicCode = dynamic<ICodeProps>(() => import('../dist/components/Code').then(mod => mod.Code));
 
 const projects: NextPage = () => {
-    const [clickedId, setClickedId] = useState<number | null>(null)
+    const { clickedId, setClickedId } = usePortfolioContext()
     const [slideOpen, setSlideOpen] = useState<boolean>(false)
 
     useEffect(() => {

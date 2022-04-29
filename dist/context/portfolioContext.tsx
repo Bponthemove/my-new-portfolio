@@ -8,6 +8,7 @@ export const PortfolioContext = createContext<ProviderProps | undefined>(undefin
 export const PortfolioContextProvider:React.FC = ({ children }) => {
     // const [theme, setTheme] = useState<string>('standard')
     const [menu, setMenu] = useState<boolean>(false)
+    const [clickedId, setClickedId] = useState<number | null>(null)
     const [leaveHiddenOpen, setLeaveHiddenOpen] = useState(0)
     const [toBottom, setToBottom] = useState(false)
     const [scroll, setScroll] = useState(2)
@@ -23,12 +24,12 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
 
     useEffect(() => {
             //disable scroll when mobile menu is open
-        if (menu) {
+        if (menu || clickedId) {
             document.documentElement.classList.add('noScroll')
         } else {
             document.documentElement.classList.remove('noScroll')
         }
-    }, [menu])
+    }, [menu, clickedId])
 
     useEffect(() => {
             //wait for useRouter on page load
@@ -53,7 +54,7 @@ export const PortfolioContextProvider:React.FC = ({ children }) => {
     const value: ProviderProps = { 
         notMobile, desktop, menu, setMenu, bottomRef, headerRef, gearRef, scroll,
         scrolling, setScroll, colorGradient, stickmanRef, toBottom, setToBottom, 
-        leaveHiddenOpen, setLeaveHiddenOpen
+        leaveHiddenOpen, setLeaveHiddenOpen, setClickedId, clickedId
     }
 
     return(

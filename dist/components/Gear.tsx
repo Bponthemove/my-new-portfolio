@@ -6,14 +6,14 @@ import usePortfolioContext from '../hooks/usePortfoliocontext'
 import useScroll from '../hooks/useScroll'
 
 export const Gear = () => {
-    const { gearRef } = usePortfolioContext()
+    const { gearRef, leaveHiddenOpen } = usePortfolioContext()
     const gears = useScroll()
 
   return (
     <div 
         className={ styles.gearContainer }
         ref={ gearRef }
-        style={{ transform: `rotate(${(gears - 2) * 5}deg)` }}
+        style={ leaveHiddenOpen ? undefined : { transform: `rotate(${(gears - 2) * 5}deg)` }}
     >
         <Image 
             src={ gear }
