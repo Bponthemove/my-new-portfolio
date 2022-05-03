@@ -34,13 +34,8 @@ const Home: NextPage = () => {
   const gears = useScroll();
 
   useEffect(() => {
-    //collapse p when section three is not visible and scroll to top of next section (otherwise you'll jump lower..)
     if (oilImgVisible) setLeaveHiddenOpen(gears);
-    if (!oilImgVisible && expanded) {
-      setExpanded(false)
-      if (gifOneRef.current) gifOneRef.current.scrollIntoView({block: 'center'});
-    };
-  }, [oilImgVisible]);
+  }, [oilImgVisible, setLeaveHiddenOpen, gears]);
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
@@ -82,7 +77,7 @@ const Home: NextPage = () => {
           { notMobile && 
           <div className={ styles.oldMan }>
             <div className={ styles.oldManImgWrapper }>
-              <Image  src={ oldMan } />
+              <Image  src={ oldMan } alt='old stickman with stick'/>
             </div>
             <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
           </div> }
@@ -107,13 +102,12 @@ const Home: NextPage = () => {
         </div>
       </section>
 {/*--------------------------------oil image section-------------------------------- */}
-      <section className={ expanded && oilImgVisible ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ')
-                          : oilImgVisible ? [styles.sectionThree, styles.sectionThreeLoaded].join(' ')  
+      <section className={ expanded && leaveHiddenOpen !== 0 ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ') 
                           : styles.sectionThree }  
                           ref={ imgRef }
                           title='image of village in oil filter style'
       >
-        <div className={ oilImgVisible ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
+        <div className={ leaveHiddenOpen !== 0 ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
           <p>
             What I love is most things associated with family, friends, good food and the outdoors.  I enjoy a good party, but also an evening with friends doing board games. 
           </p> 
