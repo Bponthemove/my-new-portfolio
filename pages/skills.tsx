@@ -46,16 +46,16 @@ const Skills: NextPage = () => {
       <section className={ styles.sectionOne }>
         { desktop && <div className={ styles.imagesContainer }>
             <div className={ styles.imgCodeContainer }>
-                <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
+                <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur'/>
             </div>
             <div className={ styles.stickPointContainer }>
-                <Image src={ stickPoint } width='100%' height='100%' layout='responsive' objectFit='contain' alt='stickman pointing' priority={ true }/>
+                <Image src={ stickPoint } width='100%' height='100%' layout='responsive' objectFit='contain' alt='stickman pointing'/>
             </div>
           </div>
         }
         <div className={ styles.mediaContainer }>
         { !desktop && <div className={ styles.imgCodeContainer }>
-            <Image src={ code } layout='responsive' alt='Image with lines of code' priority={ true } quality='90' placeholder='blur'/>
+            <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur'/>
           </div> 
         }
           <div className={ styles.textCodeContainer}>

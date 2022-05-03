@@ -7,6 +7,9 @@ gifs not working.
 
 Theme toggle needs finsihing and theme colors need to done in \_variables.
 
+Stickman outruns the pushing div on fast scroll. Need to rethink this issue.
+Also stickman mobile needs to start later.
+
 extra's maybe to be done:
   modal pop up after x seconds of inactivity to play 
   guess the skill game

@@ -24,13 +24,23 @@ export const Stickman = () => {
       <div  className={ styles.pushing }
             style={{ transform: `translateX(${ (stickman - 2) * 50 }%)` }}
       >
-        <div className={ styles.imgWrapper }>
-          <Image  src={ stickman % 2 === 0 ? stickmanArr[0] : stickmanArr[1] } 
-                  objectFit='contain' 
-                  layout='fill' 
-                  alt='stickman pushing'
-                  priority={ true }
-          />
+        <div className={ styles.imgContainer }>
+          <div className={ stickman%2 !== 0 ? [styles.imgZeroWrapper, styles.hidden].join(' ') : styles.imgZeroWrapper }>
+            <Image  src={ stickmanArr[0] } 
+                    objectFit='contain' 
+                    layout='fill' 
+                    alt='stickman pushing'
+                    priority
+            />
+          </div>
+          <div className={ stickman%2 === 0 ? [styles.imgOneWrapper, styles.hidden].join(' ') : styles.imgOneWrapper }>
+            <Image  src={ stickmanArr[1] } 
+                    objectFit='contain' 
+                    layout='fill' 
+                    alt='stickman pushing'
+                    priority
+            />
+          </div>
         </div>
       </div>
     </div>
