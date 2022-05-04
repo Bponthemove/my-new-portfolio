@@ -77,7 +77,7 @@ const Home: NextPage = () => {
           { notMobile && 
           <div className={ styles.oldMan }>
             <div className={ styles.oldManImgWrapper }>
-              <Image  src={ oldMan } alt='old stickman with stick'/>
+              <Image  src={ oldMan } alt='old stickman with stick' title='old stickman with stick'/>
             </div>
             <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
           </div> }

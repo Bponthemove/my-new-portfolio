@@ -46,16 +46,16 @@ const Skills: NextPage = () => {
       <section className={ styles.sectionOne }>
         { desktop && <div className={ styles.imagesContainer }>
             <div className={ styles.imgCodeContainer }>
-                <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur'/>
+                <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur' title='coding image'/>
             </div>
             <div className={ styles.stickPointContainer }>
-                <Image src={ stickPoint } width='100%' height='100%' layout='responsive' objectFit='contain' alt='stickman pointing'/>
+                <Image src={ stickPoint } width='100%' height='100%' layout='responsive' objectFit='contain' alt='stickman pointing' title='stickman pointing'/>
             </div>
           </div>
         }
         <div className={ styles.mediaContainer }>
         { !desktop && <div className={ styles.imgCodeContainer }>
-            <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur'/>
+            <Image src={ code } layout='responsive' alt='Image with lines of code' quality='90' placeholder='blur' title='coding image'/>
           </div> 
         }
           <div className={ styles.textCodeContainer}>
@@ -80,7 +80,7 @@ const Skills: NextPage = () => {
 {/* ----------------------------------Certificates--------------------------------------- */}
       <section className={ styles.certSection }>
         <div className={ styles.graduationContainer }>
-          <Image src={ graduation } objectFit='cover' height={ '100%' } width={ '100%' } layout='responsive' alt='graduates throwing their hats' quality='90' placeholder='blur'/>
+          <Image src={ graduation } objectFit='cover' height={ '100%' } width={ '100%' } layout='responsive' alt='graduates throwing their hats' quality='90' placeholder='blur' title='graduation image'/>
         </div>
         <div className={ styles.certificatesContainer }>
           <ul>

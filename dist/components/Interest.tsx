@@ -43,7 +43,8 @@ export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInter
                           //layout='responsive' 
                           //objectFit='contain' 
                           alt={ interest.title } 
-                          className={ styles.img }/> }
+                          className={ styles.img }
+                          title={ interest.title }/> }
         </div>
         <p>{ text }</p>
     </div>

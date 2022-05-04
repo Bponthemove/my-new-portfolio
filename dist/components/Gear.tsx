@@ -23,6 +23,7 @@ export const Gear = () => {
             objectFit='contain' 
             alt='spinning gear'  
             priority={ true }
+            title='spinning gear'
         />
     </div>   
   );
