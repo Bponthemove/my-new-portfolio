@@ -48,7 +48,7 @@ export const personality =[
   'Excellent Communication skills', 'Excellent People skills', 'Multilingual'
 ]
 
-export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scrimba', 'Framework', 'Udemy']
+export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scrimba', 'Framework', 'Udemy', 'Exercism', 'Codesmith']
 
 export const pastTrades = [
   {
