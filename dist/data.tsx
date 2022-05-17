@@ -73,12 +73,20 @@ export const pastTrades = [
 
 export const myCode = [
   {
+    img: '/images/calculatorJS.jpg',
+    text: 'Simple calculator made as project for free code camp.',
+    tags: "HTML, CSS, JavaScript",
+    link: 'https://github.com/Bponthemove/calculatorJS/tree/main',
+    live: 'https://golden-griffin-e70875.netlify.app/',
+    id: 1,
+  },
+  {
     img: '/images/weather.jpg',
     text: 'A weather app built with Next.js and served on Netlify. Easy accessible right menu for mobile hand-held devices. Weather Outlook with responsive temperature visualization, air pollution chart and weather map with various layers.',
     tags: 'Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps',
     link: 'https://github.com/Bponthemove/weatherapp',
     live: 'https://optimistic-lewin-59be2b.netlify.app/',
-    id: 1,
+    id: 2,
   },
   {
     img: '/images/drump.jpg',
@@ -86,7 +94,7 @@ export const myCode = [
     tags: 'React',
     link: 'https://github.com/Bponthemove/Drump-machine',
     live: 'https://drump-machine.herokuapp.com/',
-    id: 2,
+    id: 3,
   },  
   {
     img: '/images/oldPortfolio.jpg',
@@ -94,7 +102,7 @@ export const myCode = [
     tags: 'Express, Mongo, Mongoose, Userfront, Cloudinary, React',
     link: 'https://github.com/Bponthemove/portfolio',
     live: 'https://kind-shaw-87f836.netlify.app/',
-    id: 3,
+    id: 4,
   },
   {
     img: '/images/calculator.jpg',
@@ -102,7 +110,7 @@ export const myCode = [
     tags: 'TypeScript, React',
     link: 'https://github.com/Bponthemove/calculatorTS',
     live: 'https://calculatorfcc.herokuapp.com/',
-    id: 4,
+    id: 5,
   },
   {
     img: '/images/memory.jpg',
@@ -110,7 +118,7 @@ export const myCode = [
     tags: 'JavaScript logic, board games, React',
     link: 'https://github.com/Bponthemove/Memory',
     live: 'https://memorybp.herokuapp.com/',
-    id: 5,
+    id: 6,
   },
   {
     img: '/images/news.jpg',
@@ -118,7 +126,7 @@ export const myCode = [
     tags: "React, Axios, API's",
     link: 'https://github.com/Bponthemove/news',
     live: 'https://amazing-morse-8d93e7.netlify.app/',
-    id: 6,
+    id: 7,
   }
 ]
 

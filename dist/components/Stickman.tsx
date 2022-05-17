@@ -18,11 +18,11 @@ export const Stickman = () => {
         { desktop ? 'Certificates earned through FreeCodeCamp, Hackerrank and Framework. Also passed several LinkedIn skill tests.' : 'Certificates earned.' }
       </p>
       <div  className={ styles.imgScrollContainer } 
-            style={{ width: `${ 100 - (stickman * 5) }%` }}
+            style={{ width: `${ 100 - (stickman * 5) }%`, transition: '0.2s width' }}
       >
       </div>
       <div  className={ styles.pushing }
-            style={{ transform: `translateX(${ (stickman - 2) * 50 }%)` }}
+            style={{ transform: `translateX(${ (stickman - 2) * 50 }%)`, transition: '0.2s transform' }}
       >
         <div className={ styles.imgContainer }>
           <div className={ stickman%2 !== 0 ? [styles.imgZeroWrapper, styles.hidden].join(' ') : styles.imgZeroWrapper }>

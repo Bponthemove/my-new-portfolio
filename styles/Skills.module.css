@@ -174,8 +174,6 @@
   width: 90%;
   position: absolute;
   right: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 :global(.theme-Standard) .scrollRoll .imgScrollContainer {
@@ -190,8 +188,6 @@
   height: 100%;
   width: 10%;
   position: absolute;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .scrollRoll .pushing .imgContainer {
@@ -213,13 +209,9 @@
   -ms-grid-column: 1;
   grid-area: 1/1;
   height: 100%;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .scrollRoll .pushing .imgContainer .hidden {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   display: none;
 }
 

@@ -47,6 +47,9 @@ const Projects: NextPage = () => {
                         <FaGithub size={50}/>
                     </a> 
                 </div>
+                <p>
+                    Currently I am building a website for a rope access company and doing some small web dev volunteering for a small charity in Africa called HEKIMA.
+                </p>
             </section>
             <section className={ styles.outerContainer }>
                 <div className={ styles.sectionCode }>

@@ -107,7 +107,7 @@ const Home: NextPage = () => {
                           ref={ imgRef }
                           title='image of village in oil filter style'
       >
-        <div className={ leaveHiddenOpen !== 0 ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg}>
+        <div  className={ leaveHiddenOpen !== 0 ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg }>
           <p>
             What I love is most things associated with family, friends, good food and the outdoors.  I enjoy a good party, but also an evening with friends doing board games. 
           </p> 

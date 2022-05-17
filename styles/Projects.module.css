@@ -44,20 +44,18 @@
 .wrapper .outerContainer .sectionCode .codeContainer {
   padding: 2em;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 500px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2vw;
-  overflow: hidden;
 }
 
 .wrapper .outerContainer .sectionCode .tile {
-  width: 90%;
+  max-width: 500px;
   padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,10 +64,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 4em;
   cursor: pointer;
   opacity: 0.6;
   position: relative;
@@ -81,26 +75,6 @@
 
 :global(.theme-Ukraine) .wrapper .outerContainer .sectionCode .tile {
   background-color: #005BBB;
-}
-
-@media (min-width: 35em) {
-  .wrapper .outerContainer .sectionCode .tile {
-    -webkit-box-flex: 45%;
-        -ms-flex: 45%;
-            flex: 45%;
-    width: 45%;
-    gap: 4em;
-  }
-}
-
-@media (min-width: 60em) {
-  .wrapper .outerContainer .sectionCode .tile {
-    -webkit-box-flex: calc(90vw * 0.33333);
-        -ms-flex: calc(90vw * 0.33333);
-            flex: calc(90vw * 0.33333);
-    width: calc(90vw * 0.33333);
-    gap: 6em;
-  }
 }
 
 @media (min-width: 60em) and (hover: hover) and (pointer: fine) {
