@@ -10,6 +10,9 @@ module.exports = withBundleAnalyzer({
     locales: ["en"],
     defaultLocale: "en",
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 })
 
 

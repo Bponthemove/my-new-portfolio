@@ -51,10 +51,20 @@ const Home: NextPage = () => {
         <aside>
           Inquisitive + creative <br/>={'>'} Front End Development
         </aside>
-        <div>
-          <a download href='/BpvanZalk_CV.pdf' className={ styles.download } aria-label='button to download cv'>
+        <div 
+          className={styles.btnContainer}  
+        >
+          <div className={styles.frontBtn}>
             Download my CV
-          </a>
+          </div>
+          <div className={styles.backBtn}>
+            <a download href='/BpvanZalk_CV.pdf' className={ styles.download } aria-label='button to download cv'>
+              graphic format
+            </a>
+            <a download href='/BpvanZalk_CV_BW.pdf' className={ styles.download } aria-label='button to download cv'>
+              plain format
+            </a>
+          </div>
         </div>
       </section>
 {/*--------------------------------hidden gear section-------------------------------- */}

@@ -171,60 +171,128 @@
   }
 }
 
-.container .sectionOne .download {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  padding: 0.75em 2em;
+.container .sectionOne .btnContainer {
+  display: -ms-grid;
+  display: grid;
+  width: 8em;
   border-radius: 1em;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-  font-weight: 800;
-  font-size: 0.8em;
-}
-
-:global(.theme-Standard) .container .sectionOne .download {
-  background-color: #fe5f55;
-}
-
-:global(.theme-Ukraine) .container .sectionOne .download {
-  background-color: #242423;
-}
-
-:global(.theme-Standard) .container .sectionOne .download {
-  color: #242423;
-}
-
-:global(.theme-Ukraine) .container .sectionOne .download {
-  color: #FFD500;
+  -webkit-transform: translate(35%, 20%);
+          transform: translate(35%, 20%);
+  cursor: pointer;
 }
 
 @media (min-width: 35em) {
-  .container .sectionOne .download {
-    position: absolute;
-    bottom: -2em;
-    left: 5em;
-    font-size: 1em;
-    padding: 1em 2em;
+  .container .sectionOne .btnContainer {
+    -webkit-transform: translate(30%, 170%);
+            transform: translate(30%, 170%);
+    width: 14em;
   }
+}
+
+.container .sectionOne .btnContainer .frontBtn, .container .sectionOne .btnContainer .backBtn {
+  font-weight: 800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+}
+
+:global(.theme-Standard) .container .sectionOne .btnContainer .frontBtn, :global(.theme-Standard) .container .sectionOne .btnContainer .backBtn {
+  color: #242423;
+}
+
+:global(.theme-Ukraine) .container .sectionOne .btnContainer .frontBtn, :global(.theme-Ukraine) .container .sectionOne .btnContainer .backBtn {
+  color: #FFD500;
 }
 
 @media (min-width: 60em) {
-  .container .sectionOne .download {
+  .container .sectionOne .btnContainer .frontBtn, .container .sectionOne .btnContainer .backBtn {
     font-size: 1.2em;
-    padding: 1.25em 3em;
   }
 }
 
+.container .sectionOne .btnContainer .backBtn {
+  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8em;
+  opacity: 0;
+  border-radius: 1em;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.container .sectionOne .btnContainer .backBtn .download {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4em;
+  border-radius: 50%;
+}
+
+:global(.theme-Standard) .container .sectionOne .btnContainer .backBtn .download {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .container .sectionOne .btnContainer .backBtn .download {
+  background-color: #242423;
+}
+
+.container .sectionOne .btnContainer .frontBtn {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 1;
+  border-radius: 1em;
+  -webkit-transition: all 0.5s ease-in-out 0.6s;
+  transition: all 0.5s ease-in-out 0.6s;
+}
+
+:global(.theme-Standard) .container .sectionOne .btnContainer .frontBtn {
+  background-color: #fe5f55;
+}
+
+:global(.theme-Ukraine) .container .sectionOne .btnContainer .frontBtn {
+  background-color: #242423;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .container .sectionOne .download:hover {
+  .container .sectionOne .btnContainer:hover .frontBtn {
+    font-size: 0;
     -webkit-transition: 0.25s;
     transition: 0.25s;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
-  :global(.theme-Standard) .container .sectionOne .download:hover {
-    background-color: #fa8d85;
-  }
-  :global(.theme-Ukraine) .container .sectionOne .download:hover {
-    background-color: #fa8d85;
+  .container .sectionOne .btnContainer:hover .backBtn {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out 0.6s;
+    transition: opacity 0.5s ease-in-out 0.6s;
   }
 }
 
