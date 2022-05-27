@@ -91,6 +91,20 @@
   height: 100%;
 }
 
+.wrapper .outerContainer .sectionCode .tile .iconContainer {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8em;
+}
+
 .wrapper .outerContainer .sectionCode .tile:after {
   content: "";
   display: block;

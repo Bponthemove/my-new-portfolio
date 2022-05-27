@@ -47,6 +47,7 @@ export interface ICodeProps {
         img: string,
         text: string,
         link: string,
+        icon: string[],
         id: number,
     };
     setClickedId: React.Dispatch<React.SetStateAction<number | null>>,

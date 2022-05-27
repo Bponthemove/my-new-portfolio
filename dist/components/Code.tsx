@@ -1,22 +1,35 @@
 import React from 'react';
 import Image from 'next/image';
 import { ICodeProps } from '../types';
+import {SiNextdotjs, SiJavascript, SiReact, SiTypescript } from 'react-icons/si'
 import styles from '../../styles/Projects.module.css';
 
 export const Code = ({ code, setClickedId }: ICodeProps) => {
-
+  const {id, img, icon} = code;
+  
   return (
     <div 
       className={ styles.tile }
-      onClick={ () => setClickedId(code.id) }
+      onClick={ () => setClickedId(id) }
     >
       <Image 
-        src={ code.img } 
+        src={ img } 
         layout='fill' 
         objectFit='cover' 
-        alt={ code.img }  
-        priority={ code.id < 4 ? true : false }
+        alt={ img }  
+        priority={ id < 4 ? true : false }
       />
+      <div className={styles.iconContainer}>
+        {icon.map(icon => (
+          <div className={styles.icon} key={id}>
+            { icon === '1' ? <SiJavascript size={60}/>
+              : icon === '2' ? <SiTypescript size={60}/>
+              : icon === '3' ? <SiReact size={60}/>
+              : <SiNextdotjs size={60}/>
+            }
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

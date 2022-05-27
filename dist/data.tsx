@@ -72,12 +72,14 @@ export const pastTrades = [
 ]
 
 export const myCode = [
+  //icon: 1=js, 2=ts, 3=react, 4=next
   {
     img: '/images/calculatorJS.jpg',
     text: 'Simple calculator made as project for free code camp.',
     tags: "HTML, CSS, JavaScript",
     link: 'https://github.com/Bponthemove/calculatorJS/tree/main',
     live: 'https://golden-griffin-e70875.netlify.app/',
+    icon: ['1'],
     id: 1,
   },
   {
@@ -86,6 +88,7 @@ export const myCode = [
     tags: 'Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps',
     link: 'https://github.com/Bponthemove/weatherapp',
     live: 'https://optimistic-lewin-59be2b.netlify.app/',
+    icon: ['2','4'],
     id: 2,
   },
   {
@@ -94,6 +97,7 @@ export const myCode = [
     tags: "Next, Typescript, Sass",
     link: 'https://github.com/Bponthemove/winter_holidays',
     live: 'https://fascinating-gaufre-4f82a8.netlify.app',
+    icon: ['2', '4'],
     id: 3,
   },
   {
@@ -102,6 +106,7 @@ export const myCode = [
     tags: "React, Axios, API's",
     link: 'https://github.com/Bponthemove/news',
     live: 'https://amazing-morse-8d93e7.netlify.app/',
+    icon: ['3'],
     id: 4,
   },
   {
@@ -110,6 +115,7 @@ export const myCode = [
     tags: 'Express, Mongo, Mongoose, Userfront, Cloudinary, React',
     link: 'https://github.com/Bponthemove/portfolio',
     live: 'https://kind-shaw-87f836.netlify.app/',
+    icon: ['3'],
     id: 5,
   },
   {
@@ -118,6 +124,7 @@ export const myCode = [
     tags: 'React',
     link: 'https://github.com/Bponthemove/Drump-machine',
     live: 'https://drump-machine.herokuapp.com/',
+    icon: ['3'],
     id: 6,
   },  
   {
@@ -126,14 +133,16 @@ export const myCode = [
     tags: 'TypeScript, React',
     link: 'https://github.com/Bponthemove/calculatorTS',
     live: 'https://calculatorfcc.herokuapp.com/',
+    icon: ['3', '2'],
     id: 7,
   },
   {
     img: '/images/memory.jpg',
     text: 'One of the first things I built when I was learning javascript. My children absolutely love playing memory so I thought it would be a good idea to do that in js. I have later rewritten it in React. And currenlty I am adding TypeScript and making it more responsive.',
-    tags: 'JavaScript logic, board games, React',
+    tags: 'JavaScript, board games, React',
     link: 'https://github.com/Bponthemove/Memory',
     live: 'https://memorybp.herokuapp.com/',
+    icon: ['3'],
     id: 8,
   },
 ]

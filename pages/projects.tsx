@@ -64,7 +64,7 @@ const Projects: NextPage = () => {
                 >
                 { clickedId && 
                 <>
-                    <Image src={ myCode[clickedId - 1].img } layout='fill' objectFit='cover' alt={myCode[clickedId - 1].img}></Image>
+                    <Image src={ myCode[clickedId - 1].img } layout='fill' objectFit='cover' alt={myCode[clickedId - 1].img}/>
                     <div 
                         className={ styles.close }
                         onClick = { () => closeHandler() }
