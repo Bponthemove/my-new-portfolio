@@ -20,25 +20,25 @@ export const interests = [
   {
     title: 'Save our planet',
     gif: '/images/trees.gif',
-    gif_static: '/images/trees_static.jpg',
+    gif_static: '/images/trees_static.png',
     text: 'The fight against desctruction of habitat and pollution of our atmospheres for the gain of a few is something that is very close to my heart...',
-    bg: '#9bf6ff',
+    bg: '#405f00',
     id: 1,
   },
   {
     title: 'Balanced Societies',
     gif: '/images/equal.gif',
-    gif_static: '/images/equal_static.jpg',
+    gif_static: '/images/equal_static.png',
     text: 'together with the right for a safe, peaceful and meaningful environment to live in, for every person on this planet...',
-    bg: '#fe5f55',
+    bg: '#ade006',
     id: 2,
   },
   {
     title: 'Clean Tech to the rescue',
     gif: '/images/tech.gif',
-    gif_static: '/images/tech_static.jpg',
+    gif_static: '/images/tech_static.png',
     text: 'are the reasons for me to change my life and get into development. I believe that technology is one of the big solutions and I am hoping to contribute in my own small way.',
-    bg: '#fdffb6',
+    bg: '#7fdcff',
     id: 3,
   }
 ]
