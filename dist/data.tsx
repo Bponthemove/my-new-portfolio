@@ -22,7 +22,7 @@ export const interests = [
     gif: '/images/trees.gif',
     gif_static: '/images/trees_static.png',
     text: 'The fight against desctruction of habitat and pollution of our atmospheres for the gain of a few is something that is very close to my heart...',
-    bg: '#405f00',
+    bg: '#ade006',
     id: 1,
   },
   {
@@ -30,7 +30,7 @@ export const interests = [
     gif: '/images/equal.gif',
     gif_static: '/images/equal_static.png',
     text: 'together with the right for a safe, peaceful and meaningful environment to live in, for every person on this planet...',
-    bg: '#ade006',
+    bg: '#fe5f55',
     id: 2,
   },
   {
@@ -74,22 +74,13 @@ export const pastTrades = [
 export const myCode = [
   //icon: 1=js, 2=ts, 3=react, 4=next
   {
-    img: '/images/calculatorJS.jpg',
-    text: 'Simple calculator made as project for free code camp.',
-    tags: "HTML, CSS, JavaScript",
-    link: 'https://github.com/Bponthemove/calculatorJS/tree/main',
-    live: 'https://golden-griffin-e70875.netlify.app/',
-    icon: ['1'],
-    id: 1,
-  },
-  {
     img: '/images/weather.jpg',
     text: 'A weather app built with Next.js and served on Netlify. Easy accessible right menu for mobile hand-held devices. Weather Outlook with responsive temperature visualization, air pollution chart and weather map with various layers.',
     tags: 'Next, Typescript, Sass, Netlify functions, Chartist, Leaflet maps',
     link: 'https://github.com/Bponthemove/weatherapp',
     live: 'https://optimistic-lewin-59be2b.netlify.app/',
     icon: ['2','4'],
-    id: 2,
+    id: 1,
   },
   {
     img: '/images/landingPageK2.jpg',
@@ -98,7 +89,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/winter_holidays',
     live: 'https://fascinating-gaufre-4f82a8.netlify.app',
     icon: ['2', '4'],
-    id: 3,
+    id: 2,
   },
   {
     img: '/images/news.jpg',
@@ -107,6 +98,15 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/news',
     live: 'https://amazing-morse-8d93e7.netlify.app/',
     icon: ['3'],
+    id: 3,
+  },
+  {
+    img: '/images/calculatorJS.jpg',
+    text: 'Simple calculator made as project for free code camp.',
+    tags: "HTML, CSS, JavaScript",
+    link: 'https://github.com/Bponthemove/calculatorJS/tree/main',
+    live: 'https://golden-griffin-e70875.netlify.app/',
+    icon: ['1'],
     id: 4,
   },
   {

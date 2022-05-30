@@ -9,7 +9,7 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
   const { toBottom, setToBottom, menu, setMenu, desktop, bottomRef } = usePortfolioContext();
   const router = useRouter();
   const { current } = bottomRef;
-  const reachedBottom = useVisible(bottomRef);
+  const reachedBottom = useVisible(bottomRef, {});
 
   useEffect(() => {
     if (toBottom && current) {
@@ -20,7 +20,7 @@ export const NavLink = ({ link }: {link: { name: string, path: string } }) => {
 
 //this useEffect runs when we have reached the bottom and then sets toBottom to false so that the hidden gear section does not open when clicking contact.
   useEffect(() => {
-    if (reachedBottom) setToBottom(!toBottom)
+    if (reachedBottom?.isIntersecting) setToBottom(!toBottom)
   }, [reachedBottom]);
 
   return (

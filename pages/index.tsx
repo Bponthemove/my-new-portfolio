@@ -24,18 +24,24 @@ const DynamicInterest = dynamic<IInterestProps>(() => import('../dist/components
 
 const Home: NextPage = () => {
   const { menu, notMobile, toBottom, leaveHiddenOpen, setLeaveHiddenOpen } = usePortfolioContext();
-  const [expanded, setExpanded] = useState(false);
+  const [oilImgVis, setOilImgVis] = useState(false)
   const router = useRouter();
   const imgRef = useRef(null);
+  const qouteRef = useRef(null);
   const gifOneRef = useRef<null | HTMLDivElement>(null);
   const gifTwoRef = useRef<null | HTMLDivElement>(null);
   const gifThreeRef = useRef<null | HTMLDivElement>(null);
-  const oilImgVisible = useVisible(imgRef, '-50%');
+  const oilImg = useVisible(imgRef, {rootMargin: '0% 0% -50% 0%'});
+  const qoute = useVisible(qouteRef, {rootMargin: '0% 0% 0% 0%'});
   const gears = useScroll();
 
   useEffect(() => {
-    if (oilImgVisible) setLeaveHiddenOpen(gears);
-  }, [oilImgVisible, setLeaveHiddenOpen, gears]);
+    if (qoute?.isIntersecting) setLeaveHiddenOpen(gears);
+  }, [qoute, setLeaveHiddenOpen, gears]);
+
+  useEffect(() => {
+    if (oilImg?.isIntersecting) setOilImgVis(true);
+  }, [oilImg])
   
   return (
     <div className={menu && router.pathname === '/' ? [ styles.containerBlurred, styles.container ].join(' ') : styles.container}>
@@ -94,12 +100,15 @@ const Home: NextPage = () => {
         </div>
       </section>     
 {/*--------------------------------qoute section-------------------------------- */}
-      <section className={[ styles.sectionTwo, styles.section ].join(' ')}> 
+      <section className={leaveHiddenOpen !== 0 ? [styles.sectionTwo, styles.section, styles.sectionTwoVis].join(' ') : [styles.sectionTwo, styles.section].join(' ')}> 
         <div className={ styles.divOne }>
           <h2>Front end development</h2>
           <p>Please explore and see who I am and what I have to offer. </p>
         </div>
-        <div className={ styles.divQoute }>
+        <div 
+          className={ styles.divQoute }
+          ref={qouteRef}
+        >
           <q><b>
           Great things come from hard work and perseverance.
           </b></q>
@@ -112,30 +121,15 @@ const Home: NextPage = () => {
         </div>
       </section>
 {/*--------------------------------oil image section-------------------------------- */}
-      <section className={ expanded && leaveHiddenOpen !== 0 ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ') 
+      <section  className={oilImgVis ? [styles.sectionThree, styles.sectionThreeLoaded, styles.sectionThreeExpanded].join(' ') 
                           : styles.sectionThree }  
-                          ref={ imgRef }
-                          title='image of village in oil filter style'
+                ref={ imgRef }
+                title='image of village in oil filter style'
       >
-        <div  className={ leaveHiddenOpen !== 0 ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg }>
+        <div  className={ oilImgVis ? [styles.divOnImg, styles.divOnImgLoaded].join(' ') : styles.divOnImg }>
           <p>
-            What I love is most things associated with family, friends, good food and the outdoors.  I enjoy a good party, but also an evening with friends doing board games. 
+            Being creative and solving problems is what I do everyday, either with my keyboard and mouse, my carpentry tools or just playing some good old board or card games with friends and family. 
           </p> 
-          <span onClick={ () => setExpanded(!expanded) }>
-            { expanded ? '👇' : 'Discover more...' }
-          </span>
-          <p className={ expanded ? [styles.p, styles.pExpanded].join(' ') : styles.p }>
-            I have always loved cooking and I make sure I cook most nights. Food and family are very important to me. I also enjoy building things for cooking, like our pizza oven. Other important routines are my bike rides, either on my road bike or on my mountain bike. 
-            <br/>
-            <br/>
-            I have always enjoyed working/volunteering and chosen life/work style over steady career/money. I have travelled a lot and worked in France, Switzerland, Spain, Austria, Germany, New Zealand. Some seasonal, some volunteering and some for longer term, full-time employement. I have never been intimidated by learning new skills and languages and have always seen this as an opportunity rather than an obstacle.
-            <br/>
-            <br/>
-              Venturing into development is another phase in my life. I am more settled and enjoying family life, so I feel ready for the next step. I rolled into this by accident, trying to rewrite indicators that I used for my stock trading. These were mainly written in Javascript and with lots of googling to make them work for me, I slowly got sucked into it. I started a Udemy course on Javascript as I was interested and before I knew it I was months down the line learning React etc. 
-            <br/>
-            <br/> 
-            Time has really flown by and the combination of the visual and the problem solving has really got me hooked. I would love to keep on learning new things and one day have a dream job, helping to develop something that will have a positive impact on our planet and its people.
-          </p>
         </div>
       </section>
 {/*--------------------------------my important things section-------------------------------- */}

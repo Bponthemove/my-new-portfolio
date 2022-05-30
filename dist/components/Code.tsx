@@ -6,7 +6,7 @@ import styles from '../../styles/Projects.module.css';
 
 export const Code = ({ code, setClickedId }: ICodeProps) => {
   const {id, img, icon} = code;
-  
+  console.log(id)
   return (
     <div 
       className={ styles.tile }

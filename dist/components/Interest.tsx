@@ -8,19 +8,19 @@ export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInter
     const { title, gif, gif_static, text, bg } = interest;
     const { desktop } = usePortfolioContext();
     const [img, setImg] = useState(gif_static);
-    const gifOneVisible = useVisible(gifOneRef, '-50%');
-    const gifTwoVisible = useVisible(gifTwoRef, '-50%');
-    const gifThreeVisible = useVisible(gifThreeRef, '-50%');
+    const gifOneVisible = useVisible(gifOneRef, {rootMargin: '0% 0% -50% 0%'});
+    const gifTwoVisible = useVisible(gifTwoRef, {rootMargin: '0% 0% -50% 0%'});
+    const gifThreeVisible = useVisible(gifThreeRef, {rootMargin: '0% 0% -50% 0%'});
 
     useEffect(() => {
       if (desktop) return
-      if (gifOneVisible && interest.id === 1) setImg(gif)
-      if (gifTwoVisible && interest.id === 2) setImg(gif)
-      if (gifThreeVisible && interest.id === 3) setImg(gif)
-      if (!gifOneVisible && interest.id === 1) setImg(gif_static)
-      if (!gifTwoVisible && interest.id === 2) setImg(gif_static)
-      if (!gifThreeVisible && interest.id === 3) setImg(gif_static)
-    }, [gifOneVisible, gifTwoVisible, gifThreeVisible]);
+      if (gifOneVisible?.isIntersecting && interest.id === 1) setImg(gif)
+      if (gifTwoVisible?.isIntersecting && interest.id === 2) setImg(gif)
+      if (gifThreeVisible?.isIntersecting && interest.id === 3) setImg(gif)
+      if (!gifOneVisible?.isIntersecting && interest.id === 1) setImg(gif_static)
+      if (!gifTwoVisible?.isIntersecting && interest.id === 2) setImg(gif_static)
+      if (!gifThreeVisible?.isIntersecting && interest.id === 3) setImg(gif_static)
+    }, [gifOneVisible, gifTwoVisible, gifThreeVisible, desktop, setImg, gif, gif_static, interest]);
 
   return (
     <div    className={ styles.interest } 
@@ -38,10 +38,7 @@ export const Interest = ({ interest, gifOneRef, gifTwoRef, gifThreeRef }: IInter
         <div className={ styles.imgContainer }>
           { gif && <img src={ img } 
                           width='100%' 
-                          height='100%' 
-                          //quality='25'
-                          //layout='responsive' 
-                          //objectFit='contain' 
+                          height='100%'  
                           alt={ interest.title } 
                           className={ styles.img }
                           title={ interest.title }/> }
