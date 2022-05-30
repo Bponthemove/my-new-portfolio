@@ -41,6 +41,10 @@
   }
 }
 
+.wrapper .outerContainer {
+  min-height: 100vh;
+}
+
 .wrapper .outerContainer .sectionCode .codeContainer {
   padding: 2em;
   width: 100%;

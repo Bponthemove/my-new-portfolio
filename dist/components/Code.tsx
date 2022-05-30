@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+//--types--//
 import { ICodeProps } from '../types';
+//--icons--//
 import {SiNextdotjs, SiJavascript, SiReact, SiTypescript } from 'react-icons/si'
+//--styles--//
 import styles from '../../styles/Projects.module.css';
 
 export const Code = ({ code, setClickedId }: ICodeProps) => {
@@ -18,6 +21,8 @@ export const Code = ({ code, setClickedId }: ICodeProps) => {
         objectFit='cover' 
         alt={ img }  
         priority={ id < 4 ? true : false }
+        placeholder='blur'
+        blurDataURL='/images/placeholderCode.png'
       />
       <div className={styles.iconContainer}>
         {icon.map(icon => (
