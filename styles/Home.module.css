@@ -316,8 +316,6 @@
       -ms-flex-align: end;
           align-items: flex-end;
   text-align: center;
-  -webkit-box-shadow: 0 6px 5px -5px RGB(0 0 0/5%);
-          box-shadow: 0 6px 5px -5px RGB(0 0 0/5%);
 }
 
 @media (min-width: 35em) {
@@ -441,6 +439,8 @@
           flex-direction: column;
   padding-top: 25em;
   padding-bottom: 10em;
+  -webkit-box-shadow: 0 -5px 12px 3px RGB(0 0 0/5%);
+          box-shadow: 0 -5px 12px 3px RGB(0 0 0/5%);
 }
 
 @media (min-width: 60em) {
