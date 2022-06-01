@@ -53,7 +53,7 @@ export const media = ['Free Code Camp', 'LeetCode & Hackerrank', 'Egghead', 'Scr
 export const pastTrades = [
   {
     img: '/images/salou.png',
-    textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 20 - 70 staff members (seasonal variances). These very fast paced years of my life taught me determination, people skills and more determination. We hit our targets year in year out and made it into a very succesful business"',
+    textOne: '"Spent several years managing a multi-site hospitality business in Spain, with 50 - 70 staff members (seasonal variances). These very fast paced years of my life taught me determination, people skills and more determination. We hit our targets year in year out and made it into a very succesful business"',
     textTwo: '',
     id: 1,
   },
@@ -118,24 +118,6 @@ export const myCode = [
     icon: ['3'],
     id: 5,
   },
-  // {
-  //   img: '/images/drump.jpg',
-  //   text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Very first React project. Was meant to be a drum machine, but made it a little bit more fun',
-  //   tags: 'React',
-  //   link: 'https://github.com/Bponthemove/Drump-machine',
-  //   live: 'https://drump-machine.herokuapp.com/',
-  //   icon: ['3'],
-  //   id: 6,
-  // },  
-  // {
-  //   img: '/images/calculator.jpg',
-  //   text: 'One of the Free Code Camp projects to pass the Front End Libraries Certificate. Later rewritten to practise Typescript.',
-  //   tags: 'TypeScript, React',
-  //   link: 'https://github.com/Bponthemove/calculatorTS',
-  //   live: 'https://calculatorfcc.herokuapp.com/',
-  //   icon: ['3', '2'],
-  //   id: 7,
-  // },
   {
     img: '/images/memory.jpg',
     text: 'One of the first things I built when I was learning javascript. My children absolutely love playing memory so I thought it would be a good idea to do that in js. I have later rewritten it in React. And currenlty I am adding TypeScript and making it more responsive.',
