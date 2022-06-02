@@ -439,6 +439,7 @@
           flex-direction: column;
   padding-top: 25em;
   padding-bottom: 10em;
+  opacity: 0;
   -webkit-box-shadow: 0 -5px 12px 3px RGB(0 0 0/5%);
           box-shadow: 0 -5px 12px 3px RGB(0 0 0/5%);
 }
@@ -513,6 +514,7 @@
 
 .container .sectionTwoVis {
   padding-top: 5em;
+  opacity: 1;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }

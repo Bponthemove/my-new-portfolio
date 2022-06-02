@@ -70,7 +70,7 @@ export const LinksFooter = () => {
   useEffect(() => {
     let arrows: ReturnType<typeof setInterval>
     if (!hover) {
-      let counter: number = 1
+      let counter = 1;
       arrows = setInterval(() => {
         if (counter < 3) counter++
         else counter = 1
@@ -88,7 +88,7 @@ export const LinksFooter = () => {
     <div className={ styles.bottomContainer }>
         <div>
             {/* use styled components here to make arrows light up in sequence without hover and active in red on hover */}
-            <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank'>
+            <a href="https://www.linkedin.com/in/bram-peter-van-zalk-6b1401215" target='_blank' rel="noreferrer">
                 <IconComponent footerLink='linkedin' toggle={toggle}/>
             </a>
             <ArrowLeft active={ state.third }/>
@@ -99,7 +99,7 @@ export const LinksFooter = () => {
             <ArrowRight active={ state.first }/>
             <ArrowRight active={ state.second }/>
             <ArrowRight active={ state.third }/>
-            <a href="https://github.com/Bponthemove" target='_blank'>
+            <a href="https://github.com/Bponthemove" target='_blank' rel="noreferrer">
               <IconComponent footerLink='github' toggle={toggle}/>
             </a>
         </div>
