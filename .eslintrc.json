@@ -8,6 +8,9 @@
     "prettier" 
     // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
   ],
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
   "rules": {
     "prefer-const": "error",
     "@typescript-eslint/no-unused-vars": "error",
