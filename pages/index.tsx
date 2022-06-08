@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -86,17 +87,28 @@ const Home: NextPage = () => {
             <div className={ styles.meWrapper }/>
             <div className={ styles.headerTextWrapper }>
               <h2>Hello World</h2>
-              <h4>I am Bram, a web developer based near Reading, UK.</h4>
+              <h4>I am Bram, a Front End Developer based near Reading, UK.</h4>
             </div>
           </div>
-          <p>Web development has become my passion and I am very excited. Although having a degree in Hospitality Management, I am now pursuing my old passion and making a career of it.</p>
-          { notMobile && 
+          {notMobile ?
+          <> 
+          <p>
+            A passion for amazing, fun, stylish and fast applications. I love building with Javascript, React and CSS. My passion for tech comes from the idea of simple ideas making big impacts  via innovative solutions. Like <Link href='https://www.thetreeapp.org/'>Treeapp</Link>, made by a small team but has a big impact. And a passion for tech that is incredibly user-friendly and fast, like the gov.uk websites. Simple layout, incredibly user-friendly and does what it is suppose to do (a great user-experience).
+          </p>
           <div className={ styles.oldMan }>
             <div className={ styles.oldManImgWrapper }>
               <Image  src={ oldMan } alt='old stickman with stick' title='old stickman with stick'/>
             </div>
-            <p>Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I like building and creating.</p>
-          </div> }
+            <p>
+              Back in the old days with dial up connections, I used to love playing around with dreamweaver, wordperfect, windows 3.11 etc. There you have it, I am THAT old 😉. A good 20 years later, I rediscovered how much I love the process of building and creating, using code to visualize and engage.
+            </p>
+          </div>
+          </>
+          :
+          <p>
+            A passion for amazing, fun, stylish and fast applications. I love building with Javascript, React and CSS. My passion for tech comes from the idea of simple ideas making big impacts via innovative solutions. I love the process of building and creating, using code to visualize and engage.
+          </p>
+          }
         </div>
       </section>     
 {/*--------------------------------qoute section-------------------------------- */}
@@ -104,6 +116,11 @@ const Home: NextPage = () => {
         <div className={ styles.divOne }>
           <h2>Front end development</h2>
           <p>Please explore and see who I am and what I have to offer. </p>
+          <div className={styles.linksContainer}>
+            <Link href='/projects'>My Code</Link>
+            <Link href='/skills'>My Learning and Experience</Link>
+            <Link href='#passions'>My Other Passions</Link>
+          </div>
         </div>
         <div 
           className={ styles.divQoute }
@@ -133,7 +150,10 @@ const Home: NextPage = () => {
         </div>
       </section>
 {/*--------------------------------my important things section-------------------------------- */}
-      <section className={ styles.sectionFour }>
+      <section 
+        className={ styles.sectionFour }
+        id='passions'
+      >
         <div className={ styles.sectionFourInner }>
           { interests.map(interest => 
             <DynamicInterest  gifOneRef={ gifOneRef } 
