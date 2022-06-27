@@ -75,7 +75,7 @@ export const myCode = [
   //icon: 1=js, 2=ts, 3=react, 4=next
   {
     img: '/images/goc.webp',
-    text: 'First PWA. I kept styling very simple so I could focus on learning webpack, serviceworkers/caching and testing. It uses the openbrewerydb API which is American, so the results in Europe are a bit limited. It is a PWA, so not designed for desktop screens. Location needed.',
+    text: 'Simple store app to practice with React and Redux. I used Redux toolkit here and integrated Stripe for checkout.',
     tags: 'React, Redux, Stripe',
     link: 'https://github.com/Bponthemove/goc',
     live: 'https://strong-khapse-0f842d.netlify.app/',
