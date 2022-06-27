@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>IamBram Front End Development & Web Design</title>
         <meta name="description" content="Junior Developer for hire, Front End Development with React/Next, Javascript, Sass, CSS, HTML, JQuery."/>
         <meta name='author' content='Bram peter van Zalk'/>
-        <meta name="keywords" content='Front End Development, React/Next, Javascript, Sass, CSS, HTML, JQuery, Developer for hire' />
+        <meta name="keywords" content='Front End Development, React, Next.js, Javascript, Sass, CSS, HTML, Developer for hire' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name='robots' content='all'/>
         <link rel="icon" href="/favicon.ico" />

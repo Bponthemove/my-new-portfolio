@@ -74,13 +74,22 @@ export const pastTrades = [
 export const myCode = [
   //icon: 1=js, 2=ts, 3=react, 4=next
   {
+    img: '/images/goc.webp',
+    text: 'First PWA. I kept styling very simple so I could focus on learning webpack, serviceworkers/caching and testing. It uses the openbrewerydb API which is American, so the results in Europe are a bit limited. It is a PWA, so not designed for desktop screens. Location needed.',
+    tags: 'React, Redux, Stripe',
+    link: 'https://github.com/Bponthemove/goc',
+    live: 'https://strong-khapse-0f842d.netlify.app/',
+    icon: ['3'],
+    id: 1,
+  },
+  {
     img: '/images/brewery.jpg',
     text: 'First PWA. I kept styling very simple so I could focus on learning webpack, serviceworkers/caching and testing. It uses the openbrewerydb API which is American, so the results in Europe are a bit limited. It is a PWA, so not designed for desktop screens. Location needed.',
     tags: 'JavaScript, CSS, Jest, Leaflet, API, PWA',
     link: 'https://github.com/Bponthemove/Breweries',
     live: 'https://piquant-order.surge.sh/',
     icon: ['1'],
-    id: 1,
+    id: 2,
   },
   {
     img: '/images/weather.jpg',
@@ -89,7 +98,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/weatherapp',
     live: 'https://optimistic-lewin-59be2b.netlify.app/',
     icon: ['2','4'],
-    id: 2,
+    id: 3,
   },
   {
     img: '/images/landingPageK2.jpg',
@@ -98,7 +107,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/winter_holidays',
     live: 'https://fascinating-gaufre-4f82a8.netlify.app',
     icon: ['2', '4'],
-    id: 3,
+    id: 4,
   },
   {
     img: '/images/news.jpg',
@@ -107,7 +116,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/news',
     live: 'https://amazing-morse-8d93e7.netlify.app/',
     icon: ['3'],
-    id: 4,
+    id: 5,
   },
   {
     img: '/images/calculatorJS.jpg',
@@ -116,7 +125,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/calculatorJS/tree/main',
     live: 'https://golden-griffin-e70875.netlify.app/',
     icon: ['1'],
-    id: 5,
+    id: 6,
   },
   {
     img: '/images/oldPortfolio.jpg',
@@ -125,7 +134,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/portfolio',
     live: 'https://kind-shaw-87f836.netlify.app/',
     icon: ['3'],
-    id: 6,
+    id: 7,
   },
   {
     img: '/images/memory.jpg',
@@ -134,7 +143,7 @@ export const myCode = [
     link: 'https://github.com/Bponthemove/Memory',
     live: 'https://memorybp.herokuapp.com/',
     icon: ['3'],
-    id: 7,
+    id: 8,
   },
 ]
 
