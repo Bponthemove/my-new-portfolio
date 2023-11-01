@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             <a download href='/BpvanZalk_CV.pdf' className={ styles.download } aria-label='button to download cv'>
               graphic format
             </a>
-            <a download href='/BpvanZalk_CV_BW.pdf' className={ styles.download } aria-label='button to download cv'>
+            <a download href='/BpvanZalk_CV.pdf' className={ styles.download } aria-label='button to download cv'>
               plain format
             </a>
           </div>
